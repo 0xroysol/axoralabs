@@ -10,9 +10,9 @@ export function KPIWidget({ label, value, delta }: KPIWidgetProps) {
 
   return (
     <article className="surface rounded-xl p-4">
-      <p className="text-xs uppercase tracking-[0.16em] text-slate-400">{label}</p>
+      <p className="text-xs uppercase tracking-[0.16em] text-slate-500">{label}</p>
       <div className="mt-2 flex items-end justify-between gap-3">
-        <p className="font-display text-lg font-semibold text-white">{value}</p>
+        <p className="font-display text-lg font-semibold text-slate-100">{value}</p>
         {delta ? (
           <span
             className={`text-xs font-semibold ${

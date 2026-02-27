@@ -17,7 +17,7 @@ export default function ContactPage() {
         description="Share your business context and priority outcomes. We will return with a focused implementation path."
       />
       <section className="mx-auto w-full max-w-3xl px-6 pb-20">
-        <article className="surface rounded-2xl p-6 md:p-7">
+        <article className="surface-strong rounded-2xl p-6 md:p-7">
           <ContactForm />
         </article>
       </section>

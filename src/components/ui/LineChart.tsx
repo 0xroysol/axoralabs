@@ -19,13 +19,14 @@ export function LineChart({ values }: LineChartProps) {
 
   return (
     <div className="surface rounded-xl p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-400">Revenue Trend (12 Months)</p>
+      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-500">Revenue Trend (12 Months)</p>
       <svg viewBox={`0 0 ${width} ${height}`} className="h-44 w-full" role="img" aria-label="Revenue trend line chart">
+        <line x1={16} y1={164} x2={504} y2={164} stroke="rgba(148,163,184,0.24)" strokeWidth="1" />
         <polyline
           points={points}
           fill="none"
-          stroke="#00E5FF"
-          strokeWidth="3"
+          stroke="#bfdbfe"
+          strokeWidth="2.8"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

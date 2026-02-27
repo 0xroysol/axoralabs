@@ -77,7 +77,7 @@ export function ContactForm() {
         <div
           role="status"
           aria-live="polite"
-          className="rounded-xl border border-emerald-400/35 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-200"
+          className="rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-200"
         >
           {toast}
         </div>
@@ -93,7 +93,7 @@ export function ContactForm() {
             type="text"
             value={form.name}
             onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-            className="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm"
+            className="focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "name-error" : undefined}
           />
@@ -113,7 +113,7 @@ export function ContactForm() {
             type="email"
             value={form.email}
             onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-            className="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm"
+            className="focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "email-error" : undefined}
           />
@@ -133,7 +133,7 @@ export function ContactForm() {
             type="text"
             value={form.company}
             onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
-            className="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm"
+            className="focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100"
             aria-invalid={Boolean(errors.company)}
             aria-describedby={errors.company ? "company-error" : undefined}
           />
@@ -152,7 +152,7 @@ export function ContactForm() {
             id="serviceType"
             value={form.serviceType}
             onChange={(event) => setForm((prev) => ({ ...prev, serviceType: event.target.value }))}
-            className="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm"
+            className="focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100"
             aria-invalid={Boolean(errors.serviceType)}
             aria-describedby={errors.serviceType ? "service-error" : undefined}
           >
@@ -179,7 +179,7 @@ export function ContactForm() {
             rows={5}
             value={form.message}
             onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-            className="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm"
+            className="focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100"
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? "message-error" : undefined}
           />
@@ -193,7 +193,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={!canSubmit}
-          className="focus-ring inline-flex rounded-md bg-cyan px-5 py-3 text-sm font-semibold text-bg transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+          className="focus-ring inline-flex rounded-md border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
         >
           Submit request
         </button>

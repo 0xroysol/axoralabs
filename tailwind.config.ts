@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0A0F14",
-        surface: "#111827",
-        cyan: "#00E5FF",
-        violet: "#7C3AED",
-        textSoft: "#B4C0D4"
+        bg: "#070B11",
+        surface: "#0F1621",
+        cyan: "#4FB6FF",
+        violet: "#4C6FFF",
+        textSoft: "#9BA9BB"
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(0,229,255,0.24), 0 0 35px rgba(0,229,255,0.15)",
-        violet: "0 0 0 1px rgba(124,58,237,0.3), 0 0 30px rgba(124,58,237,0.2)"
+        glow: "0 0 0 1px rgba(79,182,255,0.24), 0 0 28px rgba(79,182,255,0.12)",
+        violet: "0 0 0 1px rgba(76,111,255,0.25), 0 0 24px rgba(76,111,255,0.12)"
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "'Satoshi'", "'Inter'", "sans-serif"],
-        body: ["'Plus Jakarta Sans'", "'Inter'", "sans-serif"]
+        display: ["'Sora'", "'Space Grotesk'", "'Inter'", "sans-serif"],
+        body: ["'Manrope'", "'Plus Jakarta Sans'", "'Inter'", "sans-serif"]
       },
       backgroundImage: {
         "radial-grid":

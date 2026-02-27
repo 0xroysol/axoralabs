@@ -16,11 +16,11 @@ export function ServiceCard({ title, description, href }: ServiceCardProps) {
     <motion.article
       whileHover={reducedMotion ? undefined : { y: -5 }}
       transition={{ duration: 0.2 }}
-      className="surface rounded-2xl p-6 shadow-[0_0_20px_rgba(0,229,255,0.08)]"
+      className="surface rounded-2xl p-6"
     >
-      <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
+      <h3 className="font-display text-xl font-semibold text-slate-100">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-textSoft">{description}</p>
-      <Link href={href} className="focus-ring mt-6 inline-flex rounded-md text-sm font-semibold text-cyan transition-opacity hover:opacity-85">
+      <Link href={href} className="focus-ring mt-6 inline-flex rounded-md text-sm font-semibold text-slate-100 transition-opacity hover:opacity-75">
         Learn more
       </Link>
     </motion.article>

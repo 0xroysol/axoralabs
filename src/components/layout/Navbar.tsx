@@ -54,19 +54,20 @@ export function Navbar({ brandName }: NavbarProps) {
 
   const linkClasses = (href: string) =>
     `focus-ring rounded-md px-3 py-2 text-sm transition-colors ${
-      pathname === href ? "text-cyan" : "text-slate-200 hover:text-cyan"
+      pathname === href ? "text-white" : "text-slate-300 hover:text-white"
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-800/70 bg-bg/85 backdrop-blur-lg">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-700/30 bg-[#080d14]/90 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="focus-ring rounded-md font-display text-lg font-semibold tracking-wide">
-          {brandName}
+        <Link href="/" className="focus-ring inline-flex items-center gap-2 rounded-md font-display text-lg font-semibold tracking-wide">
+          <span className="inline-flex h-2 w-2 rounded-full bg-cyan/90" />
+          <span>{brandName}</span>
         </Link>
 
         <button
           type="button"
-          className="focus-ring rounded-md border border-slate-700 px-3 py-2 text-sm text-slate-200 md:hidden"
+          className="focus-ring rounded-md border border-slate-600 bg-slate-900/70 px-3 py-2 text-sm text-slate-100 md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -91,7 +92,7 @@ export function Navbar({ brandName }: NavbarProps) {
           >
             <button
               type="button"
-              className="focus-ring rounded-md px-3 py-2 text-sm text-slate-200 transition-colors hover:text-cyan"
+              className="focus-ring rounded-md px-3 py-2 text-sm text-slate-300 transition-colors hover:text-white"
               aria-expanded={servicesOpen}
               aria-haspopup="menu"
               onClick={() => setServicesOpen((prev) => !prev)}
@@ -105,7 +106,7 @@ export function Navbar({ brandName }: NavbarProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.18 }}
-                  className="surface absolute left-0 top-12 min-w-60 rounded-xl p-2 shadow-glow"
+                  className="surface-strong absolute left-0 top-12 min-w-64 rounded-xl p-2"
                   role="menu"
                 >
                   {serviceLinks.map((item) => (

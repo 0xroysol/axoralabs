@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/src/components/layout/Footer";
 import { Navbar } from "@/src/components/layout/Navbar";
 import { brand } from "@/src/content/siteContent";
 
-const display = Space_Grotesk({
+const display = Sora({
   subsets: ["latin"],
   variable: "--font-display"
 });
 
-const body = Plus_Jakarta_Sans({
+const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body"
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://axoralab.ai"),
+  metadataBase: new URL("https://axoralabs.ai"),
   title: {
     default: "AxoraLab.ai | AI-powered business systems studio",
     template: "%s | AxoraLab.ai"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "AxoraLab.ai",
     description:
       "Engineering intelligent business systems for finance, operations, and AI-enabled execution.",
-    url: "https://axoralab.ai",
+    url: "https://axoralabs.ai",
     siteName: "AxoraLab.ai",
     type: "website"
   },
@@ -49,11 +49,12 @@ export default function RootLayout({
       <body className="bg-bg text-white antialiased">
         <a
           href="#main-content"
-          className="focus-ring sr-only z-[999] rounded-md bg-cyan px-3 py-2 text-sm font-semibold text-bg focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+          className="focus-ring sr-only z-[999] rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
         >
           Skip to content
         </a>
         <div className="relative min-h-screen overflow-x-clip">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-slate-700/10 to-transparent" />
           <Navbar brandName={brand.name} />
           <main id="main-content" className="pt-20">
             {children}

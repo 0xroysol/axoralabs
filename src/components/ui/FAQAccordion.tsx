@@ -26,8 +26,8 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               aria-controls={panelId}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="font-display text-base font-semibold text-white">{item.question}</span>
-              <span className="text-cyan" aria-hidden="true">
+              <span className="font-display text-base font-semibold text-slate-100">{item.question}</span>
+              <span className="text-slate-300" aria-hidden="true">
                 {isOpen ? "−" : "+"}
               </span>
             </button>

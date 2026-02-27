@@ -33,7 +33,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-20">
-        <h2 className="mb-4 font-display text-2xl font-semibold">Investment ranges</h2>
+        <h2 className="mb-4 font-display text-2xl font-semibold text-slate-100">Investment ranges</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {pricingHighlights.map((item) => (
             <PricingCard key={item.title} title={item.title} price={item.price} outcome={item.outcome} />

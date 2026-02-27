@@ -17,9 +17,9 @@ export function PricingCard({ title, price, outcome }: PricingCardProps) {
       transition={{ duration: 0.2 }}
       className="surface relative overflow-hidden rounded-2xl p-6"
     >
-      <div className="pointer-events-none absolute -right-12 top-1 h-28 w-28 rounded-full bg-cyan/20 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent" />
       <h3 className="font-display text-lg font-semibold">{title}</h3>
-      <p className="mt-3 text-xl font-semibold text-cyan">{price}</p>
+      <p className="mt-3 text-xl font-semibold text-slate-100">{price}</p>
       <p className="mt-3 text-sm leading-relaxed text-textSoft">{outcome}</p>
     </motion.article>
   );

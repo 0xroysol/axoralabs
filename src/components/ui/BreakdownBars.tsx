@@ -5,7 +5,7 @@ type BreakdownBarsProps = {
 export function BreakdownBars({ items }: BreakdownBarsProps) {
   return (
     <div className="surface rounded-xl p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-400">Cost Structure</p>
+      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-500">Cost Structure</p>
       <ul className="space-y-3">
         {items.map((item) => (
           <li key={item.name}>
@@ -15,7 +15,7 @@ export function BreakdownBars({ items }: BreakdownBarsProps) {
             </div>
             <div className="h-2 rounded-full bg-slate-800">
               <div
-                className="h-2 rounded-full bg-gradient-to-r from-cyan to-violet"
+                className="h-2 rounded-full bg-gradient-to-r from-slate-300 to-slate-500"
                 style={{ width: `${item.share}%` }}
                 aria-hidden="true"
               />

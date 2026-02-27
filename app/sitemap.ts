@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://axoralab.ai";
+const baseUrl = "https://axoralabs.ai";
 
 const routes = [
   "",
