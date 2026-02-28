@@ -1,8 +1,13 @@
+"use client";
+
+import { useTranslate } from "@/src/components/ui/LocalizedText";
+
 type LineChartProps = {
   values: number[];
 };
 
 export function LineChart({ values }: LineChartProps) {
+  const t = useTranslate();
   const width = 520;
   const height = 180;
   const padding = 16;
@@ -19,7 +24,7 @@ export function LineChart({ values }: LineChartProps) {
 
   return (
     <div className="surface rounded-xl p-4">
-      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-500">Revenue Trend (12 Months)</p>
+      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-slate-500">{t("Revenue Trend (12 Months)")}</p>
       <svg viewBox={`0 0 ${width} ${height}`} className="h-44 w-full" role="img" aria-label="Revenue trend line chart">
         <line x1={16} y1={164} x2={504} y2={164} stroke="rgba(148,163,184,0.24)" strokeWidth="1" />
         <polyline

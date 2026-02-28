@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { LanguageSwitcher } from "@/src/components/ui/LanguageSwitcher";
+import { useTranslate } from "@/src/components/ui/LocalizedText";
 import { servicePages } from "@/src/content/siteContent";
 
 type NavbarProps = {
@@ -19,6 +21,7 @@ const navItems = [
 
 export function Navbar({ brandName }: NavbarProps) {
   const pathname = usePathname();
+  const t = useTranslate();
   const servicesRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -72,7 +75,7 @@ export function Navbar({ brandName }: NavbarProps) {
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          Menu
+          {t("Menu")}
         </button>
 
         <nav className="hidden items-center gap-2 md:flex" aria-label="Main navigation">
@@ -97,7 +100,7 @@ export function Navbar({ brandName }: NavbarProps) {
               aria-haspopup="menu"
               onClick={() => setServicesOpen((prev) => !prev)}
             >
-              Services
+              {t("Services")}
             </button>
             <AnimatePresence>
               {servicesOpen ? (
@@ -111,7 +114,7 @@ export function Navbar({ brandName }: NavbarProps) {
                 >
                   {serviceLinks.map((item) => (
                     <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`} role="menuitem">
-                      {item.label}
+                      {t(item.label)}
                     </Link>
                   ))}
                 </motion.div>
@@ -120,9 +123,10 @@ export function Navbar({ brandName }: NavbarProps) {
           </div>
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={linkClasses(item.href)}>
-              {item.label}
+              {t(item.label)}
             </Link>
           ))}
+          <LanguageSwitcher />
         </nav>
       </div>
 
@@ -135,18 +139,21 @@ export function Navbar({ brandName }: NavbarProps) {
             exit={{ opacity: 0, height: 0 }}
             className="border-t border-slate-800/80 bg-slate-950/95 px-6 pb-4 md:hidden"
           >
-            <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">Services</p>
+            <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">{t("Services")}</p>
             {serviceLinks.map((item) => (
               <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`}>
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
-            <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">Company</p>
+            <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">{t("Company")}</p>
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`}>
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
+            <div className="mt-4">
+              <LanguageSwitcher />
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>

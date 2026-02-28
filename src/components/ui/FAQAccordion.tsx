@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslate } from "@/src/components/ui/LocalizedText";
 import type { FaqItem } from "@/src/content/siteContent";
 
 type FAQAccordionProps = {
@@ -10,6 +11,7 @@ type FAQAccordionProps = {
 
 export function FAQAccordion({ items }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const t = useTranslate();
 
   return (
     <div className="space-y-3">
@@ -26,7 +28,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               aria-controls={panelId}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="font-display text-base font-semibold text-slate-100">{item.question}</span>
+              <span className="font-display text-base font-semibold text-slate-100">{t(item.question)}</span>
               <span className="text-slate-300" aria-hidden="true">
                 {isOpen ? "−" : "+"}
               </span>
@@ -42,7 +44,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-3 text-sm leading-relaxed text-textSoft">{item.answer}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-textSoft">{t(item.answer)}</p>
                 </motion.div>
               ) : null}
             </AnimatePresence>

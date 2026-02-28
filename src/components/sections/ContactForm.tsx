@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { useTranslate } from "@/src/components/ui/LocalizedText";
 import { serviceTypeOptions } from "@/src/content/siteContent";
 
 type FormState = {
@@ -20,6 +21,7 @@ const initialState: FormState = {
 };
 
 export function ContactForm() {
+  const t = useTranslate();
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [toast, setToast] = useState<string>("");
@@ -35,21 +37,21 @@ export function ContactForm() {
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
 
     if (!form.name.trim()) {
-      nextErrors.name = "Please enter your name.";
+      nextErrors.name = t("Please enter your name.");
     }
     if (!form.email.trim()) {
-      nextErrors.email = "Please enter your email.";
+      nextErrors.email = t("Please enter your email.");
     } else if (!isValidEmail(form.email)) {
-      nextErrors.email = "Please enter a valid email address.";
+      nextErrors.email = t("Please enter a valid email address.");
     }
     if (!form.company.trim()) {
-      nextErrors.company = "Please enter your company name.";
+      nextErrors.company = t("Please enter your company name.");
     }
     if (!form.serviceType.trim()) {
-      nextErrors.serviceType = "Please choose a service type.";
+      nextErrors.serviceType = t("Please choose a service type.");
     }
     if (!form.message.trim()) {
-      nextErrors.message = "Please enter a short project message.";
+      nextErrors.message = t("Please enter a short project message.");
     }
 
     setErrors(nextErrors);
@@ -62,7 +64,7 @@ export function ContactForm() {
       return;
     }
 
-    setToast("Thanks. Your request has been captured. We will reach out shortly.");
+    setToast(t("Thanks. Your request has been captured. We will reach out shortly."));
     setForm(initialState);
     setErrors({});
 
@@ -86,7 +88,7 @@ export function ContactForm() {
       <form noValidate onSubmit={onSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-200">
-            Name
+            {t("Name")}
           </label>
           <input
             id="name"
@@ -106,7 +108,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-200">
-            Email
+            {t("Email")}
           </label>
           <input
             id="email"
@@ -126,7 +128,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="company" className="mb-2 block text-sm font-medium text-slate-200">
-            Company
+            {t("Company")}
           </label>
           <input
             id="company"
@@ -146,7 +148,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="serviceType" className="mb-2 block text-sm font-medium text-slate-200">
-            Service Type
+            {t("Service Type")}
           </label>
           <select
             id="serviceType"
@@ -156,10 +158,10 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.serviceType)}
             aria-describedby={errors.serviceType ? "service-error" : undefined}
           >
-            <option value="">Select a service</option>
+            <option value="">{t("Select a service")}</option>
             {serviceTypeOptions.map((option) => (
               <option value={option} key={option}>
-                {option}
+                {t(option)}
               </option>
             ))}
           </select>
@@ -172,7 +174,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-200">
-            Message
+            {t("Message")}
           </label>
           <textarea
             id="message"
@@ -195,7 +197,7 @@ export function ContactForm() {
           disabled={!canSubmit}
           className="focus-ring inline-flex rounded-md border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Submit request
+          {t("Submit request")}
         </button>
       </form>
     </div>

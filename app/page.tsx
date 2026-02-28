@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { FounderSpotlight } from "@/src/components/sections/FounderSpotlight";
 import { HomeHero } from "@/src/components/sections/HomeHero";
 import { ProcessTimeline } from "@/src/components/sections/ProcessTimeline";
+import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
@@ -14,10 +16,12 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">Core Services</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl">
-              Built for measurable operating outcomes
-            </h2>
+            <LocalizedText text="Core Services" as="p" className="eyebrow" />
+            <LocalizedText
+              text="Built for measurable operating outcomes"
+              as="h2"
+              className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
+            />
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -34,66 +38,84 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8">
-          <p className="eyebrow">Demo Preview</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl">
-            Production-style dashboard experiences
-          </h2>
+          <LocalizedText text="Demo Preview" as="p" className="eyebrow" />
+          <LocalizedText
+            text="Production-style dashboard experiences"
+            as="h2"
+            className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
+          />
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           <article className="surface rounded-2xl p-5">
-            <h3 className="font-display text-xl font-semibold text-slate-100">{demoData.finance.title}</h3>
-            <p className="mt-3 text-sm text-textSoft">{demoData.finance.summary}</p>
+            <h3 className="font-display text-xl font-semibold text-slate-100">
+              <LocalizedText text={demoData.finance.title} />
+            </h3>
+            <p className="mt-3 text-sm text-textSoft">
+              <LocalizedText text={demoData.finance.summary} />
+            </p>
             <div className="mt-4 space-y-2 text-sm text-slate-300">
-              <p>Revenue: {demoData.finance.kpis[0].value}</p>
-              <p>Net Margin: {demoData.finance.kpis[1].value}</p>
-              <p>Runway: {demoData.finance.kpis[2].value}</p>
+              <p><LocalizedText text="Monthly Revenue" />: {demoData.finance.kpis[0].value}</p>
+              <p><LocalizedText text="Net Profit Margin" />: {demoData.finance.kpis[1].value}</p>
+              <p><LocalizedText text="Cash Runway" />: {demoData.finance.kpis[2].value}</p>
             </div>
           </article>
           <article className="surface rounded-2xl p-5">
-            <h3 className="font-display text-xl font-semibold text-slate-100">{demoData.operations.title}</h3>
-            <p className="mt-3 text-sm text-textSoft">{demoData.operations.summary}</p>
+            <h3 className="font-display text-xl font-semibold text-slate-100">
+              <LocalizedText text={demoData.operations.title} />
+            </h3>
+            <p className="mt-3 text-sm text-textSoft">
+              <LocalizedText text={demoData.operations.summary} />
+            </p>
             <div className="mt-4 space-y-2 text-sm text-slate-300">
-              <p>Active Orders: {demoData.operations.kpis[0].value}</p>
-              <p>SLA: {demoData.operations.kpis[1].value}</p>
-              <p>Utilization: {demoData.operations.kpis[3].value}</p>
+              <p><LocalizedText text="Active Orders" />: {demoData.operations.kpis[0].value}</p>
+              <p><LocalizedText text="SLA Compliance" />: {demoData.operations.kpis[1].value}</p>
+              <p><LocalizedText text="Team Utilization" />: {demoData.operations.kpis[3].value}</p>
             </div>
           </article>
           <article className="surface rounded-2xl p-5">
-            <h3 className="font-display text-xl font-semibold text-slate-100">{demoData.assistant.title}</h3>
-            <p className="mt-3 text-sm text-textSoft">{demoData.assistant.summary}</p>
+            <h3 className="font-display text-xl font-semibold text-slate-100">
+              <LocalizedText text={demoData.assistant.title} />
+            </h3>
+            <p className="mt-3 text-sm text-textSoft">
+              <LocalizedText text={demoData.assistant.summary} />
+            </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               {demoData.assistant.features.slice(0, 3).map((feature) => (
-                <li key={feature}>• {feature}</li>
+                <li key={feature}>• <LocalizedText text={feature} /></li>
               ))}
             </ul>
           </article>
         </div>
         <div className="mt-6">
           <ButtonLink href="/demos" variant="secondary">
-            Explore full demos
+            <LocalizedText text="Explore full demos" />
           </ButtonLink>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8">
-          <p className="eyebrow">Engagement Process</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl">
-            A focused 5-step delivery model
-          </h2>
+          <LocalizedText text="Engagement Process" as="p" className="eyebrow" />
+          <LocalizedText
+            text="A focused 5-step delivery model"
+            as="h2"
+            className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
+          />
         </div>
         <ProcessTimeline />
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-14 md:grid-cols-[1fr_1fr]">
         <article className="surface-strong rounded-2xl p-6">
-          <p className="eyebrow">Why AxoraLab</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-100">
-            Trust-centric systems for finance and operations
-          </h2>
+          <LocalizedText text="Why AxoraLab" as="p" className="eyebrow" />
+          <LocalizedText
+            text="Trust-centric systems for finance and operations"
+            as="h2"
+            className="mt-3 font-display text-3xl font-semibold text-slate-100"
+          />
           <ul className="mt-5 space-y-3 text-sm text-textSoft">
             {whyAxora.map((item) => (
-              <li key={item}>• {item}</li>
+              <li key={item}>• <LocalizedText text={item} /></li>
             ))}
           </ul>
         </article>
@@ -104,22 +126,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      <FounderSpotlight />
+
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-10">
         <article className="surface-strong rounded-3xl p-8 md:p-10">
-          <p className="eyebrow">Ready to build</p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-semibold leading-tight text-slate-100 md:text-4xl">
-            Build a high-trust AI operating layer for your company in weeks, not quarters.
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-textSoft md:text-base">
-            We combine strategy, engineering, and design to deliver systems leadership teams actually use.
-          </p>
+          <LocalizedText text="Ready to build" as="p" className="eyebrow" />
+          <LocalizedText
+            text="Build a high-trust AI operating layer for your company in weeks, not quarters."
+            as="h2"
+            className="mt-3 max-w-3xl font-display text-3xl font-semibold leading-tight text-slate-100 md:text-4xl"
+          />
+          <LocalizedText
+            text="We combine strategy, engineering, and design to deliver systems leadership teams actually use."
+            as="p"
+            className="mt-4 max-w-2xl text-sm leading-relaxed text-textSoft md:text-base"
+          />
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <ButtonLink href="/contact">Book a 15-min Discovery Call</ButtonLink>
+            <ButtonLink href="/contact">
+              <LocalizedText text="Book a 15-min Discovery Call" />
+            </ButtonLink>
             <Link
               href="/services"
               className="focus-ring inline-flex rounded-md border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:border-slate-400"
             >
-              Review services
+              <LocalizedText text="Review services" />
             </Link>
           </div>
         </article>

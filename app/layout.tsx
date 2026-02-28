@@ -3,7 +3,9 @@ import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/src/components/layout/Footer";
 import { Navbar } from "@/src/components/layout/Navbar";
+import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { brand } from "@/src/content/siteContent";
+import { LanguageProvider } from "@/src/i18n/LanguageProvider";
 
 const display = Sora({
   subsets: ["latin"],
@@ -47,20 +49,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="bg-bg text-white antialiased">
-        <a
-          href="#main-content"
-          className="focus-ring sr-only z-[999] rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
-        >
-          Skip to content
-        </a>
-        <div className="relative min-h-screen overflow-x-clip">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-slate-700/10 to-transparent" />
-          <Navbar brandName={brand.name} />
-          <main id="main-content" className="pt-20">
-            {children}
-          </main>
-          <Footer statement={brand.footerStatement} domain={brand.domain} />
-        </div>
+        <LanguageProvider>
+          <a
+            href="#main-content"
+            className="focus-ring sr-only z-[999] rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+          >
+            <LocalizedText text="Skip to content" />
+          </a>
+          <div className="relative min-h-screen overflow-x-clip">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-slate-700/10 to-transparent" />
+            <Navbar brandName={brand.name} />
+            <main id="main-content" className="pt-20">
+              {children}
+            </main>
+            <Footer statement={brand.footerStatement} domain={brand.domain} />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

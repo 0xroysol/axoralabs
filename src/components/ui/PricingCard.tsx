@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useTranslate } from "@/src/components/ui/LocalizedText";
 
 type PricingCardProps = {
   title: string;
@@ -10,6 +11,7 @@ type PricingCardProps = {
 
 export function PricingCard({ title, price, outcome }: PricingCardProps) {
   const reducedMotion = useReducedMotion();
+  const t = useTranslate();
 
   return (
     <motion.article
@@ -18,9 +20,9 @@ export function PricingCard({ title, price, outcome }: PricingCardProps) {
       className="surface relative overflow-hidden rounded-2xl p-6"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent" />
-      <h3 className="font-display text-lg font-semibold">{title}</h3>
-      <p className="mt-3 text-xl font-semibold text-slate-100">{price}</p>
-      <p className="mt-3 text-sm leading-relaxed text-textSoft">{outcome}</p>
+      <h3 className="font-display text-lg font-semibold">{t(title)}</h3>
+      <p className="mt-3 text-xl font-semibold text-slate-100">{t(price)}</p>
+      <p className="mt-3 text-sm leading-relaxed text-textSoft">{t(outcome)}</p>
     </motion.article>
   );
 }

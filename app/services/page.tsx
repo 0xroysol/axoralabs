@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/src/components/sections/PageIntro";
+import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
 import { coreServices, pricingHighlights } from "@/src/content/siteContent";
@@ -33,7 +34,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-20">
-        <h2 className="mb-4 font-display text-2xl font-semibold text-slate-100">Investment ranges</h2>
+        <LocalizedText text="Investment ranges" as="h2" className="mb-4 font-display text-2xl font-semibold text-slate-100" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {pricingHighlights.map((item) => (
             <PricingCard key={item.title} title={item.title} price={item.price} outcome={item.outcome} />

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/src/components/sections/PageIntro";
+import { FounderSpotlight } from "@/src/components/sections/FounderSpotlight";
+import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { aboutContent } from "@/src/content/siteContent";
 
 export const metadata: Metadata = {
@@ -14,24 +16,31 @@ export default function AboutPage() {
       <PageIntro eyebrow="About" title={aboutContent.title} description={aboutContent.text} />
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-6 pb-20 md:grid-cols-3">
         <article className="surface rounded-2xl p-6">
-          <h2 className="font-display text-xl font-semibold text-slate-100">Vision</h2>
-          <p className="mt-3 text-sm leading-relaxed text-textSoft">
-            A future where every company operates with a trusted, intelligent decision layer.
-          </p>
+          <LocalizedText text="Vision" as="h2" className="font-display text-xl font-semibold text-slate-100" />
+          <LocalizedText
+            text="A future where every company operates with a trusted, intelligent decision layer."
+            as="p"
+            className="mt-3 text-sm leading-relaxed text-textSoft"
+          />
         </article>
         <article className="surface rounded-2xl p-6">
-          <h2 className="font-display text-xl font-semibold text-slate-100">Positioning</h2>
-          <p className="mt-3 text-sm leading-relaxed text-textSoft">
-            We are a technical studio focused on AI-powered business systems and executive-grade interfaces.
-          </p>
+          <LocalizedText text="Positioning" as="h2" className="font-display text-xl font-semibold text-slate-100" />
+          <LocalizedText
+            text="We are a technical studio focused on AI-powered business systems and executive-grade interfaces."
+            as="p"
+            className="mt-3 text-sm leading-relaxed text-textSoft"
+          />
         </article>
         <article className="surface rounded-2xl p-6">
-          <h2 className="font-display text-xl font-semibold text-slate-100">Credibility</h2>
-          <p className="mt-3 text-sm leading-relaxed text-textSoft">
-            Every delivery is scoped for operational adoption, measurable ROI, and long-term governance.
-          </p>
+          <LocalizedText text="Credibility" as="h2" className="font-display text-xl font-semibold text-slate-100" />
+          <LocalizedText
+            text="Every delivery is scoped for operational adoption, measurable ROI, and long-term governance."
+            as="p"
+            className="mt-3 text-sm leading-relaxed text-textSoft"
+          />
         </article>
       </section>
+      <FounderSpotlight />
     </>
   );
 }
