@@ -5,7 +5,7 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { BreakdownBars } from "@/src/components/ui/BreakdownBars";
 import { KPIWidget } from "@/src/components/ui/KPIWidget";
 import { LineChart } from "@/src/components/ui/LineChart";
-import { demoData, demoRequestLinks, demosPageContent } from "@/src/content/siteContent";
+import { demoData, demoRequestLinks, demosPageContent, financeOsLandingContent } from "@/src/content/siteContent";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -56,7 +56,7 @@ export default function DemosPage() {
           </div>
 
           <Link href={demoRequestLinks.finance} className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-            <LocalizedText text={demosPageContent.requestDemoCta} />
+            <LocalizedText text={financeOsLandingContent.cta} />
           </Link>
         </article>
       </section>

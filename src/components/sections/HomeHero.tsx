@@ -51,7 +51,7 @@ export function HomeHero() {
           transition={{ duration: 0.55, delay: 0.12 }}
           className="mt-8 flex flex-wrap items-center gap-3"
         >
-          <ButtonLink href="/demos">{t(brand.heroPrimaryCta)}</ButtonLink>
+          <ButtonLink href="/demo/finance-os">{t(brand.heroPrimaryCta)}</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             {t(brand.heroSecondaryCta)}
           </ButtonLink>

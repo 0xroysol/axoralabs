@@ -10,6 +10,11 @@ const routes = [
   "/services/ai-assistants",
   "/services/vibe-coding",
   "/demos",
+  "/demo/finance-os",
+  "/demo/finance-os/overview",
+  "/demo/finance-os/clients",
+  "/demo/finance-os/receivables",
+  "/demo/finance-os/budget",
   "/process",
   "/about",
   "/contact"

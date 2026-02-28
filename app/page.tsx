@@ -7,7 +7,15 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
-import { coreServices, demoData, demoRequestLinks, homePageContent, pricingHighlights, whyAxora } from "@/src/content/siteContent";
+import {
+  coreServices,
+  demoData,
+  demoRequestLinks,
+  financeOsLandingContent,
+  homePageContent,
+  pricingHighlights,
+  whyAxora
+} from "@/src/content/siteContent";
 
 export default function HomePage() {
   return (
@@ -66,7 +74,7 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href={demoRequestLinks.finance} className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-              <LocalizedText text={homePageContent.demoCardCta} />
+              <LocalizedText text={financeOsLandingContent.cta} />
             </Link>
           </article>
 
@@ -110,7 +118,7 @@ export default function HomePage() {
           </article>
         </div>
         <div className="mt-6">
-          <ButtonLink href="/demos" variant="secondary">
+          <ButtonLink href="/demo/finance-os" variant="secondary">
             <LocalizedText text={homePageContent.demoSectionCta} />
           </ButtonLink>
         </div>
@@ -169,7 +177,7 @@ export default function HomePage() {
               <LocalizedText text={homePageContent.finalPrimaryCta} />
             </ButtonLink>
             <Link
-              href="/demos"
+              href="/demo/finance-os"
               className="focus-ring inline-flex rounded-md border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:border-slate-400"
             >
               <LocalizedText text={homePageContent.finalSecondaryCta} />

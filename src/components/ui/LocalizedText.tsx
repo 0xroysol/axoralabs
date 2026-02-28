@@ -2,7 +2,7 @@
 
 import { createElement, type ElementType } from "react";
 import { useLanguage } from "@/src/i18n/LanguageProvider";
-import { translateText } from "@/src/i18n/translations";
+import { translateTemplate, translateText } from "@/src/i18n/translations";
 
 type LocalizedTextProps = {
   text: string;
@@ -18,4 +18,10 @@ export function LocalizedText({ text, as = "span", className }: LocalizedTextPro
 export function useTranslate() {
   const { locale } = useLanguage();
   return (text: string) => translateText(text, locale);
+}
+
+export function useTranslateTemplate() {
+  const { locale } = useLanguage();
+  return (key: string, variables?: Record<string, string | number>) =>
+    translateTemplate(key, locale, variables);
 }

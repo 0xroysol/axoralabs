@@ -607,8 +607,121 @@ const tr: Record<string, string> = {
   "Hi, we would like to request the Axora Operations Panel (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
     "Merhaba, Axora Operations Panel (Ajans Sürümü) demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?",
   "Hi, we would like to request the Axora AI Assistant demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
-    "Merhaba, Axora AI Assistant demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?"
+    "Merhaba, Axora AI Assistant demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?",
+  "Live Demo": "Canlı Demo",
+  "Explore a premium finance dashboard using realistic sample data from a 12-person performance marketing agency.":
+    "12 kişilik bir performance marketing ajansından alınan gerçekçi örnek verilerle premium finans panelini keşfedin.",
+  "Enter Demo": "Demoya Gir",
+  "Valoryx — Performance Marketing Agency • 12 Employees":
+    "Valoryx — Performance Marketing Ajansı • 12 Çalışan",
+  "Sample Data": "Örnek Veri",
+  "Back to Site": "Siteye Dön",
+  "Finance OS Navigation": "Finance OS Navigasyonu",
+  "Overview": "Genel Bakış",
+  "Clients": "Müşteriler",
+  "Receivables": "Tahsilatlar",
+  "Budget": "Bütçe",
+  "Financial overview": "Finansal genel görünüm",
+  "Fixed-date sample intelligence for agency cash, margin, and receivable risk.":
+    "Ajans nakit, marj ve tahsilat riski için sabit tarihli örnek veri analizi.",
+  "Runway": "Runway",
+  "Overdue Invoices": "Gecikmiş Faturalar",
+  "Revenue vs Expenses (12 months)": "Gelir vs Gider (12 ay)",
+  "Cash In vs Cash Out (Last 6 Months)": "Nakit Girişi vs Nakit Çıkışı (Son 6 Ay)",
+  "Revenue and expense trend chart": "Gelir ve gider trend grafiği",
+  "Active alerts": "Aktif uyarılar",
+  "No critical alerts right now.": "Şu anda kritik bir uyarı yok.",
+  "MoM": "Ay/Ay",
+  "Client profitability": "Müşteri kârlılığı",
+  "See revenue quality, margin pressure, and exposure risk client by client.":
+    "Müşteri bazında gelir kalitesini, marj baskısını ve risk maruziyetini görün.",
+  "Top 10 clients by monthly revenue": "Aylık gelire göre ilk 10 müşteri",
+  "Client health table": "Müşteri sağlık tablosu",
+  "Client": "Müşteri",
+  "Est. Cost": "Tahmini Maliyet",
+  "Margin %": "Marj %",
+  "Overdue $": "Gecikmiş $",
+  "Risk": "Risk",
+  "Overdue": "Gecikmiş",
+  "Low Margin": "Düşük Marj",
+  "Concentration": "Konsantrasyon",
+  "Stable": "Stabil",
+  "Other flags": "Diğer işaretler",
+  "Receivables control": "Tahsilat kontrolü",
+  "Aging exposure and payment behavior calculated on a fixed demo reference date.":
+    "Yaşlandırma riski ve ödeme davranışı sabit demo referans tarihine göre hesaplanır.",
+  "Receivables aging buckets": "Tahsilat yaşlandırma dilimleri",
+  "Invoice list": "Fatura listesi",
+  "Due Date": "Vade Tarihi",
+  "Amount": "Tutar",
+  "Status": "Durum",
+  "Days Past Due": "Gecikme Günü",
+  "Paid": "Ödendi",
+  "Pending": "Bekliyor",
+  "Budget discipline": "Bütçe disiplini",
+  "Track spend variance and category-level pressure before it hits profitability.":
+    "Kârlılığı etkilemeden önce harcama sapmasını ve kategori bazlı baskıyı takip edin.",
+  "Budget vs Actual by category": "Kategoriye göre Bütçe vs Gerçekleşen",
+  "Budget variance table": "Bütçe sapma tablosu",
+  "Category": "Kategori",
+  "Actual": "Gerçekleşen",
+  "Variance": "Sapma",
+  "Variance %": "Sapma %",
+  "Loading finance data...": "Finans verileri yükleniyor...",
+  "Revenue": "Gelir",
+  "Expenses": "Giderler",
+  "Cash In": "Nakit Girişi",
+  "Cash Out": "Nakit Çıkışı",
+  "months": "ay"
 };
+
+type TemplateVariables = Record<string, string | number>;
+
+const enTemplateMap: Record<string, string> = {
+  "alerts.alert_high_concentration":
+    "Top client concentration is {valuePct}%. Revenue is too dependent on few accounts.",
+  "alerts.alert_payroll_ratio_high":
+    "Payroll ratio is {valuePct}%. Watch labor cost pressure against monthly revenue.",
+  "alerts.alert_net_margin_low":
+    "Net margin is {valuePct}%. Profitability is below the target range.",
+  "alerts.alert_overdue_high":
+    "Overdue invoices reached {value}, above the threshold {threshold}.",
+  "alerts.alert_contractors_over_budget":
+    "Contractors are {variancePct}% over budget this month."
+};
+
+const trTemplateMap: Record<string, string> = {
+  "alerts.alert_high_concentration":
+    "İlk müşterilerde konsantrasyon oranı %{valuePct}. Gelir az sayıda hesaba fazla bağımlı.",
+  "alerts.alert_payroll_ratio_high":
+    "Payroll oranı %{valuePct}. Aylık gelire karşı iş gücü maliyet baskısını izleyin.",
+  "alerts.alert_net_margin_low":
+    "Net marj %{valuePct}. Karlılık hedef aralığının altında.",
+  "alerts.alert_overdue_high":
+    "Gecikmiş faturalar {value} seviyesine çıktı, eşik değer {threshold} üzerinde.",
+  "alerts.alert_contractors_over_budget":
+    "Contractors kalemi bu ay bütçenin %{variancePct} üzerinde."
+};
+
+function interpolate(template: string, variables: TemplateVariables = {}) {
+  return template.replace(/\{([a-zA-Z0-9_]+)\}/g, (_, key: string) => {
+    if (!(key in variables)) {
+      return `{${key}}`;
+    }
+    return String(variables[key]);
+  });
+}
+
+export function translateTemplate(
+  key: string,
+  locale: Locale,
+  variables: TemplateVariables = {}
+) {
+  const template =
+    locale === "tr" ? trTemplateMap[key] ?? tr[key] ?? key : enTemplateMap[key] ?? key;
+
+  return interpolate(template, variables);
+}
 
 export function translateText(text: string, locale: Locale): string {
   if (locale === "en") {

@@ -50,7 +50,7 @@ export const brand = {
 };
 
 export const productNavLinks: NavItem[] = [
-  { label: "Axora Finance OS (Agency Edition)", href: "/demos#axora-finance-os" },
+  { label: "Axora Finance OS (Agency Edition)", href: "/demo/finance-os" },
   { label: "Axora Operations Panel (Agency Edition)", href: "/demos#axora-operations-panel" },
   { label: "Axora AI Assistant", href: "/demos#axora-ai-assistant" }
 ];
@@ -106,7 +106,7 @@ export const homeProductSpotlight = {
     "Receivables Aging"
   ],
   cta: "See Finance OS Demo",
-  href: "/demos#axora-finance-os"
+  href: "/demo/finance-os"
 };
 
 export const homePageContent = {
@@ -137,8 +137,113 @@ export const demosPageContent = {
   requestDemoCta: "Request this demo"
 };
 
+export const financeDemoRoutes = {
+  landing: "/demo/finance-os",
+  overview: "/demo/finance-os/overview",
+  clients: "/demo/finance-os/clients",
+  receivables: "/demo/finance-os/receivables",
+  budget: "/demo/finance-os/budget"
+};
+
+export const financeOsLandingContent = {
+  eyebrow: "Live Demo",
+  title: "Axora Finance OS — Agency Edition",
+  description:
+    "Explore a premium finance dashboard using realistic sample data from a 12-person performance marketing agency.",
+  cta: "Enter Demo"
+};
+
+export const financeOsShellContent = {
+  agencyLabel: "Valoryx — Performance Marketing Agency • 12 Employees",
+  sampleDataLabel: "Sample Data",
+  backToSiteLabel: "Back to Site",
+  navLabel: "Finance OS Navigation",
+  navItems: [
+    { label: "Overview", href: financeDemoRoutes.overview },
+    { label: "Clients", href: financeDemoRoutes.clients },
+    { label: "Receivables", href: financeDemoRoutes.receivables },
+    { label: "Budget", href: financeDemoRoutes.budget }
+  ]
+};
+
+export const financeOverviewContent = {
+  heading: "Financial overview",
+  subtitle: "Fixed-date sample intelligence for agency cash, margin, and receivable risk.",
+  kpi: {
+    monthlyRevenue: "Monthly Revenue",
+    netMargin: "Net Margin",
+    payrollRatio: "Payroll Ratio",
+    runway: "Runway",
+    overdueInvoices: "Overdue Invoices",
+    clientConcentration: "Client Concentration"
+  },
+  charts: {
+    revenueExpenses: "Revenue vs Expenses (12 months)",
+    cashFlow: "Cash In vs Cash Out (Last 6 Months)",
+    revenueExpensesAria: "Revenue and expense trend chart"
+  },
+  alertsTitle: "Active alerts",
+  noAlerts: "No critical alerts right now.",
+  monthTag: "MoM"
+};
+
+export const financeClientsContent = {
+  heading: "Client profitability",
+  subtitle: "See revenue quality, margin pressure, and exposure risk client by client.",
+  chartTitle: "Top 10 clients by monthly revenue",
+  tableTitle: "Client health table",
+  columns: {
+    client: "Client",
+    revenue: "Monthly Revenue",
+    cost: "Est. Cost",
+    margin: "Margin %",
+    overdue: "Overdue $",
+    risk: "Risk"
+  },
+  risk: {
+    overdue: "Overdue",
+    lowMargin: "Low Margin",
+    concentration: "Concentration",
+    stable: "Stable",
+    otherFlags: "Other flags"
+  }
+};
+
+export const financeReceivablesContent = {
+  heading: "Receivables control",
+  subtitle: "Aging exposure and payment behavior calculated on a fixed demo reference date.",
+  agingTitle: "Receivables aging buckets",
+  tableTitle: "Invoice list",
+  columns: {
+    client: "Client",
+    dueDate: "Due Date",
+    amount: "Amount",
+    status: "Status",
+    daysPastDue: "Days Past Due"
+  },
+  status: {
+    paid: "Paid",
+    pending: "Pending",
+    overdue: "Overdue"
+  }
+};
+
+export const financeBudgetContent = {
+  heading: "Budget discipline",
+  subtitle: "Track spend variance and category-level pressure before it hits profitability.",
+  chartTitle: "Budget vs Actual by category",
+  tableTitle: "Budget variance table",
+  columns: {
+    category: "Category",
+    budget: "Budget",
+    actual: "Actual",
+    variance: "Variance",
+    percent: "Variance %"
+  }
+};
+
 export const demoRequestLinks = {
-  finance: "/contact?serviceType=Demo%20Request&intent=finance",
+  finance: "/demo/finance-os",
   operations: "/contact?serviceType=Demo%20Request&intent=operations",
   assistant: "/contact?serviceType=Demo%20Request&intent=assistant"
 };
