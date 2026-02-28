@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     template: "%s | AxoraLab.ai"
   },
   description:
-    "AxoraLab.ai designs AI-powered business systems, finance dashboards, operational panels, and intelligent assistants.",
+    "AxoraLab.ai helps digital marketing agencies gain financial clarity with AI-powered dashboards, ops panels, and assistants.",
   openGraph: {
     title: "AxoraLab.ai",
     description:
-      "Engineering intelligent business systems for finance, operations, and AI-enabled execution.",
+      "Financial clarity systems for digital marketing agencies: finance OS, operations panels, and AI assistants.",
     url: "https://axoralabs.ai",
     siteName: "AxoraLab.ai",
     type: "website"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AxoraLab.ai",
     description:
-      "AI-powered dashboards, finance infrastructure, and intelligent assistants for modern companies."
+      "Track cash flow, profitability, payroll ratio, and receivables in one place with Axora Finance OS."
   }
 };
 

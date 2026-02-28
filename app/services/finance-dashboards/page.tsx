@@ -5,7 +5,7 @@ import { servicePages } from "@/src/content/siteContent";
 export const metadata: Metadata = {
   title: "Finance Dashboards",
   description:
-    "Finance and accounting dashboards with board-ready KPIs, forecasts, and trusted decision visibility."
+    "Agency Finance MVP dashboards for cash flow, payroll ratio, receivables aging, and client profitability."
 };
 
 export default function FinanceDashboardsPage() {

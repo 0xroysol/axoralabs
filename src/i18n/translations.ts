@@ -70,6 +70,8 @@ const tr: Record<string, string> = {
   "Please enter a short project message.": "Lütfen kısa bir proje mesajı girin.",
   "Thanks. Your request has been captured. We will reach out shortly.": "Teşekkürler. Talebiniz alındı. Kısa süre içinde sizinle iletişime geçeceğiz.",
   "AxoraLab builds AI-powered operating systems for modern companies.": "AxoraLab, modern şirketler için AI destekli operasyon sistemleri geliştirir.",
+  "AxoraLab builds AI-powered operating systems for digital marketing agencies.":
+    "AxoraLab, dijital pazarlama ajansları için AI destekli operasyon sistemleri geliştirir.",
   "Finance Dashboards": "Finans Dashboard'ları",
   "Industry Panels": "Sektörel Paneller",
   "AI Assistants": "AI Asistanları",
@@ -345,7 +347,247 @@ const tr: Record<string, string> = {
   "Automation Adoption Rate": "Otomasyon Benimseme Oranı",
   "AxoraLab.ai is a studio focused on AI-powered business systems, finance infrastructure, and execution intelligence. We partner with leadership teams to convert fragmented data into trusted decision architecture and practical automation. Every delivery is shaped for measurable outcomes, enterprise trust, and long-term operating leverage.":
     "AxoraLab.ai; AI destekli iş sistemleri, finans altyapısı ve uygulama zekasına odaklanan bir stüdyodur. Parçalı veriyi güvenilir karar mimarisi ve pratik otomasyona dönüştürmek için liderlik ekipleriyle birlikte çalışırız. Her teslimat; ölçülebilir sonuç, kurumsal güven ve uzun vadeli operasyonel kaldıraç için şekillendirilir.",
-  "Integrated Suite": "Entegre Paket"
+  "Integrated Suite": "Entegre Paket",
+  "Products": "Ürünler",
+  "Custom Dashboards": "Özel Dashboard'lar",
+  "Integration & Support": "Entegrasyon ve Destek",
+  "Financial Clarity for Digital Marketing Agencies.": "Dijital Pazarlama Ajansları İçin Finansal Netlik.",
+  "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.":
+    "Nakit akışı, kârlılık, payroll oranı ve gecikmiş tahsilatları tek panelden takip edin — Axora Finance OS ile.",
+  "for 5–20 person agencies": "5–20 kişilik ajanslar için",
+  "Explore Agency Demo": "Ajans Demo'larını Gör",
+  "Book a 15-min Call": "15 dk Görüşme Ayarla",
+  "Product: Axora Finance OS": "Ürün: Axora Finance OS",
+  "Axora Finance OS (Agency Edition)": "Axora Finance OS (Ajans Sürümü)",
+  "Know exactly which clients make you money.": "Hangi müşterinin gerçekten para kazandırdığını net görün.",
+  "See Finance OS Demo": "Finance OS Demo'yu Gör",
+  "payroll ratio": "payroll oranı",
+  "receivables aging": "tahsilat yaşlandırma",
+  "client concentration": "müşteri konsantrasyonu",
+  "revenue mix": "gelir karması",
+  "Agency-focused service tracks": "Ajans odaklı hizmet paketleri",
+  "Agency edition product previews": "Ajans sürümü ürün önizlemeleri",
+  "Agency rollout in 5 practical steps": "5 pratik adımda ajans kurulumu",
+  "Built for agency financial and operational clarity": "Ajans finansı ve operasyonu için netlik odaklı",
+  "Build your agency operating layer in weeks, not quarters.": "Ajans operasyon katmanınızı çeyreklerde değil haftalarda kurun.",
+  "Designed for digital marketing agencies and flexible for other service-based teams.":
+    "Dijital pazarlama ajansları için tasarlandı, diğer hizmet odaklı ekipler için de esnek şekilde uyarlanır.",
+  "Axora Finance OS — Agency Edition": "Axora Finance OS — Ajans Sürümü",
+  "Agency financial clarity layer across cash flow, margin, payroll, and receivables.":
+    "Nakit akışı, marj, payroll ve tahsilat görünürlüğünü birleştiren ajans finans netliği katmanı.",
+  "Monthly Revenue, Net Margin, Payroll Ratio": "Aylık Ciro, Net Marj, Payroll Oranı",
+  "Client Concentration & Revenue per Client": "Müşteri Konsantrasyonu ve Müşteri Başına Gelir",
+  "Receivables Aging & Overdue Alerts": "Tahsilat Yaşlandırma ve Gecikme Uyarıları",
+  "Simple Cash Forecast (30 days)": "Basit Nakit Tahmini (30 gün)",
+  "Net Margin": "Net Marj",
+  "Payroll Ratio": "Payroll Oranı",
+  "Client Concentration": "Müşteri Konsantrasyonu",
+  "Receivables Aging": "Tahsilat Yaşlandırma",
+  "Overdue Alerts": "Gecikme Uyarıları",
+  "Cash Forecast (30d)": "Nakit Tahmini (30g)",
+  "Media Spend": "Medya Harcaması",
+  "Axora Operations Panel — Agency Edition": "Axora Operations Panel — Ajans Sürümü",
+  "Operational visibility layer for utilization, delivery health, and client work cadence.":
+    "Kapasite, teslimat sağlığı ve müşteri iş ritmi için operasyonel görünürlük katmanı.",
+  "Utilization snapshot (high-level)": "Kapasite/Utilization özeti (yüksek seviye)",
+  "Project throughput & delivery health": "Proje akışı ve teslimat sağlığı",
+  "SLA-style task tracking (light)": "Hafif SLA görev takibi",
+  "Utilization Snapshot": "Utilization Özeti",
+  "Project Throughput": "Proje Akışı",
+  "Delivery Health": "Teslimat Sağlığı",
+  "SLA Task Compliance": "SLA Görev Uyumu",
+  "Team Capacity Balance": "Ekip Kapasite Dengesi",
+  "Private assistant workflows designed for agency communication and reporting speed.":
+    "Ajans iletişimi ve raporlama hızını artırmak için tasarlanmış özel asistan iş akışları.",
+  "Proposal & report drafts": "Teklif ve rapor taslakları",
+  "Weekly KPI summaries": "Haftalık KPI özetleri",
+  "Internal doc Q&A": "İç doküman Soru-Cevap",
+  "Request this demo": "Bu demoyu iste",
+  "Agency-ready product demos for finance, operations, and AI workflows":
+    "Finans, operasyon ve AI iş akışları için ajansa hazır ürün demoları",
+  "Explore how Axora products help 5–20 person digital marketing agencies operate with clarity.":
+    "Axora ürünlerinin 5–20 kişilik dijital pazarlama ajanslarına nasıl operasyonel netlik sağladığını keşfedin.",
+  "Agency-focused systems for finance clarity and operational control":
+    "Finansal netlik ve operasyon kontrolü için ajans odaklı sistemler",
+  "Built for digital marketing agencies and adaptable for other service-based teams.":
+    "Dijital pazarlama ajansları için tasarlandı, diğer hizmet odaklı ekipler için de uyarlanabilir.",
+  "Move beyond spreadsheet chaos and manual reconciliation.":
+    "Excel kaosundan ve manuel mutabakat yükünden çıkın.",
+  "Reduce receivables risk before it impacts payroll.":
+    "Tahsilat riskini payroll'u etkilemeden önce azaltın.",
+  "Understand true client profitability, not just topline revenue.":
+    "Sadece ciroyu değil, gerçek müşteri karlılığını görün.",
+  "Monitor payroll pressure with ratio-based visibility.":
+    "Payroll baskısını oran bazlı görünürlükle yönetin.",
+  "Connect data sources and align goals across invoices, bank activity, and expenses.":
+    "Fatura, banka hareketi ve gider verilerini bağlayıp hedefleri hizalayın.",
+  "Define KPI map and decision screens for owners, ops, and finance.":
+    "Kurucu, operasyon ve finans ekipleri için KPI haritası ve karar ekranlarını tanımlayın.",
+  "Build dashboard layers, alerts, and weekly reporting flows.":
+    "Dashboard katmanlarını, uyarıları ve haftalık raporlama akışlarını oluşturun.",
+  "Roll out with onboarding, training, and handoff.":
+    "Onboarding, eğitim ve devir adımlarıyla yayına alın.",
+  "Run monthly improvement cycles for KPI quality and operating speed.":
+    "KPI kalitesi ve operasyon hızını artırmak için aylık iyileştirme döngüleri çalıştırın.",
+  "Agency Finance MVP": "Ajans Finance MVP",
+  "Financial command view for agency owners and finance leads.":
+    "Ajans kurucuları ve finans ekipleri için finansal komuta görünümü.",
+  "Payroll ratio + revenue mix": "Payroll oranı + gelir karması",
+  "Client revenue breakdown": "Müşteri bazlı gelir kırılımı",
+  "Receivables aging + alerts": "Tahsilat yaşlandırma + uyarılar",
+  "12-month trends": "12 aylık trendler",
+  "Agency Growth Suite": "Ajans Growth Suite",
+  "Growth-layer package for planning, forecasting, and delivery visibility.":
+    "Planlama, tahminleme ve teslimat görünürlüğü için büyüme katmanı paketi.",
+  "Budget vs actual": "Bütçe vs gerçekleşen",
+  "Forecast extension": "Genişletilmiş tahmin",
+  "Ops panel add-on": "Operasyon paneli eklentisi",
+  "Automate agency proposals, weekly KPI updates, and internal knowledge flow.":
+    "Ajans tekliflerini, haftalık KPI güncellemelerini ve iç bilgi akışını otomatikleştirin.",
+  "Unified intelligence layer across finance, operations, and execution.":
+    "Finans, operasyon ve uygulama süreçleri boyunca birleşik zeka katmanı.",
+  "Hands-on AI system building capability for agency product and ops teams.":
+    "Ajans ürün ve operasyon ekipleri için uygulamalı AI sistem kurma yetkinliği.",
+  "Financial clarity stack for digital marketing agencies and adaptable service-based teams.":
+    "Dijital pazarlama ajansları için finansal netlik paketi; hizmet odaklı ekipler için de uyarlanabilir.",
+  "Agency founders and finance leads needing weekly financial truth":
+    "Haftalık finansal doğruluğa ihtiyaç duyan ajans kurucuları ve finans liderleri",
+  "Teams managing payroll pressure and overdue receivables":
+    "Payroll baskısını ve gecikmiş tahsilatları yöneten ekipler",
+  "5–20 person agencies preparing for stable growth":
+    "Sürdürülebilir büyümeye hazırlanan 5–20 kişilik ajanslar",
+  "Payroll ratio + revenue mix dashboard":
+    "Payroll oranı + gelir karması dashboard'u",
+  "Client revenue breakdown and concentration view":
+    "Müşteri bazlı gelir kırılımı ve konsantrasyon görünümü",
+  "Receivables aging with overdue alert layer":
+    "Gecikme uyarı katmanıyla tahsilat yaşlandırma",
+  "12-month trend and monthly close view":
+    "12 aylık trend ve aylık kapanış görünümü",
+  "Premium base package for agency finance visibility and faster monthly decisions.":
+    "Ajans finans görünürlüğü ve daha hızlı aylık kararlar için premium başlangıç paketi.",
+  "Week 1: source mapping + KPI alignment":
+    "1. Hafta: kaynak haritalama + KPI hizalama",
+  "Week 2-3: dashboard implementation + alerts":
+    "2-3. Hafta: dashboard kurulumu + uyarılar",
+  "Week 4: onboarding, training, and handoff":
+    "4. Hafta: onboarding, eğitim ve devir",
+  "How fast can an agency go live?":
+    "Bir ajans ne kadar hızlı canlıya geçebilir?",
+  "Most agencies launch an MVP in 3-4 weeks depending on data readiness and tool access.":
+    "Çoğu ajans, veri hazırlığı ve araç erişimine bağlı olarak MVP'yi 3-4 haftada yayına alır.",
+  "Can you connect invoicing and bank data together?":
+    "Faturalama ve banka verilerini birlikte bağlayabiliyor musunuz?",
+  "Yes. We combine invoicing, banking, and expense data into one decision-ready finance layer.":
+    "Evet. Faturalama, bankacılık ve gider verilerini karar odaklı tek bir finans katmanında birleştiriyoruz.",
+  "Do you include receivables and overdue visibility?":
+    "Tahsilat ve gecikme görünürlüğü dahil mi?",
+  "Yes. Receivables aging and overdue alerts are core parts of the agency package.":
+    "Evet. Tahsilat yaşlandırma ve gecikme uyarıları ajans paketinin temel parçalarıdır.",
+  "Can founders and account managers use the same system?":
+    "Kurucular ve hesap yöneticileri aynı sistemi kullanabilir mi?",
+  "Yes. We configure role-aware views for owner-level clarity and team-level follow-up.":
+    "Evet. Kurucu düzeyi netlik ve ekip düzeyi takip için role duyarlı görünümler kuruyoruz.",
+  "What happens after launch?":
+    "Yayın sonrası ne oluyor?",
+  "We offer monthly optimization cycles for KPI governance, alert tuning, and new modules.":
+    "KPI yönetişimi, uyarı optimizasyonu ve yeni modüller için aylık iyileştirme döngüleri sunuyoruz.",
+  "Operational panel extension for agency throughput, delivery health, and planning alignment.":
+    "Ajans kapasitesi, teslimat sağlığı ve planlama uyumu için operasyon paneli uzantısı.",
+  "Agency ops leads needing clear delivery visibility":
+    "Teslimat görünürlüğüne ihtiyaç duyan ajans operasyon liderleri",
+  "Teams balancing utilization with service quality":
+    "Kapasite kullanımı ile servis kalitesini dengeleyen ekipler",
+  "Service-based teams tracking revenue and operations together":
+    "Gelir ve operasyonu birlikte izleyen hizmet odaklı ekipler",
+  "Budget vs actual view with forecast extension":
+    "Genişletilmiş tahmin katmanlı bütçe vs gerçekleşen görünümü",
+  "Project throughput and delivery health panels":
+    "Proje akışı ve teslimat sağlığı panelleri",
+  "Utilization snapshot and SLA-style task tracker":
+    "Utilization özeti ve SLA tarzı görev takip katmanı",
+  "Ops add-on linked with finance metrics":
+    "Finans metrikleriyle bağlı operasyon eklentisi",
+  "Growth layer for agencies that need planning, delivery, and finance in one command view.":
+    "Planlama, teslimat ve finansı tek komuta görünümünde birleştirmek isteyen ajanslar için büyüme katmanı.",
+  "Phase 1: workflow mapping and KPI architecture":
+    "Faz 1: iş akışı haritalama ve KPI mimarisi",
+  "Phase 2: panel build and integration":
+    "Faz 2: panel kurulumu ve entegrasyon",
+  "Phase 3: rollout governance and iteration":
+    "Faz 3: yayına alma yönetişimi ve iterasyon",
+  "Can the panel match our agency workflow?":
+    "Panel ajans iş akışımıza uyarlanabilir mi?",
+  "Yes. We model screens around your service model, delivery cadence, and team structure.":
+    "Evet. Ekranları servis modelinize, teslimat ritminize ve ekip yapınıza göre modelliyoruz.",
+  "Do we get a light operations layer or full PM replacement?":
+    "Hafif bir operasyon katmanı mı alıyoruz yoksa tam PM sistemi mi?",
+  "This is a focused executive layer, not a heavy PM replacement system.":
+    "Bu ağır bir PM değişimi değil, odaklı bir yönetici görünürlüğü katmanıdır.",
+  "Can we tie operations to finance outcomes?":
+    "Operasyonu finansal sonuçlara bağlayabiliyor muyuz?",
+  "Yes. We connect delivery and utilization signals to revenue and margin context.":
+    "Evet. Teslimat ve kapasite sinyallerini gelir ve marj bağlamına bağlıyoruz.",
+  "What if our operational data is noisy?":
+    "Operasyon verimiz dağınıksa ne olur?",
+  "We add a hardening pass and confidence indicators before scaling decision automation.":
+    "Karar otomasyonunu büyütmeden önce veri dayanıklılığı adımı ve güven göstergeleri ekliyoruz.",
+  "Is ongoing support available?":
+    "Sürekli destek mevcut mu?",
+  "Yes. Monthly support is available for optimization, extensions, and governance updates.":
+    "Evet. Optimizasyon, genişletme ve yönetişim güncellemeleri için aylık destek sunuyoruz.",
+  "Agency-ready assistants for proposal drafts, KPI communication, and internal knowledge access.":
+    "Teklif taslakları, KPI iletişimi ve iç bilgi erişimi için ajansa hazır asistanlar.",
+  "Agency teams with repetitive reporting and proposal workflows":
+    "Tekrarlı raporlama ve teklif akışlarına sahip ajans ekipleri",
+  "Founders and managers needing faster weekly updates":
+    "Daha hızlı haftalık güncelleme ihtiyacı olan kurucular ve yöneticiler",
+  "Service teams that want private, context-aware automation":
+    "Özel ve bağlama duyarlı otomasyon isteyen hizmet ekipleri",
+  "Proposal and report draft assistant":
+    "Teklif ve rapor taslak asistanı",
+  "Weekly KPI summary generation":
+    "Haftalık KPI özet üretimi",
+  "Meeting and update summary automation":
+    "Toplantı ve durum güncellemesi özet otomasyonu",
+  "Built for agency communication velocity, consistent output quality, and practical ROI.":
+    "Ajans iletişim hızını, tutarlı çıktı kalitesini ve pratik ROI'yi artırmak için tasarlandı.",
+  "Sprint 1: use-case prioritization and guardrails":
+    "Sprint 1: kullanım senaryosu önceliği ve güvenlik çerçevesi",
+  "Sprint 2: assistant setup and context wiring":
+    "Sprint 2: asistan kurulumu ve bağlam entegrasyonu",
+  "Sprint 3: pilot rollout and optimization":
+    "Sprint 3: pilot yayına alma ve optimizasyon",
+  "Can assistants use our agency docs securely?":
+    "Asistanlar ajans dokümanlarımızı güvenli kullanabilir mi?",
+  "Yes. We design private-context retrieval with role-aware access boundaries.":
+    "Evet. Role duyarlı erişim sınırlarıyla özel bağlamlı retrieval akışları tasarlıyoruz.",
+  "No. It removes repetitive workload so your team can focus on higher-value work.":
+    "Hayır. Tekrarlı işleri kaldırarak ekibinizin daha yüksek değerli işlere odaklanmasını sağlar.",
+  "Can we automate weekly KPI updates?":
+    "Haftalık KPI güncellemelerini otomatikleştirebilir miyiz?",
+  "Yes. Weekly KPI digest and summary workflows are core assistant use cases.":
+    "Evet. Haftalık KPI özet akışları asistanın temel kullanım alanlarındandır.",
+  "Can outputs follow our tone and structure?":
+    "Çıktılar tonumuza ve formatımıza uyabilir mi?",
+  "Yes. We configure style, structure, and review checkpoints for consistency.":
+    "Evet. Tutarlılık için stil, yapı ve kontrol noktalarını yapılandırıyoruz.",
+  "We baseline reporting effort and cycle times, then track before/after improvements.":
+    "Raporlama eforu ve çevrim sürelerini baz alır, sonra öncesi-sonrası iyileşmeyi takip ederiz.",
+  "A practical 5-step rollout for agency systems":
+    "Ajans sistemleri için pratik 5 adımlı yayına alma modeli",
+  "From data connection to monthly optimization, we keep delivery tight and measurable for agency teams.":
+    "Veri bağlantısından aylık optimizasyona kadar teslimatı ajans ekipleri için sıkı ve ölçülebilir tutuyoruz.",
+  "A future where agencies run with trusted, real-time financial and operational visibility.":
+    "Ajansların güvenilir, gerçek zamanlı finans ve operasyon görünürlüğüyle çalıştığı bir gelecek.",
+  "We are a product-focused studio building AI-powered systems for digital marketing agencies.":
+    "Dijital pazarlama ajansları için AI destekli sistemler geliştiren ürün odaklı bir stüdyoyuz.",
+  "Every delivery is scoped for measurable ROI, team adoption, and consistent execution quality.":
+    "Her teslimat ölçülebilir ROI, ekip benimsemesi ve tutarlı uygulama kalitesi için kapsamlanır.",
+  "We build AI-powered operating layers for digital marketing agencies and service-based teams.":
+    "Dijital pazarlama ajansları ve hizmet odaklı ekipler için AI destekli operasyon katmanları geliştiriyoruz.",
+  "AxoraLab.ai is a product and systems studio focused on financial clarity, operational visibility, and practical AI automation. We help 5–20 person agencies move from scattered spreadsheets to reliable decision infrastructure. Every delivery is designed for measurable outcomes, team adoption, and sustained execution quality.":
+    "AxoraLab.ai, finansal netlik, operasyonel görünürlük ve pratik AI otomasyonuna odaklanan bir ürün ve sistem stüdyosudur. 5–20 kişilik ajansların dağınık tablolardan güvenilir karar altyapısına geçmesine yardımcı oluruz. Her teslimat; ölçülebilir sonuç, ekip benimsemesi ve sürdürülebilir uygulama kalitesi için tasarlanır."
 };
 
 export function translateText(text: string, locale: Locale): string {

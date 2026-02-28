@@ -37,31 +37,23 @@ export function HomeHero() {
         >
           {t(brand.subheadline)}
         </motion.p>
-        <motion.div
+        <motion.p
           initial={reducedMotion ? undefined : { opacity: 0, y: 16 }}
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.11 }}
-          className="mt-6 flex flex-wrap gap-2"
+          className="mt-5 inline-flex rounded-full border border-cyan/40 bg-cyan/10 px-3 py-1 text-xs font-semibold tracking-[0.12em] text-cyan"
         >
-          <span className="rounded-full border border-slate-600 px-3 py-1 text-xs font-medium text-slate-300">
-            {t("Investor-ready UX")}
-          </span>
-          <span className="rounded-full border border-slate-600 px-3 py-1 text-xs font-medium text-slate-300">
-            {t("Finance-grade trust")}
-          </span>
-          <span className="rounded-full border border-slate-600 px-3 py-1 text-xs font-medium text-slate-300">
-            {t("AI-native workflows")}
-          </span>
-        </motion.div>
+          {t(brand.segmentBadge)}
+        </motion.p>
         <motion.div
           initial={reducedMotion ? undefined : { opacity: 0, y: 16 }}
           animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.12 }}
           className="mt-8 flex flex-wrap items-center gap-3"
         >
-          <ButtonLink href="/contact">{t("Book a 15-min Discovery Call")}</ButtonLink>
-          <ButtonLink href="/demos" variant="secondary">
-            {t("Explore Demos")}
+          <ButtonLink href="/demos">{t("Explore Agency Demo")}</ButtonLink>
+          <ButtonLink href="/contact" variant="secondary">
+            {t("Book a 15-min Call")}
           </ButtonLink>
         </motion.div>
         <motion.p

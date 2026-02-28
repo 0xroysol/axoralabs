@@ -18,7 +18,7 @@ export default function AboutPage() {
         <article className="surface rounded-2xl p-6">
           <LocalizedText text="Vision" as="h2" className="font-display text-xl font-semibold text-slate-100" />
           <LocalizedText
-            text="A future where every company operates with a trusted, intelligent decision layer."
+            text="A future where agencies run with trusted, real-time financial and operational visibility."
             as="p"
             className="mt-3 text-sm leading-relaxed text-textSoft"
           />
@@ -26,7 +26,7 @@ export default function AboutPage() {
         <article className="surface rounded-2xl p-6">
           <LocalizedText text="Positioning" as="h2" className="font-display text-xl font-semibold text-slate-100" />
           <LocalizedText
-            text="We are a technical studio focused on AI-powered business systems and executive-grade interfaces."
+            text="We are a product-focused studio building AI-powered systems for digital marketing agencies."
             as="p"
             className="mt-3 text-sm leading-relaxed text-textSoft"
           />
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <article className="surface rounded-2xl p-6">
           <LocalizedText text="Credibility" as="h2" className="font-display text-xl font-semibold text-slate-100" />
           <LocalizedText
-            text="Every delivery is scoped for operational adoption, measurable ROI, and long-term governance."
+            text="Every delivery is scoped for measurable ROI, team adoption, and consistent execution quality."
             as="p"
             className="mt-3 text-sm leading-relaxed text-textSoft"
           />

@@ -7,9 +7,10 @@ type PricingCardProps = {
   title: string;
   price: string;
   outcome: string;
+  includes?: string[];
 };
 
-export function PricingCard({ title, price, outcome }: PricingCardProps) {
+export function PricingCard({ title, price, outcome, includes }: PricingCardProps) {
   const reducedMotion = useReducedMotion();
   const t = useTranslate();
 
@@ -23,6 +24,13 @@ export function PricingCard({ title, price, outcome }: PricingCardProps) {
       <h3 className="font-display text-lg font-semibold">{t(title)}</h3>
       <p className="mt-3 text-xl font-semibold text-slate-100">{t(price)}</p>
       <p className="mt-3 text-sm leading-relaxed text-textSoft">{t(outcome)}</p>
+      {includes?.length ? (
+        <ul className="mt-4 space-y-2 text-xs text-slate-300">
+          {includes.map((item) => (
+            <li key={item}>• {t(item)}</li>
+          ))}
+        </ul>
+      ) : null}
     </motion.article>
   );
 }

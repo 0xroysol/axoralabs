@@ -5,7 +5,7 @@ import { servicePages } from "@/src/content/siteContent";
 export const metadata: Metadata = {
   title: "AI Assistants",
   description:
-    "Enterprise AI assistant systems for document intelligence, reporting, and workflow automation."
+    "AI assistant systems for digital marketing agencies: proposals, KPI updates, and internal document Q&A."
 };
 
 export default function AIAssistantsPage() {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { PageIntro } from "@/src/components/sections/PageIntro";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
@@ -9,7 +10,7 @@ import { demoData } from "@/src/content/siteContent";
 export const metadata: Metadata = {
   title: "Demos",
   description:
-    "See AxoraLab demo systems: finance OS, operations panel, and AI assistant workflows."
+    "Agency-ready product demos for finance, operations, and AI workflows."
 };
 
 export default function DemosPage() {
@@ -17,12 +18,12 @@ export default function DemosPage() {
     <>
       <PageIntro
         eyebrow="Demos"
-        title="Realistic dashboard and assistant demo systems"
-        description="Structured previews of finance intelligence, operational visibility, and assistant automation patterns."
+        title="Agency-ready product demos for finance, operations, and AI workflows"
+        description="Explore how Axora products help 5–20 person digital marketing agencies operate with clarity."
       />
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-14">
-        <article className="surface rounded-2xl p-6 md:p-7">
+        <article id="axora-finance-os" className="surface rounded-2xl p-6 md:p-7 scroll-mt-28">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2 className="font-display text-2xl font-semibold text-slate-100">
@@ -33,9 +34,15 @@ export default function DemosPage() {
               </p>
             </div>
             <p className="rounded-full border border-slate-600 bg-slate-800/60 px-3 py-1 text-xs font-semibold tracking-wide text-slate-200">
-              <LocalizedText text="Finance & Accounting Intelligence" />
+              <LocalizedText text="Axora Finance OS" />
             </p>
           </div>
+
+          <ul className="mt-5 grid gap-2 text-sm text-slate-300 md:grid-cols-2">
+            {demoData.finance.bullets.map((bullet) => (
+              <li key={bullet}>• <LocalizedText text={bullet} /></li>
+            ))}
+          </ul>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {demoData.finance.kpis.map((kpi) => (
@@ -47,25 +54,37 @@ export default function DemosPage() {
             <LineChart values={demoData.finance.lineSeries} />
             <BreakdownBars items={demoData.finance.breakdown} />
           </div>
+
+          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <LocalizedText text="Request this demo" />
+          </Link>
         </article>
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-6 pb-14 md:grid-cols-2">
-        <article className="surface rounded-2xl p-6">
+        <article id="axora-operations-panel" className="surface rounded-2xl p-6 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold text-slate-100">
             <LocalizedText text={demoData.operations.title} />
           </h2>
           <p className="mt-2 text-sm text-textSoft">
             <LocalizedText text={demoData.operations.summary} />
           </p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-300">
+            {demoData.operations.bullets.map((bullet) => (
+              <li key={bullet}>• <LocalizedText text={bullet} /></li>
+            ))}
+          </ul>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {demoData.operations.kpis.map((kpi) => (
               <KPIWidget key={kpi.label} label={kpi.label} value={kpi.value} delta={kpi.delta} />
             ))}
           </div>
+          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <LocalizedText text="Request this demo" />
+          </Link>
         </article>
 
-        <article className="surface rounded-2xl p-6">
+        <article id="axora-ai-assistant" className="surface rounded-2xl p-6 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold text-slate-100">
             <LocalizedText text={demoData.assistant.title} />
           </h2>
@@ -79,6 +98,9 @@ export default function DemosPage() {
               </li>
             ))}
           </ul>
+          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <LocalizedText text="Request this demo" />
+          </Link>
         </article>
       </section>
     </>

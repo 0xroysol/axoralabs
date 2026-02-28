@@ -5,7 +5,7 @@ import { servicePages } from "@/src/content/siteContent";
 export const metadata: Metadata = {
   title: "Industry Panels",
   description:
-    "Industry-specific operational panels for throughput, SLA compliance, and profitability control."
+    "Agency Growth Suite for utilization snapshots, delivery health, and operational planning visibility."
 };
 
 export default function IndustryPanelsPage() {

@@ -8,7 +8,7 @@ import { coreServices, pricingHighlights } from "@/src/content/siteContent";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore AxoraLab services: finance dashboards, industry panels, AI assistant systems, and vibe coding education."
+    "Explore AxoraLab services for digital marketing agencies: custom dashboards, integration support, and AI systems."
 };
 
 export default function ServicesPage() {
@@ -16,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageIntro
         eyebrow="Services"
-        title="High-trust AI systems for finance, operations, and execution"
-        description="AxoraLab delivers focused implementation tracks that combine strategic architecture, premium interface design, and production engineering discipline."
+        title="Agency-focused systems for finance clarity and operational control"
+        description="Built for digital marketing agencies and adaptable for other service-based teams."
       />
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-12">
@@ -37,7 +37,7 @@ export default function ServicesPage() {
         <LocalizedText text="Investment ranges" as="h2" className="mb-4 font-display text-2xl font-semibold text-slate-100" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {pricingHighlights.map((item) => (
-            <PricingCard key={item.title} title={item.title} price={item.price} outcome={item.outcome} />
+            <PricingCard key={item.title} title={item.title} price={item.price} outcome={item.outcome} includes={item.includes} />
           ))}
         </div>
       </section>

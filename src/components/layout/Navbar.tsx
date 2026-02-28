@@ -3,62 +3,63 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/src/components/ui/LanguageSwitcher";
 import { useTranslate } from "@/src/components/ui/LocalizedText";
-import { servicePages } from "@/src/content/siteContent";
+import { companyNavLinks, productNavLinks, serviceNavLinks, type NavItem } from "@/src/content/siteContent";
 
 type NavbarProps = {
   brandName: string;
 };
 
-const navItems = [
-  { label: "Demos", href: "/demos" },
-  { label: "Process", href: "/process" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" }
-];
+type DropdownKey = "products" | "services";
+
+function getBasePath(href: string) {
+  return href.split("#")[0] || "/";
+}
 
 export function Navbar({ brandName }: NavbarProps) {
   const pathname = usePathname();
   const t = useTranslate();
-  const servicesRef = useRef<HTMLDivElement>(null);
+  const desktopMenusRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<DropdownKey | null>(null);
 
   useEffect(() => {
     setMenuOpen(false);
-    setServicesOpen(false);
+    setOpenDropdown(null);
   }, [pathname]);
 
   useEffect(() => {
-    const closeServices = (event: MouseEvent) => {
-      if (!servicesRef.current?.contains(event.target as Node)) {
-        setServicesOpen(false);
+    const closeDesktopMenus = (event: MouseEvent) => {
+      if (!desktopMenusRef.current?.contains(event.target as Node)) {
+        setOpenDropdown(null);
       }
     };
 
-    document.addEventListener("mousedown", closeServices);
+    document.addEventListener("mousedown", closeDesktopMenus);
     return () => {
-      document.removeEventListener("mousedown", closeServices);
+      document.removeEventListener("mousedown", closeDesktopMenus);
     };
   }, []);
 
-  const serviceLinks = useMemo(
-    () => [
-      { label: "All Services", href: "/services" },
-      ...Object.values(servicePages).map((service) => ({
-        label: service.navLabel,
-        href: `/services/${service.slug}`
-      }))
-    ],
-    []
-  );
+  const isActive = (href: string) => {
+    const basePath = getBasePath(href);
+    if (basePath === "/") {
+      return pathname === "/";
+    }
+    return pathname === basePath || pathname.startsWith(`${basePath}/`);
+  };
 
   const linkClasses = (href: string) =>
     `focus-ring rounded-md px-3 py-2 text-sm transition-colors ${
-      pathname === href ? "text-white" : "text-slate-300 hover:text-white"
+      isActive(href) ? "text-white" : "text-slate-300 hover:text-white"
     }`;
+
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-700/30 bg-[#080d14]/90 backdrop-blur-xl">
@@ -78,56 +79,35 @@ export function Navbar({ brandName }: NavbarProps) {
           {t("Menu")}
         </button>
 
-        <nav className="hidden items-center gap-2 md:flex" aria-label="Main navigation">
-          <div
-            ref={servicesRef}
-            className="relative"
-            onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                setServicesOpen(false);
-              }
-            }}
-            onKeyDown={(event) => {
-              if (event.key === "Escape") {
-                setServicesOpen(false);
-              }
-            }}
-          >
-            <button
-              type="button"
-              className="focus-ring rounded-md px-3 py-2 text-sm text-slate-300 transition-colors hover:text-white"
-              aria-expanded={servicesOpen}
-              aria-haspopup="menu"
-              onClick={() => setServicesOpen((prev) => !prev)}
-            >
-              {t("Services")}
-            </button>
-            <AnimatePresence>
-              {servicesOpen ? (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.18 }}
-                  className="surface-strong absolute left-0 top-12 min-w-64 rounded-xl p-2"
-                  role="menu"
-                >
-                  {serviceLinks.map((item) => (
-                    <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`} role="menuitem">
-                      {t(item.label)}
-                    </Link>
-                  ))}
-                </motion.div>
-              ) : null}
-            </AnimatePresence>
-          </div>
-          {navItems.map((item) => (
+        <div ref={desktopMenusRef} className="hidden items-center gap-2 md:flex">
+          <DropdownMenu
+            label="Products"
+            items={productNavLinks}
+            isOpen={openDropdown === "products"}
+            onToggle={() => setOpenDropdown((prev) => (prev === "products" ? null : "products"))}
+            onNavigate={closeMenus}
+            t={t}
+            linkClasses={linkClasses}
+          />
+
+          <DropdownMenu
+            label="Services"
+            items={serviceNavLinks}
+            isOpen={openDropdown === "services"}
+            onToggle={() => setOpenDropdown((prev) => (prev === "services" ? null : "services"))}
+            onNavigate={closeMenus}
+            t={t}
+            linkClasses={linkClasses}
+          />
+
+          {companyNavLinks.map((item) => (
             <Link key={item.href} href={item.href} className={linkClasses(item.href)}>
               {t(item.label)}
             </Link>
           ))}
+
           <LanguageSwitcher />
-        </nav>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -139,18 +119,27 @@ export function Navbar({ brandName }: NavbarProps) {
             exit={{ opacity: 0, height: 0 }}
             className="border-t border-slate-800/80 bg-slate-950/95 px-6 pb-4 md:hidden"
           >
+            <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">{t("Products")}</p>
+            {productNavLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`} onClick={closeMenus}>
+                {t(item.label)}
+              </Link>
+            ))}
+
             <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">{t("Services")}</p>
-            {serviceLinks.map((item) => (
-              <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`}>
+            {serviceNavLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`} onClick={closeMenus}>
                 {t(item.label)}
               </Link>
             ))}
+
             <p className="mb-1 mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">{t("Company")}</p>
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`}>
+            {companyNavLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={`${linkClasses(item.href)} block`} onClick={closeMenus}>
                 {t(item.label)}
               </Link>
             ))}
+
             <div className="mt-4">
               <LanguageSwitcher />
             </div>
@@ -158,5 +147,67 @@ export function Navbar({ brandName }: NavbarProps) {
         ) : null}
       </AnimatePresence>
     </header>
+  );
+}
+
+type DropdownMenuProps = {
+  label: string;
+  items: NavItem[];
+  isOpen: boolean;
+  onToggle: () => void;
+  onNavigate: () => void;
+  t: (value: string) => string;
+  linkClasses: (href: string) => string;
+};
+
+function DropdownMenu({ label, items, isOpen, onToggle, onNavigate, t, linkClasses }: DropdownMenuProps) {
+  return (
+    <div
+      className="relative"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          onNavigate();
+        }
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          onNavigate();
+        }
+      }}
+    >
+      <button
+        type="button"
+        className="focus-ring rounded-md px-3 py-2 text-sm text-slate-300 transition-colors hover:text-white"
+        aria-expanded={isOpen}
+        aria-haspopup="menu"
+        onClick={onToggle}
+      >
+        {t(label)}
+      </button>
+      <AnimatePresence>
+        {isOpen ? (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="surface-strong absolute left-0 top-12 min-w-72 rounded-xl p-2"
+            role="menu"
+          >
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`${linkClasses(item.href)} block`}
+                role="menuitem"
+                onClick={onNavigate}
+              >
+                {t(item.label)}
+              </Link>
+            ))}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { ProcessTimeline } from "@/src/components/sections/ProcessTimeline";
 export const metadata: Metadata = {
   title: "Process",
   description:
-    "AxoraLab 5-step process: Discover, Architect, Build, Deploy, Optimize."
+    "AxoraLab 5-step rollout for digital marketing agencies: Discover, Architect, Build, Deploy, Optimize."
 };
 
 export default function ProcessPage() {
@@ -13,8 +13,8 @@ export default function ProcessPage() {
     <>
       <PageIntro
         eyebrow="Process"
-        title="A disciplined 5-step model for shipping intelligent systems"
-        description="Our process balances strategic clarity, engineering speed, and operational adoption for measurable business outcomes."
+        title="A practical 5-step rollout for agency systems"
+        description="From data connection to monthly optimization, we keep delivery tight and measurable for agency teams."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20">
         <ProcessTimeline />

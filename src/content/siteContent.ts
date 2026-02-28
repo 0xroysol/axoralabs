@@ -9,6 +9,11 @@ export type FaqItem = {
   answer: string;
 };
 
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
 export type ServicePageContent = {
   slug: ServiceSlug;
   navLabel: string;
@@ -24,68 +29,121 @@ export type ServicePageContent = {
   faqs: FaqItem[];
 };
 
+export type PricingHighlight = {
+  title: string;
+  price: string;
+  outcome: string;
+  includes?: string[];
+};
+
 export const brand = {
   name: "AxoraLab",
   domain: "AxoraLab.ai",
-  headline: "Engineering Intelligent Business Systems.",
+  headline: "Financial Clarity for Digital Marketing Agencies.",
   subheadline:
-    "AI-powered dashboards, finance infrastructure, and intelligent assistants for modern companies.",
+    "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.",
+  segmentBadge: "for 5–20 person agencies",
   footerStatement:
-    "AxoraLab builds AI-powered operating systems for modern companies."
+    "AxoraLab builds AI-powered operating systems for digital marketing agencies."
 };
+
+export const productNavLinks: NavItem[] = [
+  { label: "Axora Finance OS", href: "/demos#axora-finance-os" },
+  { label: "Axora Operations Panel", href: "/demos#axora-operations-panel" },
+  { label: "Axora AI Assistant", href: "/demos#axora-ai-assistant" }
+];
+
+export const serviceNavLinks: NavItem[] = [
+  { label: "Custom Dashboards", href: "/services/finance-dashboards" },
+  { label: "Integration & Support", href: "/services/industry-panels" },
+  { label: "Vibe Coding Education", href: "/services/vibe-coding" }
+];
+
+export const companyNavLinks: NavItem[] = [
+  { label: "Demos", href: "/demos" },
+  { label: "Process", href: "/process" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" }
+];
 
 export const coreServices = [
   {
-    title: "Finance & Accounting Dashboards",
+    title: "Custom Dashboards",
     description:
-      "Executive-grade financial visibility with trusted KPI pipelines, variance tracking, and forecasting layers.",
+      "Finance and delivery dashboards tailored to agency workflows, margin visibility, and owner-level decisions.",
     href: "/services/finance-dashboards"
   },
   {
-    title: "Industry Operational Panels",
+    title: "Integration & Support",
     description:
-      "Role-specific command centers for operations, SLA performance, and revenue-linked delivery throughput.",
+      "Bring invoices, bank activity, expenses, and project operations into one integrated reporting layer.",
     href: "/services/industry-panels"
   },
   {
     title: "AI Assistant Systems",
     description:
-      "Private-context copilots for document Q&A, summaries, proposal drafting, and KPI communication workflows.",
+      "Automate proposal drafts, KPI summaries, and internal knowledge Q&A for faster team execution.",
     href: "/services/ai-assistants"
   },
   {
     title: "Vibe Coding Education",
     description:
-      "Practical upskilling programs that teach teams to design, validate, and ship AI-native internal systems.",
+      "Practical upskilling for agency teams that want to build and ship AI-native internal tools.",
     href: "/services/vibe-coding"
   }
 ];
 
-export const pricingHighlights = [
+export const homeProductSpotlight = {
+  eyebrow: "Product: Axora Finance OS",
+  title: "Axora Finance OS (Agency Edition)",
+  subtitle: "Know exactly which clients make you money.",
+  features: [
+    "payroll ratio",
+    "receivables aging",
+    "client concentration",
+    "revenue mix"
+  ],
+  cta: "See Finance OS Demo",
+  href: "/demos#axora-finance-os"
+};
+
+export const pricingHighlights: PricingHighlight[] = [
   {
-    title: "Finance Dashboard MVP",
+    title: "Agency Finance MVP",
     price: "Starting from $3,500",
-    outcome: "Board-ready financial visibility with reliable KPI definitions."
+    outcome: "Financial command view for agency owners and finance leads.",
+    includes: [
+      "Payroll ratio + revenue mix",
+      "Client revenue breakdown",
+      "Receivables aging + alerts",
+      "12-month trends"
+    ]
   },
   {
-    title: "Industry Operational Panel",
+    title: "Agency Growth Suite",
     price: "Starting from $4,500",
-    outcome: "Operational clarity with measurable throughput and SLA gains."
+    outcome: "Growth-layer package for planning, forecasting, and delivery visibility.",
+    includes: [
+      "Budget vs actual",
+      "Forecast extension",
+      "Ops panel add-on"
+    ]
   },
   {
     title: "AI Assistant System",
     price: "Starting from $2,500",
-    outcome: "Faster knowledge access and reduced internal response time."
+    outcome:
+      "Automate agency proposals, weekly KPI updates, and internal knowledge flow."
   },
   {
     title: "AI + Dashboard Integrated Suite",
     price: "Starting from $8,000",
-    outcome: "Unified intelligence layer for finance, operations, and decisioning."
+    outcome: "Unified intelligence layer across finance, operations, and execution."
   },
   {
     title: "Vibe Coding Bootcamp",
     price: "$590 per seat",
-    outcome: "Hands-on AI system building capabilities for product and ops teams."
+    outcome: "Hands-on AI system building capability for agency product and ops teams."
   },
   {
     title: "Corporate Training Workshop",
@@ -98,157 +156,156 @@ export const processSteps = [
   {
     name: "Discover",
     detail:
-      "Align on business objectives, constraints, and decision-critical metrics."
+      "Connect data sources and align goals across invoices, bank activity, and expenses."
   },
   {
     name: "Architect",
     detail:
-      "Design the data model, dashboard logic, and assistant workflow architecture."
+      "Define KPI map and decision screens for owners, ops, and finance."
   },
   {
     name: "Build",
     detail:
-      "Ship a production-grade, secure, and instrumented working system."
+      "Build dashboard layers, alerts, and weekly reporting flows."
   },
   {
     name: "Deploy",
-    detail:
-      "Launch with enablement, governance controls, and stakeholder onboarding."
+    detail: "Roll out with onboarding, training, and handoff."
   },
   {
     name: "Optimize",
     detail:
-      "Continuously improve KPI integrity, automation depth, and business ROI."
+      "Run monthly improvement cycles for KPI quality and operating speed."
   }
 ];
 
 export const whyAxora = [
-  "Finance-grade clarity with executive-ready outputs",
-  "Minimal interfaces designed for rapid decisions",
-  "AI systems grounded in your internal data context",
-  "Production engineering discipline from day one"
+  "Move beyond spreadsheet chaos and manual reconciliation.",
+  "Reduce receivables risk before it impacts payroll.",
+  "Understand true client profitability, not just topline revenue.",
+  "Monitor payroll pressure with ratio-based visibility."
 ];
 
 export const servicePages: Record<ServiceSlug, ServicePageContent> = {
   "finance-dashboards": {
     slug: "finance-dashboards",
     navLabel: "Finance Dashboards",
-    heroTitle: "Finance & Accounting Dashboards",
+    heroTitle: "Agency Finance MVP",
     heroSubtitle:
-      "Turn fragmented financial data into decision-grade, board-ready intelligence.",
+      "Financial clarity stack for digital marketing agencies and adaptable service-based teams.",
     forWho: [
-      "Founders and CFOs needing monthly and weekly financial truth",
-      "Finance teams managing budget variance and runway pressure",
-      "Scale-ups preparing for investors or debt financing"
+      "Agency founders and finance leads needing weekly financial truth",
+      "Teams managing payroll pressure and overdue receivables",
+      "5–20 person agencies preparing for stable growth"
     ],
     deliverables: [
-      "Revenue, margin, and cash-flow dashboard layers",
-      "Budget vs Actual and department-level drilldowns",
-      "Receivables and payables aging views",
-      "Forecast model and scenario comparison widgets"
+      "Payroll ratio + revenue mix dashboard",
+      "Client revenue breakdown and concentration view",
+      "Receivables aging with overdue alert layer",
+      "12-month trend and monthly close view"
     ],
     kpis: [
       "Monthly Revenue",
-      "Net Profit Margin",
-      "Cash Runway",
-      "Burn Rate",
-      "EBITDA Trend"
+      "Net Margin",
+      "Payroll Ratio",
+      "Receivables Aging",
+      "Cash Forecast (30d)"
     ],
-    pricingTitle: "Finance Dashboard MVP",
+    pricingTitle: "Agency Finance MVP",
     pricingValue: "Starting from $3,500",
     pricingNote:
-      "Designed for immediate leadership visibility and finance operating cadence.",
+      "Premium base package for agency finance visibility and faster monthly decisions.",
     engagementModel: [
-      "Week 1: metric alignment + data source audit",
-      "Week 2-3: dashboard build + QA",
-      "Week 4: rollout, enablement, and handoff"
+      "Week 1: source mapping + KPI alignment",
+      "Week 2-3: dashboard implementation + alerts",
+      "Week 4: onboarding, training, and handoff"
     ],
     faqs: [
       {
-        question: "How quickly can we launch the first version?",
+        question: "How fast can an agency go live?",
         answer:
-          "Most teams launch an MVP in 3-4 weeks depending on data readiness and integration scope."
+          "Most agencies launch an MVP in 3-4 weeks depending on data readiness and tool access."
       },
       {
-        question: "Can you connect multiple accounting tools?",
+        question: "Can you connect invoicing and bank data together?",
         answer:
-          "Yes. We can merge accounting, ERP, and spreadsheet sources into a single KPI layer."
+          "Yes. We combine invoicing, banking, and expense data into one decision-ready finance layer."
       },
       {
-        question: "Do you include forecasting?",
+        question: "Do you include receivables and overdue visibility?",
         answer:
-          "Yes. Baseline forecasting and scenario views are included in standard finance delivery packages."
+          "Yes. Receivables aging and overdue alerts are core parts of the agency package."
       },
       {
-        question: "Will the dashboard work for non-finance executives?",
+        question: "Can founders and account managers use the same system?",
         answer:
-          "Yes. We design multi-layer views so executives get clarity while finance teams keep depth."
+          "Yes. We configure role-aware views for owner-level clarity and team-level follow-up."
       },
       {
-        question: "What support is available after launch?",
+        question: "What happens after launch?",
         answer:
-          "Optimization retainers are available for model refinements, KPI governance, and new modules."
+          "We offer monthly optimization cycles for KPI governance, alert tuning, and new modules."
       }
     ]
   },
   "industry-panels": {
     slug: "industry-panels",
     navLabel: "Industry Panels",
-    heroTitle: "Industry-Specific Operational Panels",
+    heroTitle: "Agency Growth Suite",
     heroSubtitle:
-      "Build a real-time command center for throughput, quality, and service reliability.",
+      "Operational panel extension for agency throughput, delivery health, and planning alignment.",
     forWho: [
-      "Operations leaders needing daily performance visibility",
-      "Service organizations managing SLA and utilization",
-      "Multi-team environments with fragmented operational reporting"
+      "Agency ops leads needing clear delivery visibility",
+      "Teams balancing utilization with service quality",
+      "Service-based teams tracking revenue and operations together"
     ],
     deliverables: [
-      "Operational KPI cockpit with role-based views",
-      "Alert blocks for SLA risk and delivery bottlenecks",
-      "Team utilization and client-level profitability overlays",
-      "Daily performance digest dashboard"
+      "Budget vs actual view with forecast extension",
+      "Project throughput and delivery health panels",
+      "Utilization snapshot and SLA-style task tracker",
+      "Ops add-on linked with finance metrics"
     ],
     kpis: [
-      "Active Orders",
-      "SLA Compliance %",
-      "Inventory Turnover",
-      "Team Utilization Rate",
+      "Utilization Snapshot",
+      "Project Throughput",
+      "Delivery Health",
+      "SLA Task Compliance",
       "Revenue per Client"
     ],
-    pricingTitle: "Industry Operational Panel",
+    pricingTitle: "Agency Growth Suite",
     pricingValue: "Starting from $4,500",
     pricingNote:
-      "Structured to reduce operational blind spots and improve execution tempo.",
+      "Growth layer for agencies that need planning, delivery, and finance in one command view.",
     engagementModel: [
-      "Phase 1: operations mapping and KPI architecture",
-      "Phase 2: panel design and data integration",
-      "Phase 3: performance governance and iteration"
+      "Phase 1: workflow mapping and KPI architecture",
+      "Phase 2: panel build and integration",
+      "Phase 3: rollout governance and iteration"
     ],
     faqs: [
       {
-        question: "Can the panel reflect our specific industry workflow?",
+        question: "Can the panel match our agency workflow?",
         answer:
-          "Yes. Each panel is custom-modeled for your process logic and decision cadence."
+          "Yes. We model screens around your service model, delivery cadence, and team structure."
       },
       {
-        question: "Do we get role-based dashboards?",
+        question: "Do we get a light operations layer or full PM replacement?",
         answer:
-          "Yes. Teams can have specific views while leadership keeps a consolidated executive layer."
+          "This is a focused executive layer, not a heavy PM replacement system."
       },
       {
-        question: "Can we track both operations and revenue outcomes?",
+        question: "Can we tie operations to finance outcomes?",
         answer:
-          "Yes. We link performance metrics to financial outcomes wherever possible."
+          "Yes. We connect delivery and utilization signals to revenue and margin context."
       },
       {
-        question: "What if our data quality is inconsistent?",
+        question: "What if our operational data is noisy?",
         answer:
-          "We include a data quality hardening step and flag confidence levels transparently."
+          "We add a hardening pass and confidence indicators before scaling decision automation."
       },
       {
-        question: "How do you handle ongoing improvements?",
+        question: "Is ongoing support available?",
         answer:
-          "We run optimization cycles focused on bottleneck removal and KPI accuracy gains."
+          "Yes. Monthly support is available for optimization, extensions, and governance updates."
       }
     ]
   },
@@ -257,17 +314,17 @@ export const servicePages: Record<ServiceSlug, ServicePageContent> = {
     navLabel: "AI Assistants",
     heroTitle: "AI Assistant Systems",
     heroSubtitle:
-      "Deploy trusted internal assistants that accelerate reporting, communication, and execution.",
+      "Agency-ready assistants for proposal drafts, KPI communication, and internal knowledge access.",
     forWho: [
-      "Teams with high document volume and repetitive reporting tasks",
-      "Founders and managers who need faster decision support",
-      "Organizations seeking private, context-aware AI workflows"
+      "Agency teams with repetitive reporting and proposal workflows",
+      "Founders and managers needing faster weekly updates",
+      "Service teams that want private, context-aware automation"
     ],
     deliverables: [
-      "Internal document Q&A assistant",
-      "Financial report summary generator",
-      "Automated weekly KPI email draft workflow",
-      "Proposal and meeting summary automation"
+      "Proposal and report draft assistant",
+      "Weekly KPI summary generation",
+      "Internal document Q&A",
+      "Meeting and update summary automation"
     ],
     kpis: [
       "Response Time Reduction",
@@ -279,37 +336,37 @@ export const servicePages: Record<ServiceSlug, ServicePageContent> = {
     pricingTitle: "AI Assistant System",
     pricingValue: "Starting from $2,500",
     pricingNote:
-      "Built for practical productivity impact with clear governance boundaries.",
+      "Built for agency communication velocity, consistent output quality, and practical ROI.",
     engagementModel: [
-      "Sprint 1: use-case prioritization and policy baseline",
-      "Sprint 2: assistant build and context wiring",
-      "Sprint 3: pilot rollout and workflow refinement"
+      "Sprint 1: use-case prioritization and guardrails",
+      "Sprint 2: assistant setup and context wiring",
+      "Sprint 3: pilot rollout and optimization"
     ],
     faqs: [
       {
-        question: "Can assistants use our internal documents securely?",
+        question: "Can assistants use our agency docs securely?",
         answer:
-          "Yes. We design private-context retrieval flows with clear access boundaries."
+          "Yes. We design private-context retrieval with role-aware access boundaries."
       },
       {
         question: "Will this replace our team?",
         answer:
-          "No. The system is designed to augment teams by removing repetitive communication overhead."
+          "No. It removes repetitive workload so your team can focus on higher-value work."
       },
       {
-        question: "Can we automate weekly KPI emails?",
+        question: "Can we automate weekly KPI updates?",
         answer:
-          "Yes. KPI digest and summary generation workflows are a common deployment pattern."
+          "Yes. Weekly KPI digest and summary workflows are core assistant use cases."
       },
       {
-        question: "Can outputs follow our brand tone?",
+        question: "Can outputs follow our tone and structure?",
         answer:
-          "Yes. We configure style, structure, and approval controls for consistent communications."
+          "Yes. We configure style, structure, and review checkpoints for consistency."
       },
       {
         question: "How do we measure ROI?",
         answer:
-          "We define baseline effort and cycle-time metrics, then track before/after performance changes."
+          "We baseline reporting effort and cycle times, then track before/after improvements."
       }
     ]
   },
@@ -378,63 +435,74 @@ export const servicePages: Record<ServiceSlug, ServicePageContent> = {
 
 export const demoData = {
   finance: {
-    title: "Axora Finance OS",
+    title: "Axora Finance OS — Agency Edition",
     summary:
-      "Executive financial operating view with recurring close metrics and planning alignment.",
-    kpis: [
-      { label: "Monthly Revenue", value: "$412,000", delta: "+8.6%" },
-      { label: "Net Profit Margin", value: "22.4%", delta: "+2.1pt" },
-      { label: "Cash Runway", value: "17.2 mo", delta: "+1.4 mo" },
-      { label: "Burn Rate", value: "$48,700", delta: "-6.3%" },
-      { label: "AR Aging", value: "34 days", delta: "-4 days" },
-      { label: "AP Aging", value: "41 days", delta: "+2 days" },
-      { label: "Budget vs Actual", value: "96.8%", delta: "+3.2%" },
-      { label: "EBITDA Trend", value: "$78,900", delta: "+11.9%" }
+      "Agency financial clarity layer across cash flow, margin, payroll, and receivables.",
+    bullets: [
+      "Monthly Revenue, Net Margin, Payroll Ratio",
+      "Client Concentration & Revenue per Client",
+      "Receivables Aging & Overdue Alerts",
+      "Simple Cash Forecast (30 days)"
     ],
-    lineSeries: [58, 63, 66, 74, 81, 89, 92, 101, 108, 112, 121, 129],
+    kpis: [
+      { label: "Monthly Revenue", value: "$214,200", delta: "+7.4%" },
+      { label: "Net Margin", value: "19.8%", delta: "+1.6pt" },
+      { label: "Payroll Ratio", value: "42%", delta: "-2.1pt" },
+      { label: "Client Concentration", value: "31%", delta: "-4.0pt" },
+      { label: "Revenue per Client", value: "$8,940", delta: "+6.5%" },
+      { label: "Receivables Aging", value: "29 days", delta: "-5 days" },
+      { label: "Overdue Alerts", value: "6", delta: "-3" },
+      { label: "Cash Forecast (30d)", value: "$86,400", delta: "+9.2%" }
+    ],
+    lineSeries: [58, 62, 67, 71, 74, 79, 83, 88, 92, 96, 101, 109],
     breakdown: [
-      { name: "COGS", share: 37 },
-      { name: "Payroll", share: 26 },
-      { name: "Sales & Marketing", share: 18 },
-      { name: "R&D", share: 12 },
+      { name: "Payroll", share: 42 },
+      { name: "Media Spend", share: 24 },
+      { name: "Tools", share: 13 },
+      { name: "Operations", share: 14 },
       { name: "Other", share: 7 }
     ]
   },
   operations: {
-    title: "Axora Operations Panel",
+    title: "Axora Operations Panel — Agency Edition",
     summary:
-      "Throughput and reliability control tower for service and fulfillment organizations.",
+      "Operational visibility layer for utilization, delivery health, and client work cadence.",
+    bullets: [
+      "Utilization snapshot (high-level)",
+      "Project throughput & delivery health",
+      "SLA-style task tracking (light)"
+    ],
     kpis: [
-      { label: "Active Orders", value: "1,284", delta: "+4.9%" },
-      { label: "SLA Compliance", value: "97.2%", delta: "+1.8pt" },
-      { label: "Inventory Turnover", value: "6.4x", delta: "+0.7x" },
-      { label: "Team Utilization", value: "84%", delta: "+5pt" },
-      { label: "Revenue per Client", value: "$5,740", delta: "+9.4%" }
+      { label: "Utilization Snapshot", value: "81%", delta: "+3pt" },
+      { label: "Project Throughput", value: "27 / wk", delta: "+4" },
+      { label: "Delivery Health", value: "92%", delta: "+2pt" },
+      { label: "SLA Task Compliance", value: "95%", delta: "+1.1pt" },
+      { label: "Team Capacity Balance", value: "Stable", delta: "On target" }
     ]
   },
   assistant: {
     title: "Axora AI Assistant",
     summary:
-      "Private-context assistant workflows for internal intelligence and communication velocity.",
+      "Private assistant workflows designed for agency communication and reporting speed.",
     features: [
-      "Internal document Q&A",
-      "Financial report summary generation",
-      "Automated KPI weekly email draft",
-      "Proposal draft automation",
-      "Meeting summary extraction"
+      "Proposal & report drafts",
+      "Weekly KPI summaries",
+      "Internal doc Q&A"
     ]
   }
 };
 
 export const aboutContent = {
-  title: "We build intelligent operating systems for ambitious companies.",
-  text: "AxoraLab.ai is a studio focused on AI-powered business systems, finance infrastructure, and execution intelligence. We partner with leadership teams to convert fragmented data into trusted decision architecture and practical automation. Every delivery is shaped for measurable outcomes, enterprise trust, and long-term operating leverage."
+  title:
+    "We build AI-powered operating layers for digital marketing agencies and service-based teams.",
+  text: "AxoraLab.ai is a product and systems studio focused on financial clarity, operational visibility, and practical AI automation. We help 5–20 person agencies move from scattered spreadsheets to reliable decision infrastructure. Every delivery is designed for measurable outcomes, team adoption, and sustained execution quality."
 };
 
 export const serviceTypeOptions = [
-  "Finance Dashboards",
-  "Industry Panels",
-  "AI Assistants",
-  "Vibe Coding",
+  "Agency Finance MVP",
+  "Agency Growth Suite",
+  "AI Assistant System",
+  "Integration & Support",
+  "Vibe Coding Education",
   "Integrated Suite"
 ];
