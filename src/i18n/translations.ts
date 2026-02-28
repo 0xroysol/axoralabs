@@ -58,7 +58,6 @@ const tr: Record<string, string> = {
   "Share your business context and priority outcomes. We will return with a focused implementation path.": "İş bağlamınızı ve öncelikli hedeflerinizi paylaşın. Size odaklı bir uygulama planı ile geri dönelim.",
   "Name": "Ad Soyad",
   "Email": "E-posta",
-  "Company": "Şirket",
   "Service Type": "Hizmet Türü",
   "Message": "Mesaj",
   "Select a service": "Bir hizmet seçin",
