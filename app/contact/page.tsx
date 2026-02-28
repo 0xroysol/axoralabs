@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ContactForm } from "@/src/components/sections/ContactForm";
 import { PageIntro } from "@/src/components/sections/PageIntro";
 
@@ -18,7 +19,9 @@ export default function ContactPage() {
       />
       <section className="mx-auto w-full max-w-3xl px-6 pb-20">
         <article className="surface-strong rounded-2xl p-6 md:p-7">
-          <ContactForm />
+          <Suspense fallback={null}>
+            <ContactForm />
+          </Suspense>
         </article>
       </section>
     </>
