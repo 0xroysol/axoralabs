@@ -130,6 +130,8 @@ const tr: Record<string, string> = {
   "Every delivery is scoped for operational adoption, measurable ROI, and long-term governance.": "Her teslimat; operasyonel benimseme, ölçülebilir ROI ve uzun vadeli yönetişim için kapsamlanır.",
   "Founder Spotlight": "Kurucu Profili",
   "CEO & Founder": "CEO & Kurucu",
+  "Founder & CEO": "Founder & CEO",
+  "Founder & CEO: Murat Guler": "Founder & CEO: Murat Guler",
   "Murat Guler": "Murat Guler",
   "Building finance-grade AI systems that executives trust and teams actually use.": "Yöneticilerin güvendiği ve ekiplerin gerçekten kullandığı finans seviyesinde AI sistemleri kuruyor.",
   "Leadership": "Liderlik",

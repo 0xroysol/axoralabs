@@ -64,6 +64,14 @@ export function HomeHero() {
             {t("Explore Demos")}
           </ButtonLink>
         </motion.div>
+        <motion.p
+          initial={reducedMotion ? undefined : { opacity: 0, y: 16 }}
+          animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.14 }}
+          className="mt-5 text-sm text-slate-300"
+        >
+          {t("Founder & CEO: Murat Guler")}
+        </motion.p>
       </div>
       <div className="surface-strong rounded-3xl p-3">
         <HeroOrb />

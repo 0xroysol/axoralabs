@@ -11,7 +11,7 @@ export function FounderSpotlight() {
               MG
             </div>
             <LocalizedText text="Murat Guler" as="h3" className="font-display text-2xl font-semibold text-slate-100" />
-            <LocalizedText text="CEO & Founder" as="p" className="mt-2 text-sm font-medium text-slate-300" />
+            <LocalizedText text="Founder & CEO" as="p" className="mt-2 text-sm font-medium text-slate-300" />
           </div>
 
           <div>
