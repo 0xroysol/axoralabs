@@ -341,7 +341,7 @@ const tr: Record<string, string> = {
   "Weekly Reporting Hours Saved": "Haftalık Raporlama Saat Tasarrufu",
   "Draft-to-Approval Cycle Time": "Taslak-Onay Çevrim Süresi",
   "Knowledge Retrieval Accuracy": "Bilgi Erişim Doğruluğu",
-  "Automation Adoption Rate": "Otomasyon Benimseme Oranı"
+  "Automation Adoption Rate": "Otomasyon Benimseme Oranı",
   "AxoraLab.ai is a studio focused on AI-powered business systems, finance infrastructure, and execution intelligence. We partner with leadership teams to convert fragmented data into trusted decision architecture and practical automation. Every delivery is shaped for measurable outcomes, enterprise trust, and long-term operating leverage.":
     "AxoraLab.ai; AI destekli iş sistemleri, finans altyapısı ve uygulama zekasına odaklanan bir stüdyodur. Parçalı veriyi güvenilir karar mimarisi ve pratik otomasyona dönüştürmek için liderlik ekipleriyle birlikte çalışırız. Her teslimat; ölçülebilir sonuç, kurumsal güven ve uzun vadeli operasyonel kaldıraç için şekillendirilir.",
   "Integrated Suite": "Entegre Paket"
