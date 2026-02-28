@@ -51,9 +51,9 @@ export function HomeHero() {
           transition={{ duration: 0.55, delay: 0.12 }}
           className="mt-8 flex flex-wrap items-center gap-3"
         >
-          <ButtonLink href="/demos">{t("Explore Agency Demo")}</ButtonLink>
+          <ButtonLink href="/demos">{t(brand.heroPrimaryCta)}</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
-            {t("Book a 15-min Call")}
+            {t(brand.heroSecondaryCta)}
           </ButtonLink>
         </motion.div>
         <motion.p

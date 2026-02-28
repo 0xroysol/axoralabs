@@ -3,7 +3,7 @@ import { PageIntro } from "@/src/components/sections/PageIntro";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
-import { coreServices, pricingHighlights } from "@/src/content/siteContent";
+import { coreServices, pricingHighlights, servicesPageContent } from "@/src/content/siteContent";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -15,9 +15,9 @@ export default function ServicesPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Services"
-        title="Agency-focused systems for finance clarity and operational control"
-        description="Built for digital marketing agencies and adaptable for other service-based teams."
+        eyebrow={servicesPageContent.eyebrow}
+        title={servicesPageContent.title}
+        description={servicesPageContent.description}
       />
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-12">

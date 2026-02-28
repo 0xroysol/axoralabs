@@ -7,7 +7,7 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
-import { coreServices, demoData, pricingHighlights, whyAxora } from "@/src/content/siteContent";
+import { coreServices, demoData, homePageContent, pricingHighlights, whyAxora } from "@/src/content/siteContent";
 
 export default function HomePage() {
   return (
@@ -18,9 +18,9 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <LocalizedText text="Core Services" as="p" className="eyebrow" />
+            <LocalizedText text={homePageContent.servicesEyebrow} as="p" className="eyebrow" />
             <LocalizedText
-              text="Agency-focused service tracks"
+              text={homePageContent.servicesTitle}
               as="h2"
               className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
             />
@@ -40,9 +40,9 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8">
-          <LocalizedText text="Demo Preview" as="p" className="eyebrow" />
+          <LocalizedText text={homePageContent.demosEyebrow} as="p" className="eyebrow" />
           <LocalizedText
-            text="Agency edition product previews"
+            text={homePageContent.demosTitle}
             as="h2"
             className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
           />
@@ -66,7 +66,7 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-              <LocalizedText text="Request this demo" />
+              <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
 
@@ -88,7 +88,7 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-              <LocalizedText text="Request this demo" />
+              <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
 
@@ -105,22 +105,22 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-              <LocalizedText text="Request this demo" />
+              <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
         </div>
         <div className="mt-6">
           <ButtonLink href="/demos" variant="secondary">
-            <LocalizedText text="Explore Agency Demo" />
+            <LocalizedText text={homePageContent.demoSectionCta} />
           </ButtonLink>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="mb-8">
-          <LocalizedText text="Engagement Process" as="p" className="eyebrow" />
+          <LocalizedText text={homePageContent.processEyebrow} as="p" className="eyebrow" />
           <LocalizedText
-            text="Agency rollout in 5 practical steps"
+            text={homePageContent.processTitle}
             as="h2"
             className="mt-3 font-display text-3xl font-semibold text-slate-100 md:text-4xl"
           />
@@ -130,9 +130,9 @@ export default function HomePage() {
 
       <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-14 md:grid-cols-[1fr_1fr]">
         <article className="surface-strong rounded-2xl p-6">
-          <LocalizedText text="Why AxoraLab" as="p" className="eyebrow" />
+          <LocalizedText text={homePageContent.whyEyebrow} as="p" className="eyebrow" />
           <LocalizedText
-            text="Built for agency financial and operational clarity"
+            text={homePageContent.whyTitle}
             as="h2"
             className="mt-3 font-display text-3xl font-semibold text-slate-100"
           />
@@ -153,26 +153,26 @@ export default function HomePage() {
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-10">
         <article className="surface-strong rounded-3xl p-8 md:p-10">
-          <LocalizedText text="Ready to build" as="p" className="eyebrow" />
+          <LocalizedText text={homePageContent.finalEyebrow} as="p" className="eyebrow" />
           <LocalizedText
-            text="Build your agency operating layer in weeks, not quarters."
+            text={homePageContent.finalTitle}
             as="h2"
             className="mt-3 max-w-3xl font-display text-3xl font-semibold leading-tight text-slate-100 md:text-4xl"
           />
           <LocalizedText
-            text="Designed for digital marketing agencies and flexible for other service-based teams."
+            text={homePageContent.finalDescription}
             as="p"
             className="mt-4 max-w-2xl text-sm leading-relaxed text-textSoft md:text-base"
           />
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <ButtonLink href="/contact">
-              <LocalizedText text="Book a 15-min Call" />
+              <LocalizedText text={homePageContent.finalPrimaryCta} />
             </ButtonLink>
             <Link
               href="/demos"
               className="focus-ring inline-flex rounded-md border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:border-slate-400"
             >
-              <LocalizedText text="Explore Agency Demo" />
+              <LocalizedText text={homePageContent.finalSecondaryCta} />
             </Link>
           </div>
         </article>

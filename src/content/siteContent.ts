@@ -42,14 +42,16 @@ export const brand = {
   headline: "Financial Clarity for Digital Marketing Agencies.",
   subheadline:
     "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.",
-  segmentBadge: "for 5–20 person agencies",
+  segmentBadge: "Built for 5–20 person agencies",
+  heroPrimaryCta: "Explore Agency Demo",
+  heroSecondaryCta: "Book a 15-min Call",
   footerStatement:
     "AxoraLab builds AI-powered operating systems for digital marketing agencies."
 };
 
 export const productNavLinks: NavItem[] = [
-  { label: "Axora Finance OS", href: "/demos#axora-finance-os" },
-  { label: "Axora Operations Panel", href: "/demos#axora-operations-panel" },
+  { label: "Axora Finance OS (Agency Edition)", href: "/demos#axora-finance-os" },
+  { label: "Axora Operations Panel (Agency Edition)", href: "/demos#axora-operations-panel" },
   { label: "Axora AI Assistant", href: "/demos#axora-ai-assistant" }
 ];
 
@@ -98,13 +100,55 @@ export const homeProductSpotlight = {
   title: "Axora Finance OS (Agency Edition)",
   subtitle: "Know exactly which clients make you money.",
   features: [
-    "payroll ratio",
-    "receivables aging",
-    "client concentration",
-    "revenue mix"
+    "Payroll Ratio",
+    "Client Concentration",
+    "Revenue Mix",
+    "Receivables Aging"
   ],
   cta: "See Finance OS Demo",
   href: "/demos#axora-finance-os"
+};
+
+export const homePageContent = {
+  servicesEyebrow: "Core Services",
+  servicesTitle: "Agency-focused service tracks",
+  demosEyebrow: "Demo Preview",
+  demosTitle: "Agency edition product previews",
+  demoCardCta: "Request this demo",
+  demoSectionCta: "Explore Agency Demo",
+  processEyebrow: "Engagement Process",
+  processTitle: "Agency rollout in 5 practical steps",
+  whyEyebrow: "Why AxoraLab",
+  whyTitle: "Built for agency financial and operational clarity",
+  finalEyebrow: "Ready to build",
+  finalTitle: "Build your agency operating layer in weeks, not quarters.",
+  finalDescription:
+    "Designed for digital marketing agencies and flexible for other service-based teams.",
+  finalPrimaryCta: "Book a 15-min Call",
+  finalSecondaryCta: "Explore Agency Demo"
+};
+
+export const demosPageContent = {
+  eyebrow: "Demos",
+  title: "Agency-ready product demos for finance, operations, and AI workflows",
+  description:
+    "Explore how Axora products help 5–20 person digital marketing agencies operate with clarity.",
+  financeBadge: "Axora Finance OS",
+  requestDemoCta: "Request this demo"
+};
+
+export const servicesPageContent = {
+  eyebrow: "Services",
+  title: "Agency-focused systems for finance clarity and operational control",
+  description:
+    "Built for digital marketing agencies and adaptable for other service-based teams."
+};
+
+export const processPageContent = {
+  eyebrow: "Process",
+  title: "A practical 5-step rollout for agency systems",
+  description:
+    "From data connection to monthly optimization, we keep delivery tight and measurable for agency teams."
 };
 
 export const pricingHighlights: PricingHighlight[] = [

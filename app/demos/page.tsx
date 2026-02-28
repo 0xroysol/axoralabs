@@ -5,7 +5,7 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { BreakdownBars } from "@/src/components/ui/BreakdownBars";
 import { KPIWidget } from "@/src/components/ui/KPIWidget";
 import { LineChart } from "@/src/components/ui/LineChart";
-import { demoData } from "@/src/content/siteContent";
+import { demoData, demosPageContent } from "@/src/content/siteContent";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -17,9 +17,9 @@ export default function DemosPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Demos"
-        title="Agency-ready product demos for finance, operations, and AI workflows"
-        description="Explore how Axora products help 5–20 person digital marketing agencies operate with clarity."
+        eyebrow={demosPageContent.eyebrow}
+        title={demosPageContent.title}
+        description={demosPageContent.description}
       />
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-14">
@@ -34,7 +34,7 @@ export default function DemosPage() {
               </p>
             </div>
             <p className="rounded-full border border-slate-600 bg-slate-800/60 px-3 py-1 text-xs font-semibold tracking-wide text-slate-200">
-              <LocalizedText text="Axora Finance OS" />
+              <LocalizedText text={demosPageContent.financeBadge} />
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function DemosPage() {
           </div>
 
           <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-            <LocalizedText text="Request this demo" />
+            <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>
       </section>
@@ -80,7 +80,7 @@ export default function DemosPage() {
             ))}
           </div>
           <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-            <LocalizedText text="Request this demo" />
+            <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>
 
@@ -99,7 +99,7 @@ export default function DemosPage() {
             ))}
           </ul>
           <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-            <LocalizedText text="Request this demo" />
+            <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>
       </section>
