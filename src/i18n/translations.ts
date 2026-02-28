@@ -351,6 +351,14 @@ const tr: Record<string, string> = {
   "Products": "Ürünler",
   "Custom Dashboards": "Özel Dashboard'lar",
   "Integration & Support": "Entegrasyon ve Destek",
+  "Finance and delivery dashboards tailored to agency workflows, margin visibility, and owner-level decisions.":
+    "Ajans iş akışlarına, marj görünürlüğüne ve kurucu düzeyi karar süreçlerine özel finans ve teslimat dashboard'ları.",
+  "Bring invoices, bank activity, expenses, and project operations into one integrated reporting layer.":
+    "Fatura, banka hareketleri, giderler ve proje operasyonunu tek bir entegre raporlama katmanında birleştirin.",
+  "Automate proposal drafts, KPI summaries, and internal knowledge Q&A for faster team execution.":
+    "Daha hızlı ekip uygulaması için teklif taslaklarını, KPI özetlerini ve iç bilgi Soru-Cevap akışlarını otomatikleştirin.",
+  "Practical upskilling for agency teams that want to build and ship AI-native internal tools.":
+    "AI-native iç araçlar geliştirmek ve yayına almak isteyen ajans ekipleri için pratik yetkinlik geliştirme.",
   "Financial Clarity for Digital Marketing Agencies.": "Dijital Pazarlama Ajansları İçin Finansal Netlik.",
   "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.":
     "Nakit akışı, kârlılık, payroll oranı ve gecikmiş tahsilatları tek panelden takip edin — Axora Finance OS ile.",
@@ -380,7 +388,9 @@ const tr: Record<string, string> = {
   "Monthly Revenue, Net Margin, Payroll Ratio": "Aylık Ciro, Net Marj, Payroll Oranı",
   "Client Concentration & Revenue per Client": "Müşteri Konsantrasyonu ve Müşteri Başına Gelir",
   "Receivables Aging & Overdue Alerts": "Tahsilat Yaşlandırma ve Gecikme Uyarıları",
+  "Receivables aging + overdue alerts": "Tahsilat yaşlandırma + gecikme uyarıları",
   "Simple Cash Forecast (30 days)": "Basit Nakit Tahmini (30 gün)",
+  "Simple cash forecast (30 days)": "Basit nakit tahmini (30 gün)",
   "Net Margin": "Net Marj",
   "Payroll Ratio": "Payroll Oranı",
   "Client Concentration": "Müşteri Konsantrasyonu",
@@ -406,6 +416,7 @@ const tr: Record<string, string> = {
   "Weekly KPI summaries": "Haftalık KPI özetleri",
   "Internal doc Q&A": "İç doküman Soru-Cevap",
   "Request this demo": "Bu demoyu iste",
+  "Demo Request": "Demo Talebi",
   "Agency-ready product demos for finance, operations, and AI workflows":
     "Finans, operasyon ve AI iş akışları için ajansa hazır ürün demoları",
   "Explore how Axora products help 5–20 person digital marketing agencies operate with clarity.":
@@ -590,7 +601,13 @@ const tr: Record<string, string> = {
   "We build AI-powered operating layers for digital marketing agencies and service-based teams.":
     "Dijital pazarlama ajansları ve hizmet odaklı ekipler için AI destekli operasyon katmanları geliştiriyoruz.",
   "AxoraLab.ai is a product and systems studio focused on financial clarity, operational visibility, and practical AI automation. We help 5–20 person agencies move from scattered spreadsheets to reliable decision infrastructure. Every delivery is designed for measurable outcomes, team adoption, and sustained execution quality.":
-    "AxoraLab.ai, finansal netlik, operasyonel görünürlük ve pratik AI otomasyonuna odaklanan bir ürün ve sistem stüdyosudur. 5–20 kişilik ajansların dağınık tablolardan güvenilir karar altyapısına geçmesine yardımcı oluruz. Her teslimat; ölçülebilir sonuç, ekip benimsemesi ve sürdürülebilir uygulama kalitesi için tasarlanır."
+    "AxoraLab.ai, finansal netlik, operasyonel görünürlük ve pratik AI otomasyonuna odaklanan bir ürün ve sistem stüdyosudur. 5–20 kişilik ajansların dağınık tablolardan güvenilir karar altyapısına geçmesine yardımcı oluruz. Her teslimat; ölçülebilir sonuç, ekip benimsemesi ve sürdürülebilir uygulama kalitesi için tasarlanır.",
+  "Hi, we would like to request the Axora Finance OS (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
+    "Merhaba, Axora Finance OS (Ajans Sürümü) demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?",
+  "Hi, we would like to request the Axora Operations Panel (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
+    "Merhaba, Axora Operations Panel (Ajans Sürümü) demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?",
+  "Hi, we would like to request the Axora AI Assistant demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
+    "Merhaba, Axora AI Assistant demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?"
 };
 
 export function translateText(text: string, locale: Locale): string {

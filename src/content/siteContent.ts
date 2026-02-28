@@ -137,6 +137,21 @@ export const demosPageContent = {
   requestDemoCta: "Request this demo"
 };
 
+export const demoRequestLinks = {
+  finance: "/contact?serviceType=Demo%20Request&intent=finance",
+  operations: "/contact?serviceType=Demo%20Request&intent=operations",
+  assistant: "/contact?serviceType=Demo%20Request&intent=assistant"
+};
+
+export const demoRequestMessagesByIntent: Record<string, string> = {
+  finance:
+    "Hi, we would like to request the Axora Finance OS (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.",
+  operations:
+    "Hi, we would like to request the Axora Operations Panel (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.",
+  assistant:
+    "Hi, we would like to request the Axora AI Assistant demo. We are a 5–20 person digital marketing agency. Please share available time slots."
+};
+
 export const servicesPageContent = {
   eyebrow: "Services",
   title: "Agency-focused systems for finance clarity and operational control",
@@ -485,8 +500,8 @@ export const demoData = {
     bullets: [
       "Monthly Revenue, Net Margin, Payroll Ratio",
       "Client Concentration & Revenue per Client",
-      "Receivables Aging & Overdue Alerts",
-      "Simple Cash Forecast (30 days)"
+      "Receivables aging + overdue alerts",
+      "Simple cash forecast (30 days)"
     ],
     kpis: [
       { label: "Monthly Revenue", value: "$214,200", delta: "+7.4%" },
@@ -543,6 +558,7 @@ export const aboutContent = {
 };
 
 export const serviceTypeOptions = [
+  "Demo Request",
   "Agency Finance MVP",
   "Agency Growth Suite",
   "AI Assistant System",

@@ -7,7 +7,7 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { PricingCard } from "@/src/components/ui/PricingCard";
 import { ServiceCard } from "@/src/components/ui/ServiceCard";
-import { coreServices, demoData, homePageContent, pricingHighlights, whyAxora } from "@/src/content/siteContent";
+import { coreServices, demoData, demoRequestLinks, homePageContent, pricingHighlights, whyAxora } from "@/src/content/siteContent";
 
 export default function HomePage() {
   return (
@@ -61,11 +61,11 @@ export default function HomePage() {
               <p><LocalizedText text="Payroll Ratio" />: {demoData.finance.kpis[2].value}</p>
             </div>
             <ul className="mt-4 space-y-2 text-xs text-slate-300">
-              {demoData.finance.bullets.slice(0, 2).map((bullet) => (
+              {demoData.finance.bullets.map((bullet) => (
                 <li key={bullet}>• <LocalizedText text={bullet} /></li>
               ))}
             </ul>
-            <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <Link href={demoRequestLinks.finance} className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
               <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
@@ -87,7 +87,7 @@ export default function HomePage() {
                 <li key={bullet}>• <LocalizedText text={bullet} /></li>
               ))}
             </ul>
-            <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <Link href={demoRequestLinks.operations} className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
               <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 <li key={feature}>• <LocalizedText text={feature} /></li>
               ))}
             </ul>
-            <Link href="/contact" className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+            <Link href={demoRequestLinks.assistant} className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
               <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>

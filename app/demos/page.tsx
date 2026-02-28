@@ -5,7 +5,7 @@ import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { BreakdownBars } from "@/src/components/ui/BreakdownBars";
 import { KPIWidget } from "@/src/components/ui/KPIWidget";
 import { LineChart } from "@/src/components/ui/LineChart";
-import { demoData, demosPageContent } from "@/src/content/siteContent";
+import { demoData, demoRequestLinks, demosPageContent } from "@/src/content/siteContent";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -55,7 +55,7 @@ export default function DemosPage() {
             <BreakdownBars items={demoData.finance.breakdown} />
           </div>
 
-          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+          <Link href={demoRequestLinks.finance} className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
             <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>
@@ -79,7 +79,7 @@ export default function DemosPage() {
               <KPIWidget key={kpi.label} label={kpi.label} value={kpi.value} delta={kpi.delta} />
             ))}
           </div>
-          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+          <Link href={demoRequestLinks.operations} className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
             <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>
@@ -98,7 +98,7 @@ export default function DemosPage() {
               </li>
             ))}
           </ul>
-          <Link href="/contact" className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
+          <Link href={demoRequestLinks.assistant} className="focus-ring mt-6 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
             <LocalizedText text={demosPageContent.requestDemoCta} />
           </Link>
         </article>

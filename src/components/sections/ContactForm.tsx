@@ -1,8 +1,9 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslate } from "@/src/components/ui/LocalizedText";
-import { serviceTypeOptions } from "@/src/content/siteContent";
+import { demoRequestMessagesByIntent, serviceTypeOptions } from "@/src/content/siteContent";
 
 type FormState = {
   name: string;
@@ -22,9 +23,37 @@ const initialState: FormState = {
 
 export function ContactForm() {
   const t = useTranslate();
+  const searchParams = useSearchParams();
+  const hasPrefilled = useRef(false);
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [toast, setToast] = useState<string>("");
+
+  useEffect(() => {
+    if (hasPrefilled.current) {
+      return;
+    }
+
+    const serviceTypeFromQuery = searchParams.get("serviceType") ?? "";
+    const intentFromQuery = searchParams.get("intent") ?? "";
+    const selectedServiceType = serviceTypeOptions.includes(serviceTypeFromQuery)
+      ? serviceTypeFromQuery
+      : "";
+    const messageKey = demoRequestMessagesByIntent[intentFromQuery];
+    const prefilledMessage = messageKey ? t(messageKey) : "";
+
+    if (!selectedServiceType && !prefilledMessage) {
+      hasPrefilled.current = true;
+      return;
+    }
+
+    setForm((prev) => ({
+      ...prev,
+      serviceType: selectedServiceType || prev.serviceType,
+      message: prefilledMessage || prev.message
+    }));
+    hasPrefilled.current = true;
+  }, [searchParams, t]);
 
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
