@@ -146,11 +146,21 @@ export const financeDemoRoutes = {
 };
 
 export const financeOsLandingContent = {
-  eyebrow: "Live Demo",
-  title: "Axora Finance OS — Agency Edition",
+  eyebrow: "Axora Finance OS — Agency Edition",
+  title: "Explore Financial Clarity for Digital Marketing Agencies",
   description:
-    "This dashboard demonstrates Axora Finance OS using sample data from a marketing agency. The system is designed to be AI-ready for optional integrations.",
-  cta: "Enter Demo"
+    "This interactive demo uses realistic sample data from a 12-person performance marketing agency to demonstrate how Axora Finance OS helps track revenue, margins, and receivable risk.",
+  environmentTitle: "Demo Environment",
+  environmentItems: [
+    "Agency: Valoryx — Performance Marketing Agency",
+    "Team size: 12 employees",
+    "Clients: 18 active accounts",
+    "Revenue model: Retainers + performance bonuses",
+    "Data: Realistic sample data (not real client data)"
+  ],
+  disclaimer: "All data in this demo is fictional and used for demonstration purposes.",
+  cta: "Enter Live Demo",
+  backLink: "Back to AxoraLab"
 };
 
 export const financeOsShellContent = {

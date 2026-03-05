@@ -11,7 +11,6 @@ import {
   coreServices,
   demoData,
   demoRequestLinks,
-  financeOsLandingContent,
   homePageContent,
   pricingHighlights,
   whyAxora
@@ -74,7 +73,7 @@ export default function HomePage() {
               ))}
             </ul>
             <Link href={demoRequestLinks.finance} className="focus-ring mt-5 inline-flex text-sm font-semibold text-slate-100 hover:opacity-80">
-              <LocalizedText text={financeOsLandingContent.cta} />
+              <LocalizedText text={homePageContent.demoCardCta} />
             </Link>
           </article>
 

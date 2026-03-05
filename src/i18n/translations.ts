@@ -374,6 +374,23 @@ const tr: Record<string, string> = {
   "Built for 5–20 person agencies": "5–20 kişilik ajanslar için",
   "Explore Agency Demo": "Ajans Demo'larını Gör",
   "Book a 15-min Call": "15 dk Görüşme Ayarla",
+  "Explore Financial Clarity for Digital Marketing Agencies":
+    "Dijital Pazarlama Ajansları İçin Finansal Netliği Keşfedin",
+  "This interactive demo uses realistic sample data from a 12-person performance marketing agency to demonstrate how Axora Finance OS helps track revenue, margins, and receivable risk.":
+    "Bu interaktif demo, 12 kişilik bir performans pazarlama ajansına ait gerçekçi örnek veriler kullanarak Axora Finance OS’un gelir, marj ve tahsilat riskini nasıl analiz ettiğini gösterir.",
+  "Demo Environment": "Demo Ortamı",
+  "Agency: Valoryx — Performance Marketing Agency":
+    "Ajans: Valoryx — Performance Marketing Agency",
+  "Team size: 12 employees": "Ekip büyüklüğü: 12 çalışan",
+  "Clients: 18 active accounts": "Müşteriler: 18 aktif hesap",
+  "Revenue model: Retainers + performance bonuses":
+    "Gelir modeli: Retainer + performans bonusları",
+  "Data: Realistic sample data (not real client data)":
+    "Veri: Gerçekçi örnek veri (gerçek müşteri verisi değildir)",
+  "All data in this demo is fictional and used for demonstration purposes.":
+    "Bu demodaki tüm veriler kurgusaldır ve yalnızca gösterim amaçlı kullanılır.",
+  "Enter Live Demo": "Canlı Demoya Gir",
+  "Back to AxoraLab": "AxoraLab'a Dön",
   "Product: Axora Finance OS": "Ürün: Axora Finance OS",
   "Axora Finance OS (Agency Edition)": "Axora Finance OS (Ajans Sürümü)",
   "Axora Operations Panel (Agency Edition)": "Axora Operations Panel (Ajans Sürümü)",
