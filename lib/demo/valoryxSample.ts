@@ -1,26 +1,26 @@
 import type { BudgetLine, CashData, Client, ExpenseBreakdown, FinanceDemoData, Invoice, MonthlyFinancial } from "./types";
 
 export const monthlyFinancials: MonthlyFinancial[] = [
-  { month: "Jan", revenue: 148000, expenses: 121000 },
-  { month: "Feb", revenue: 152000, expenses: 124000 },
-  { month: "Mar", revenue: 158000, expenses: 129000 },
+  { month: "Jan", revenue: 148000, expenses: 124000 },
+  { month: "Feb", revenue: 152000, expenses: 126000 },
+  { month: "Mar", revenue: 158000, expenses: 131000 },
   { month: "Apr", revenue: 164000, expenses: 136000 },
   { month: "May", revenue: 171000, expenses: 142000 },
-  { month: "Jun", revenue: 176000, expenses: 148000 },
-  { month: "Jul", revenue: 182000, expenses: 156000 },
-  { month: "Aug", revenue: 189000, expenses: 165000 },
-  { month: "Sep", revenue: 178000, expenses: 160000 },
-  { month: "Oct", revenue: 173000, expenses: 158000 },
-  { month: "Nov", revenue: 168000, expenses: 154000 },
-  { month: "Dec", revenue: 165000, expenses: 152000 }
+  { month: "Jun", revenue: 176000, expenses: 147000 },
+  { month: "Jul", revenue: 182000, expenses: 154000 },
+  { month: "Aug", revenue: 189000, expenses: 160000 },
+  { month: "Sep", revenue: 178000, expenses: 150000 },
+  { month: "Oct", revenue: 173000, expenses: 146000 },
+  { month: "Nov", revenue: 168000, expenses: 143000 },
+  { month: "Dec", revenue: 165000, expenses: 140000 }
 ];
 
 export const expenseBreakdown: ExpenseBreakdown = {
-  payroll: 82000,
-  contractors: 18000,
-  tools: 9500,
-  overhead: 14000,
-  taxes: 8500
+  payroll: 78000,
+  contractors: 16000,
+  tools: 9000,
+  overhead: 12000,
+  taxes: 8000
 };
 
 export const cashData: CashData = {

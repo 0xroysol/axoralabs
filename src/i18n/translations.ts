@@ -14,6 +14,8 @@ const tr: Record<string, string> = {
   "Skip to content": "İçeriğe geç",
   "Learn more": "Detayları gör",
   "AI-powered business systems studio": "Yapay zeka destekli iş sistemleri stüdyosu",
+  "AI-ready business systems & intelligent dashboards":
+    "AI entegrasyonuna hazır iş sistemleri ve akıllı dashboard’lar",
   "Executive AI systems studio": "Yönetici odaklı yapay zeka sistemleri stüdyosu",
   "Engineering Intelligent Business Systems.": "Akıllı İş Sistemleri Geliştiriyoruz.",
   "AI-powered dashboards, finance infrastructure, and intelligent assistants for modern companies.": "Modern şirketler için AI destekli dashboard'lar, finans altyapısı ve akıllı asistanlar.",
@@ -72,6 +74,8 @@ const tr: Record<string, string> = {
   "AxoraLab builds AI-powered operating systems for modern companies.": "AxoraLab, modern şirketler için AI destekli operasyon sistemleri geliştirir.",
   "AxoraLab builds AI-powered operating systems for digital marketing agencies.":
     "AxoraLab, dijital pazarlama ajansları için AI destekli operasyon sistemleri geliştirir.",
+  "Intelligent dashboards and AI-ready business systems":
+    "Akıllı dashboard’lar ve AI entegrasyonuna hazır iş sistemleri",
   "Finance Dashboards": "Finans Dashboard'ları",
   "Industry Panels": "Sektörel Paneller",
   "AI Assistants": "AI Asistanları",
@@ -79,6 +83,7 @@ const tr: Record<string, string> = {
   "Finance & Accounting Dashboards": "Finans ve Muhasebe Dashboard'ları",
   "Industry Operational Panels": "Sektörel Operasyon Panelleri",
   "AI Assistant Systems": "AI Asistan Sistemleri",
+  "AI Integrations (AI-ready)": "AI Entegrasyonları (AI-ready)",
   "Vibe Coding Education": "Vibe Coding Eğitimi",
   "Starting from $3,500": "$3,500'den başlayan",
   "Starting from $4,500": "$4,500'den başlayan",
@@ -596,10 +601,14 @@ const tr: Record<string, string> = {
     "Ajansların güvenilir, gerçek zamanlı finans ve operasyon görünürlüğüyle çalıştığı bir gelecek.",
   "We are a product-focused studio building AI-powered systems for digital marketing agencies.":
     "Dijital pazarlama ajansları için AI destekli sistemler geliştiren ürün odaklı bir stüdyoyuz.",
+  "We are a product-focused studio building AI-ready systems for digital marketing agencies.":
+    "Dijital pazarlama ajansları için AI entegrasyonuna hazır sistemler geliştiren ürün odaklı bir stüdyoyuz.",
   "Every delivery is scoped for measurable ROI, team adoption, and consistent execution quality.":
     "Her teslimat ölçülebilir ROI, ekip benimsemesi ve tutarlı uygulama kalitesi için kapsamlanır.",
   "We build AI-powered operating layers for digital marketing agencies and service-based teams.":
     "Dijital pazarlama ajansları ve hizmet odaklı ekipler için AI destekli operasyon katmanları geliştiriyoruz.",
+  "We build intelligent dashboards and AI-ready business systems for digital marketing agencies and service-based teams.":
+    "Dijital pazarlama ajansları ve hizmet odaklı ekipler için akıllı dashboard’lar ve AI entegrasyonuna hazır iş sistemleri geliştiriyoruz.",
   "AxoraLab.ai is a product and systems studio focused on financial clarity, operational visibility, and practical AI automation. We help 5–20 person agencies move from scattered spreadsheets to reliable decision infrastructure. Every delivery is designed for measurable outcomes, team adoption, and sustained execution quality.":
     "AxoraLab.ai, finansal netlik, operasyonel görünürlük ve pratik AI otomasyonuna odaklanan bir ürün ve sistem stüdyosudur. 5–20 kişilik ajansların dağınık tablolardan güvenilir karar altyapısına geçmesine yardımcı oluruz. Her teslimat; ölçülebilir sonuç, ekip benimsemesi ve sürdürülebilir uygulama kalitesi için tasarlanır.",
   "Hi, we would like to request the Axora Finance OS (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
@@ -609,8 +618,10 @@ const tr: Record<string, string> = {
   "Hi, we would like to request the Axora AI Assistant demo. We are a 5–20 person digital marketing agency. Please share available time slots.":
     "Merhaba, Axora AI Assistant demosunu talep etmek istiyoruz. 5–20 kişilik bir dijital pazarlama ajansıyız. Uygun zaman aralıklarını paylaşabilir misiniz?",
   "Live Demo": "Canlı Demo",
-  "Explore a premium finance dashboard using realistic sample data from a 12-person performance marketing agency.":
-    "12 kişilik bir performance marketing ajansından alınan gerçekçi örnek verilerle premium finans panelini keşfedin.",
+  "This dashboard demonstrates Axora Finance OS using sample data from a marketing agency. The system is designed to be AI-ready for optional integrations.":
+    "Bu panel, bir pazarlama ajansına ait örnek veriler kullanılarak Axora Finance OS sistemini göstermektedir. Sistem, isteğe bağlı AI entegrasyonlarına hazır şekilde tasarlanmıştır.",
+  "Optional AI integrations for reporting summaries, document Q&A, and workflow automation. The platform is designed to be AI-ready.":
+    "İsteğe bağlı yapay zeka entegrasyonları. Rapor özetleme, doküman sorgulama ve otomasyon akışları kurulabilir. Sistem AI entegrasyonlarına hazır şekilde tasarlanmıştır.",
   "Enter Demo": "Demoya Gir",
   "Valoryx — Performance Marketing Agency • 12 Employees":
     "Valoryx — Performance Marketing Ajansı • 12 Çalışan",

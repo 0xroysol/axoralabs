@@ -20,11 +20,11 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://axoralabs.ai"),
   title: {
-    default: "AxoraLab.ai | AI-powered business systems studio",
+    default: "AxoraLab.ai | AI-ready business systems & intelligent dashboards",
     template: "%s | AxoraLab.ai"
   },
   description:
-    "AxoraLab.ai helps digital marketing agencies gain financial clarity with AI-powered dashboards, ops panels, and assistants.",
+    "AxoraLab.ai helps digital marketing agencies gain financial clarity with intelligent dashboards and AI-ready business systems.",
   openGraph: {
     title: "AxoraLab.ai",
     description:

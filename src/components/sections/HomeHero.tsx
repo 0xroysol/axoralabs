@@ -19,7 +19,7 @@ export function HomeHero() {
           transition={{ duration: 0.45 }}
           className="eyebrow"
         >
-          {t("Executive AI systems studio")}
+          {t("AI-ready business systems & intelligent dashboards")}
         </motion.p>
         <motion.h1
           initial={reducedMotion ? undefined : { opacity: 0, y: 16 }}

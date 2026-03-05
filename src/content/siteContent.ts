@@ -46,7 +46,7 @@ export const brand = {
   heroPrimaryCta: "Explore Agency Demo",
   heroSecondaryCta: "Book a 15-min Call",
   footerStatement:
-    "AxoraLab builds AI-powered operating systems for digital marketing agencies."
+    "Intelligent dashboards and AI-ready business systems"
 };
 
 export const productNavLinks: NavItem[] = [
@@ -82,9 +82,9 @@ export const coreServices = [
     href: "/services/industry-panels"
   },
   {
-    title: "AI Assistant Systems",
+    title: "AI Integrations (AI-ready)",
     description:
-      "Automate proposal drafts, KPI summaries, and internal knowledge Q&A for faster team execution.",
+      "Optional AI integrations for reporting summaries, document Q&A, and workflow automation. The platform is designed to be AI-ready.",
     href: "/services/ai-assistants"
   },
   {
@@ -149,7 +149,7 @@ export const financeOsLandingContent = {
   eyebrow: "Live Demo",
   title: "Axora Finance OS — Agency Edition",
   description:
-    "Explore a premium finance dashboard using realistic sample data from a 12-person performance marketing agency.",
+    "This dashboard demonstrates Axora Finance OS using sample data from a marketing agency. The system is designed to be AI-ready for optional integrations.",
   cta: "Enter Demo"
 };
 
@@ -475,10 +475,10 @@ export const servicePages: Record<ServiceSlug, ServicePageContent> = {
   },
   "ai-assistants": {
     slug: "ai-assistants",
-    navLabel: "AI Assistants",
-    heroTitle: "AI Assistant Systems",
+    navLabel: "AI Integrations (AI-ready)",
+    heroTitle: "AI Integrations (AI-ready)",
     heroSubtitle:
-      "Agency-ready assistants for proposal drafts, KPI communication, and internal knowledge access.",
+      "Optional AI integrations for reporting summaries, document Q&A, and workflow automation. The platform is designed to be AI-ready.",
     forWho: [
       "Agency teams with repetitive reporting and proposal workflows",
       "Founders and managers needing faster weekly updates",
@@ -658,7 +658,7 @@ export const demoData = {
 
 export const aboutContent = {
   title:
-    "We build AI-powered operating layers for digital marketing agencies and service-based teams.",
+    "We build intelligent dashboards and AI-ready business systems for digital marketing agencies and service-based teams.",
   text: "AxoraLab.ai is a product and systems studio focused on financial clarity, operational visibility, and practical AI automation. We help 5–20 person agencies move from scattered spreadsheets to reliable decision infrastructure. Every delivery is designed for measurable outcomes, team adoption, and sustained execution quality."
 };
 

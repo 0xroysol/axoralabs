@@ -26,7 +26,7 @@ export default function AboutPage() {
         <article className="surface rounded-2xl p-6">
           <LocalizedText text="Positioning" as="h2" className="font-display text-xl font-semibold text-slate-100" />
           <LocalizedText
-            text="We are a product-focused studio building AI-powered systems for digital marketing agencies."
+            text="We are a product-focused studio building AI-ready systems for digital marketing agencies."
             as="p"
             className="mt-3 text-sm leading-relaxed text-textSoft"
           />
