@@ -1,12 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { financeDemoRoutes, financeOsLandingContent } from "@/src/content/siteContent";
 
 export default function FinanceOsLandingPage() {
+  const reducedMotion = useReducedMotion();
+
   return (
     <section className="mx-auto flex min-h-[calc(100vh-180px)] w-full max-w-5xl items-center justify-center px-6 pb-20 pt-8 md:pt-12">
-      <article className="surface-strong w-full rounded-3xl p-8 text-center md:p-10">
+      <motion.article
+        initial={reducedMotion ? undefined : { opacity: 0, y: 8 }}
+        animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.28 }}
+        className="surface-strong w-full rounded-3xl p-8 text-center md:p-10"
+      >
         <LocalizedText
           text={financeOsLandingContent.eyebrow}
           as="p"
@@ -39,12 +49,6 @@ export default function FinanceOsLandingPage() {
           </ul>
         </div>
 
-        <LocalizedText
-          text={financeOsLandingContent.disclaimer}
-          as="p"
-          className="mx-auto mt-4 max-w-xl text-xs text-slate-400"
-        />
-
         <div className="mt-8 flex flex-col items-center gap-4">
           <ButtonLink
             href={financeDemoRoutes.overview}
@@ -59,7 +63,7 @@ export default function FinanceOsLandingPage() {
             <LocalizedText text={financeOsLandingContent.backLink} />
           </Link>
         </div>
-      </article>
+      </motion.article>
     </section>
   );
 }

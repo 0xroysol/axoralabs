@@ -43,7 +43,7 @@ export const brand = {
   subheadline:
     "AI-ready dashboards designed for financial clarity in growing digital marketing agencies.",
   segmentBadge: "Built for 5–20 person agencies",
-  heroPrimaryCta: "Explore Agency Demo",
+  heroPrimaryCta: "Explore Live Demo",
   heroSecondaryCta: "Book a 15-min Call",
   footerStatement:
     "Intelligent dashboards and AI-ready business systems"
@@ -114,8 +114,9 @@ export const homePageContent = {
   servicesTitle: "Agency-focused service tracks",
   demosEyebrow: "Demo Preview",
   demosTitle: "Agency edition product previews",
+  financeSnapshotLabel: "Sample Agency Snapshot",
   demoCardCta: "Request this demo",
-  demoSectionCta: "Explore Agency Demo",
+  demoSectionCta: "Explore Live Demo",
   processEyebrow: "Engagement Process",
   processTitle: "Agency rollout in 5 practical steps",
   whyEyebrow: "Why AxoraLab",
@@ -125,7 +126,7 @@ export const homePageContent = {
   finalDescription:
     "Designed for digital marketing agencies and flexible for other service-based teams.",
   finalPrimaryCta: "Book a 15-min Call",
-  finalSecondaryCta: "Explore Agency Demo"
+  finalSecondaryCta: "Explore Live Demo"
 };
 
 export const demosPageContent = {
@@ -149,16 +150,14 @@ export const financeOsLandingContent = {
   eyebrow: "Axora Finance OS — Agency Edition",
   title: "Explore Financial Clarity for Digital Marketing Agencies",
   description:
-    "This interactive demo uses realistic sample data from a 12-person performance marketing agency to demonstrate how Axora Finance OS helps track revenue, margins, and receivable risk.",
+    "Meet Valoryx — a 12-person performance marketing agency managing 18 active accounts. This interactive demo uses realistic sample data to show how Axora Finance OS tracks revenue, margins, payroll ratio, and receivables risk.",
   environmentTitle: "Demo Environment",
   environmentItems: [
     "Agency: Valoryx — Performance Marketing Agency",
     "Team size: 12 employees",
     "Clients: 18 active accounts",
-    "Revenue model: Retainers + performance bonuses",
-    "Data: Realistic sample data (not real client data)"
+    "Data: Fictional sample data (no real client data)"
   ],
-  disclaimer: "All data in this demo is fictional and used for demonstration purposes.",
   cta: "Enter Live Demo",
   backLink: "Back to AxoraLab"
 };

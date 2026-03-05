@@ -62,6 +62,9 @@ export default function HomePage() {
             <p className="mt-3 text-sm text-textSoft">
               <LocalizedText text={demoData.finance.summary} />
             </p>
+            <p className="mt-4 inline-flex rounded-full border border-slate-600 bg-slate-900/60 px-2.5 py-1 text-[11px] font-medium tracking-wide text-slate-300">
+              <LocalizedText text={homePageContent.financeSnapshotLabel} />
+            </p>
             <div className="mt-4 space-y-2 text-sm text-slate-300">
               <p><LocalizedText text="Monthly Revenue" />: {demoData.finance.kpis[0].value}</p>
               <p><LocalizedText text="Net Margin" />: {demoData.finance.kpis[1].value}</p>

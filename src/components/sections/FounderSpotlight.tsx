@@ -16,7 +16,7 @@ export function FounderSpotlight() {
 
           <div>
             <LocalizedText
-              text="Building finance-grade AI systems that executives trust and teams actually use."
+              text="I design dashboards and operating systems that help agencies gain financial clarity. Focus: profitability, payroll ratio, receivables risk, and client concentration."
               as="p"
               className="text-base leading-relaxed text-textSoft md:text-lg"
             />

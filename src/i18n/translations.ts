@@ -140,6 +140,8 @@ const tr: Record<string, string> = {
   "Founder & CEO: Murat Guler": "Founder & CEO: Murat Guler",
   "Murat Guler": "Murat Guler",
   "Building finance-grade AI systems that executives trust and teams actually use.": "Yöneticilerin güvendiği ve ekiplerin gerçekten kullandığı finans seviyesinde AI sistemleri kuruyor.",
+  "I design dashboards and operating systems that help agencies gain financial clarity. Focus: profitability, payroll ratio, receivables risk, and client concentration.":
+    "Ajansların finansal netliğe ulaşması için dashboard ve operasyon sistemleri tasarlıyorum. Odak: kârlılık, payroll oranı, tahsilat riski ve müşteri konsantrasyonu.",
   "Leadership": "Liderlik",
   "Technical Depth": "Teknik Derinlik",
   "Market Focus": "Pazar Odağı",
@@ -373,24 +375,30 @@ const tr: Record<string, string> = {
   "for 5–20 person agencies": "5–20 kişilik ajanslar için",
   "Built for 5–20 person agencies": "5–20 kişilik ajanslar için",
   "Explore Agency Demo": "Ajans Demo'larını Gör",
+  "Explore Live Demo": "Canlı Demo'yu Keşfet",
   "Book a 15-min Call": "15 dk Görüşme Ayarla",
+  "Sample Agency Snapshot": "Örnek Ajans Özeti",
   "Explore Financial Clarity for Digital Marketing Agencies":
     "Dijital Pazarlama Ajansları İçin Finansal Netliği Keşfedin",
+  "Meet Valoryx — a 12-person performance marketing agency managing 18 active accounts. This interactive demo uses realistic sample data to show how Axora Finance OS tracks revenue, margins, payroll ratio, and receivables risk.":
+    "Valoryx ile tanışın — 12 kişilik bir performance marketing ajansı ve 18 aktif müşteri hesabı yönetiyor. Bu interaktif demo, Axora Finance OS'un gelir, marj, payroll oranı ve tahsilat riskini nasıl takip ettiğini gerçekçi örnek verilerle gösterir.",
   "This interactive demo uses realistic sample data from a 12-person performance marketing agency to demonstrate how Axora Finance OS helps track revenue, margins, and receivable risk.":
     "Bu interaktif demo, 12 kişilik bir performans pazarlama ajansına ait gerçekçi örnek veriler kullanarak Axora Finance OS’un gelir, marj ve tahsilat riskini nasıl analiz ettiğini gösterir.",
   "Demo Environment": "Demo Ortamı",
   "Agency: Valoryx — Performance Marketing Agency":
     "Ajans: Valoryx — Performance Marketing Agency",
-  "Team size: 12 employees": "Ekip büyüklüğü: 12 çalışan",
-  "Clients: 18 active accounts": "Müşteriler: 18 aktif hesap",
+  "Team size: 12 employees": "Ekip: 12 kişi",
+  "Clients: 18 active accounts": "Müşteri: 18 aktif hesap",
+  "Data: Fictional sample data (no real client data)":
+    "Veri: Kurgusal örnek veri (gerçek müşteri verisi değildir)",
   "Revenue model: Retainers + performance bonuses":
     "Gelir modeli: Retainer + performans bonusları",
   "Data: Realistic sample data (not real client data)":
     "Veri: Gerçekçi örnek veri (gerçek müşteri verisi değildir)",
   "All data in this demo is fictional and used for demonstration purposes.":
     "Bu demodaki tüm veriler kurgusaldır ve yalnızca gösterim amaçlı kullanılır.",
-  "Enter Live Demo": "Canlı Demoya Gir",
-  "Back to AxoraLab": "AxoraLab'a Dön",
+  "Enter Live Demo": "Canlı Demo'ya Gir",
+  "Back to AxoraLab": "AxoraLab'e Dön",
   "Product: Axora Finance OS": "Ürün: Axora Finance OS",
   "Axora Finance OS (Agency Edition)": "Axora Finance OS (Ajans Sürümü)",
   "Axora Operations Panel (Agency Edition)": "Axora Operations Panel (Ajans Sürümü)",
