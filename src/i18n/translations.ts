@@ -378,6 +378,7 @@ const tr: Record<string, string> = {
   "Explore Live Demo": "Canlı Demo'yu Keşfet",
   "Book a 15-min Call": "15 dk Görüşme Ayarla",
   "Sample Agency Snapshot": "Örnek Ajans Özeti",
+  "No signup required": "Kayıt gerekmez",
   "Explore Financial Clarity for Digital Marketing Agencies":
     "Dijital Pazarlama Ajansları İçin Finansal Netliği Keşfedin",
   "Meet Valoryx — a 12-person performance marketing agency managing 18 active accounts. This interactive demo uses realistic sample data to show how Axora Finance OS tracks revenue, margins, payroll ratio, and receivables risk.":
@@ -670,6 +671,21 @@ const tr: Record<string, string> = {
   "Revenue and expense trend chart": "Gelir ve gider trend grafiği",
   "Active alerts": "Aktif uyarılar",
   "No critical alerts right now.": "Şu anda kritik bir uyarı yok.",
+  "Quick guide": "Hızlı rehber",
+  "Close onboarding": "Onboarding'i kapat",
+  "Don't show again": "Bir daha gösterme",
+  "Back": "Geri",
+  "Next": "İleri",
+  "Finish": "Bitir",
+  "1) Overall Health": "1) Genel Sağlık",
+  "Start with Net Margin and Payroll Ratio. Together they show profitability and cost discipline.":
+    "Önce Net Marj ve Payroll Oranı'na bakın. Bu ikisi ajansın kârlılık ve maliyet disiplinini gösterir.",
+  "2) Risk Signals": "2) Risk Sinyalleri",
+  "The alerts panel highlights concentration and overdue receivables before they become bigger issues.":
+    "Uyarılar paneli; müşteri konsantrasyonu ve gecikmiş tahsilatlar gibi kritik riskleri öne çıkarır.",
+  "3) Where to Start": "3) Nereden Başlamalı?",
+  "Go to Clients and focus on accounts marked Overdue or Low Margin for immediate action.":
+    "Clients sekmesinde 'Overdue' ve 'Low Margin' olan hesapları filtreleyerek hızlı aksiyon alanı bulun.",
   "MoM": "Ay/Ay",
   "Client profitability": "Müşteri kârlılığı",
   "See revenue quality, margin pressure, and exposure risk client by client.":
@@ -685,6 +701,7 @@ const tr: Record<string, string> = {
   "FINANCE": "FİNANS",
   "Overdue": "Gecikmiş",
   "Low Margin": "Düşük Marj",
+  "High Concentration": "Konsantrasyon Riski",
   "Concentration": "Konsantrasyon",
   "Stable": "Stabil",
   "Other flags": "Diğer işaretler",

@@ -156,9 +156,11 @@ export const financeOsLandingContent = {
     "Agency: Valoryx — Performance Marketing Agency",
     "Team size: 12 employees",
     "Clients: 18 active accounts",
+    "Revenue model: Retainers + performance bonuses",
     "Data: Fictional sample data (no real client data)"
   ],
   cta: "Enter Live Demo",
+  noSignupNote: "No signup required",
   backLink: "Back to AxoraLab"
 };
 
@@ -196,6 +198,31 @@ export const financeOverviewContent = {
     risk: "RISK",
     finance: "FINANCE"
   },
+  onboarding: {
+    stepLabel: "Quick guide",
+    dismissAria: "Close onboarding",
+    dontShowAgain: "Don't show again",
+    back: "Back",
+    next: "Next",
+    finish: "Finish",
+    steps: [
+      {
+        title: "1) Overall Health",
+        description:
+          "Start with Net Margin and Payroll Ratio. Together they show profitability and cost discipline."
+      },
+      {
+        title: "2) Risk Signals",
+        description:
+          "The alerts panel highlights concentration and overdue receivables before they become bigger issues."
+      },
+      {
+        title: "3) Where to Start",
+        description:
+          "Go to Clients and focus on accounts marked Overdue or Low Margin for immediate action."
+      }
+    ]
+  },
   noAlerts: "No critical alerts right now.",
   monthTag: "MoM"
 };
@@ -216,8 +243,7 @@ export const financeClientsContent = {
   risk: {
     overdue: "Overdue",
     lowMargin: "Low Margin",
-    concentration: "Concentration",
-    stable: "Stable",
+    concentration: "High Concentration",
     otherFlags: "Other flags"
   }
 };

@@ -56,6 +56,11 @@ export default function FinanceOsLandingPage() {
           >
             <LocalizedText text={financeOsLandingContent.cta} />
           </ButtonLink>
+          <LocalizedText
+            text={financeOsLandingContent.noSignupNote}
+            as="p"
+            className="-mt-1 text-xs text-slate-400"
+          />
           <Link
             href="/"
             className="focus-ring text-sm text-slate-400 transition-colors hover:text-slate-200"

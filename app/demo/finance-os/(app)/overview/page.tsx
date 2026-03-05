@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { buildFinanceAlerts } from "@/lib/demo/alerts";
 import {
@@ -19,6 +19,9 @@ import { DemoPageSkeleton } from "@/src/components/demo/DemoSkeleton";
 import { useFinanceFormatters } from "@/src/components/demo/useFinanceFormatters";
 import { LocalizedText, useTranslate, useTranslateTemplate } from "@/src/components/ui/LocalizedText";
 import { financeOverviewContent } from "@/src/content/siteContent";
+
+const DEMO_ONBOARDING_HIDDEN_KEY = "axora_finance_os_onboarding_hidden";
+const DEMO_ONBOARDING_COMPLETED_KEY = "axora_finance_os_onboarding_completed";
 
 function buildPoints(values: number[], width: number, height: number, padding = 6) {
   const max = Math.max(...values);
@@ -205,6 +208,115 @@ function CashFlowChart({
         </span>
       </div>
     </article>
+  );
+}
+
+function OverviewOnboarding() {
+  const reducedMotion = useReducedMotion();
+  const t = useTranslate();
+  const [isVisible, setIsVisible] = useState(false);
+  const [stepIndex, setStepIndex] = useState(0);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
+
+  const steps = financeOverviewContent.onboarding.steps;
+  const step = steps[stepIndex];
+  const isLastStep = stepIndex === steps.length - 1;
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    const isHidden = localStorage.getItem(DEMO_ONBOARDING_HIDDEN_KEY) === "true";
+    const isCompleted = localStorage.getItem(DEMO_ONBOARDING_COMPLETED_KEY) === "true";
+    if (!isHidden && !isCompleted) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  const closeOnboarding = () => {
+    if (dontShowAgain && typeof window !== "undefined") {
+      localStorage.setItem(DEMO_ONBOARDING_HIDDEN_KEY, "true");
+    }
+    setIsVisible(false);
+  };
+
+  const goNext = () => {
+    if (isLastStep) {
+      if (typeof window !== "undefined") {
+        localStorage.setItem(DEMO_ONBOARDING_COMPLETED_KEY, "true");
+        if (dontShowAgain) {
+          localStorage.setItem(DEMO_ONBOARDING_HIDDEN_KEY, "true");
+        }
+      }
+      setIsVisible(false);
+      return;
+    }
+    setStepIndex((prev) => Math.min(prev + 1, steps.length - 1));
+  };
+
+  if (!isVisible) {
+    return null;
+  }
+
+  return (
+    <motion.aside
+      initial={reducedMotion ? undefined : { opacity: 0, y: 12 }}
+      animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.24 }}
+      className="surface-strong fixed bottom-6 right-6 z-40 w-[min(92vw,360px)] rounded-2xl p-4"
+      aria-live="polite"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-cyan">
+          <LocalizedText text={financeOverviewContent.onboarding.stepLabel} />
+        </p>
+        <button
+          type="button"
+          className="focus-ring rounded-md px-2 py-1 text-xs text-slate-400 transition-colors hover:text-slate-200"
+          onClick={closeOnboarding}
+          aria-label={t(financeOverviewContent.onboarding.dismissAria)}
+        >
+          ×
+        </button>
+      </div>
+
+      <LocalizedText
+        text={step.title}
+        as="h3"
+        className="mt-2 font-display text-lg font-semibold text-slate-100"
+      />
+      <LocalizedText text={step.description} as="p" className="mt-2 text-sm leading-relaxed text-slate-300" />
+
+      <label className="mt-4 flex cursor-pointer items-center gap-2 text-xs text-slate-400">
+        <input
+          type="checkbox"
+          checked={dontShowAgain}
+          onChange={(event) => setDontShowAgain(event.target.checked)}
+          className="h-3.5 w-3.5 rounded border-slate-600 bg-slate-900 text-cyan focus:ring-cyan/30"
+        />
+        <LocalizedText text={financeOverviewContent.onboarding.dontShowAgain} />
+      </label>
+
+      <div className="mt-4 flex items-center justify-between gap-2">
+        <button
+          type="button"
+          onClick={() => setStepIndex((prev) => Math.max(prev - 1, 0))}
+          disabled={stepIndex === 0}
+          className="focus-ring rounded-md border border-slate-700 px-3 py-1.5 text-xs font-semibold text-slate-300 transition-colors enabled:hover:border-slate-500 enabled:hover:text-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <LocalizedText text={financeOverviewContent.onboarding.back} />
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          className="focus-ring rounded-md border border-cyan/70 bg-cyan px-3 py-1.5 text-xs font-semibold text-slate-950 transition-colors hover:bg-cyan/90"
+        >
+          <LocalizedText
+            text={isLastStep ? financeOverviewContent.onboarding.finish : financeOverviewContent.onboarding.next}
+          />
+        </button>
+      </div>
+    </motion.aside>
   );
 }
 
@@ -428,6 +540,7 @@ export default function FinanceOverviewPage() {
           </p>
         )}
       </section>
+      <OverviewOnboarding />
     </motion.div>
   );
 }
