@@ -356,6 +356,7 @@ const tr: Record<string, string> = {
   "Products": "Ürünler",
   "Custom Dashboards": "Özel Dashboard'lar",
   "Integration & Support": "Entegrasyon ve Destek",
+  "Data Integration & Support": "Veri Entegrasyonu ve Destek",
   "Finance and delivery dashboards tailored to agency workflows, margin visibility, and owner-level decisions.":
     "Ajans iş akışlarına, marj görünürlüğüne ve kurucu düzeyi karar süreçlerine özel finans ve teslimat dashboard'ları.",
   "Bring invoices, bank activity, expenses, and project operations into one integrated reporting layer.":
@@ -367,6 +368,8 @@ const tr: Record<string, string> = {
   "Financial Clarity for Digital Marketing Agencies.": "Dijital Pazarlama Ajansları İçin Finansal Netlik.",
   "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.":
     "Nakit akışı, kârlılık, payroll oranı ve gecikmiş tahsilatları tek panelden takip edin — Axora Finance OS ile.",
+  "AI-ready dashboards designed for financial clarity in growing digital marketing agencies.":
+    "Büyüyen dijital pazarlama ajanslarında finansal netlik için tasarlanan AI entegrasyonuna hazır dashboard'lar.",
   "for 5–20 person agencies": "5–20 kişilik ajanslar için",
   "Built for 5–20 person agencies": "5–20 kişilik ajanslar için",
   "Explore Agency Demo": "Ajans Demo'larını Gör",
@@ -653,6 +656,8 @@ const tr: Record<string, string> = {
   "Margin %": "Marj %",
   "Overdue $": "Gecikmiş $",
   "Risk": "Risk",
+  "RISK": "RİSK",
+  "FINANCE": "FİNANS",
   "Overdue": "Gecikmiş",
   "Low Margin": "Düşük Marj",
   "Concentration": "Konsantrasyon",
@@ -662,6 +667,7 @@ const tr: Record<string, string> = {
   "Aging exposure and payment behavior calculated on a fixed demo reference date.":
     "Yaşlandırma riski ve ödeme davranışı sabit demo referans tarihine göre hesaplanır.",
   "Receivables aging buckets": "Tahsilat yaşlandırma dilimleri",
+  "Total Receivables": "Toplam Tahsilatlar",
   "Invoice list": "Fatura listesi",
   "Due Date": "Vade Tarihi",
   "Amount": "Tutar",

@@ -46,7 +46,7 @@ export function FinanceDemoLayoutShell({ children }: FinanceDemoLayoutShellProps
                   href={item.href}
                   className={`focus-ring block rounded-lg border px-3 py-2 text-sm transition-colors ${
                     isActive
-                      ? "border-slate-400 bg-slate-900 text-slate-100"
+                      ? "border-slate-200/70 bg-slate-800/90 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
                       : "border-transparent text-slate-300 hover:border-slate-700 hover:bg-slate-900/50 hover:text-slate-100"
                   }`}
                 >

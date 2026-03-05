@@ -41,7 +41,7 @@ export const brand = {
   domain: "AxoraLab.ai",
   headline: "Financial Clarity for Digital Marketing Agencies.",
   subheadline:
-    "Track cash flow, profitability, payroll ratio, and overdue invoices in one place — with Axora Finance OS.",
+    "AI-ready dashboards designed for financial clarity in growing digital marketing agencies.",
   segmentBadge: "Built for 5–20 person agencies",
   heroPrimaryCta: "Explore Agency Demo",
   heroSecondaryCta: "Book a 15-min Call",
@@ -57,7 +57,7 @@ export const productNavLinks: NavItem[] = [
 
 export const serviceNavLinks: NavItem[] = [
   { label: "Custom Dashboards", href: "/services/finance-dashboards" },
-  { label: "Integration & Support", href: "/services/industry-panels" },
+  { label: "Data Integration & Support", href: "/services/industry-panels" },
   { label: "Vibe Coding Education", href: "/services/vibe-coding" }
 ];
 
@@ -183,6 +183,10 @@ export const financeOverviewContent = {
     revenueExpensesAria: "Revenue and expense trend chart"
   },
   alertsTitle: "Active alerts",
+  alertCategories: {
+    risk: "RISK",
+    finance: "FINANCE"
+  },
   noAlerts: "No critical alerts right now.",
   monthTag: "MoM"
 };
@@ -213,6 +217,7 @@ export const financeReceivablesContent = {
   heading: "Receivables control",
   subtitle: "Aging exposure and payment behavior calculated on a fixed demo reference date.",
   agingTitle: "Receivables aging buckets",
+  totalReceivablesLabel: "Total Receivables",
   tableTitle: "Invoice list",
   columns: {
     client: "Client",

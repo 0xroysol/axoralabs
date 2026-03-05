@@ -33,7 +33,7 @@ function buildPoints(values: number[], width: number, height: number, padding = 
     .join(" ");
 }
 
-function Sparkline({ values }: { values: number[] }) {
+function Sparkline({ values, highlighted = false }: { values: number[]; highlighted?: boolean }) {
   const points = buildPoints(values, 160, 40);
 
   return (
@@ -41,8 +41,9 @@ function Sparkline({ values }: { values: number[] }) {
       <polyline
         points={points}
         fill="none"
-        stroke="var(--accent)"
-        strokeWidth="2"
+        stroke={highlighted ? "color-mix(in srgb, var(--accent) 85%, white 15%)" : "var(--accent)"}
+        strokeWidth={highlighted ? "2.4" : "2"}
+        strokeOpacity={highlighted ? "1" : "0.88"}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -54,34 +55,50 @@ function KpiCard({
   label,
   value,
   delta,
-  series
+  series,
+  highlighted = false
 }: {
   label: string;
   value: string;
   delta: string;
   series: number[];
+  highlighted?: boolean;
 }) {
   const deltaValue = Number(delta.replace(/[^0-9+.\-]/g, ""));
   const isPositive = Number.isFinite(deltaValue) && deltaValue > 0;
   const isNegative = Number.isFinite(deltaValue) && deltaValue < 0;
 
   return (
-    <article className="surface rounded-xl p-4">
+    <article
+      className={`surface rounded-xl p-4 ${highlighted ? "border-slate-300/35" : ""}`}
+      style={
+        highlighted
+          ? {
+              boxShadow:
+                "0 0 0 1px color-mix(in srgb, var(--accent) 28%, transparent), 0 8px 30px color-mix(in srgb, var(--accent) 12%, transparent)"
+            }
+          : undefined
+      }
+    >
       <p className="text-xs uppercase tracking-[0.14em] text-slate-500">
         <LocalizedText text={label} />
       </p>
       <div className="mt-2 flex items-end justify-between gap-2">
         <p className="font-display text-xl font-semibold text-slate-100">{value}</p>
         <span
-          className={`text-xs font-semibold ${
-            isPositive ? "text-emerald-300" : isNegative ? "text-rose-300" : "text-slate-300"
+          className={`rounded-full px-2 py-0.5 text-xs font-semibold tabular-nums ${
+            isPositive
+              ? "bg-emerald-500/10 text-emerald-300"
+              : isNegative
+                ? "bg-rose-500/10 text-rose-300"
+                : "text-slate-300"
           }`}
         >
           {delta}
         </span>
       </div>
       <div className="mt-3">
-        <Sparkline values={series} />
+        <Sparkline values={series} highlighted={highlighted} />
       </div>
     </article>
   );
@@ -343,7 +360,14 @@ export default function FinanceOverviewPage() {
 
       <section className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {kpis.map((kpi) => (
-          <KpiCard key={kpi.label} label={kpi.label} value={kpi.value} delta={kpi.delta} series={kpi.series} />
+          <KpiCard
+            key={kpi.label}
+            label={kpi.label}
+            value={kpi.value}
+            delta={kpi.delta}
+            series={kpi.series}
+            highlighted={kpi.label === financeOverviewContent.kpi.netMargin}
+          />
         ))}
       </section>
 
@@ -378,9 +402,22 @@ export default function FinanceOverviewPage() {
                 threshold: formatCurrency(alert.meta.threshold ?? 0)
               });
 
+              const categoryLabel =
+                alert.code === "alert_overdue_high" || alert.code === "alert_contractors_over_budget"
+                  ? financeOverviewContent.alertCategories.finance
+                  : financeOverviewContent.alertCategories.risk;
+
               return (
                 <li key={alert.code} className={`rounded-lg border px-3 py-2 text-sm ${toneClass}`}>
-                  {translated}
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-200/90">
+                      <LocalizedText text={categoryLabel} />
+                    </span>
+                    <span aria-hidden="true" className="text-slate-300/80">
+                      ·
+                    </span>
+                    <span>{translated}</span>
+                  </div>
                 </li>
               );
             })}

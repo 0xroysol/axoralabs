@@ -13,19 +13,17 @@ type RiskCode = "overdue" | "lowMargin" | "concentration";
 
 const riskPriority: RiskCode[] = ["overdue", "lowMargin", "concentration"];
 
-function RiskBadge({ code }: { code: RiskCode | "stable" }) {
+function RiskBadge({ code }: { code: RiskCode }) {
   const styleMap: Record<string, string> = {
     overdue: "border-rose-500/30 bg-rose-500/10 text-rose-200",
     lowMargin: "border-amber-400/30 bg-amber-400/10 text-amber-200",
-    concentration: "border-violet-500/30 bg-violet-500/10 text-violet-200",
-    stable: "border-slate-500/30 bg-slate-500/10 text-slate-200"
+    concentration: "border-violet-500/30 bg-violet-500/10 text-violet-200"
   };
 
   const labelMap: Record<string, string> = {
     overdue: financeClientsContent.risk.overdue,
     lowMargin: financeClientsContent.risk.lowMargin,
-    concentration: financeClientsContent.risk.concentration,
-    stable: financeClientsContent.risk.stable
+    concentration: financeClientsContent.risk.concentration
   };
 
   return (
@@ -67,7 +65,7 @@ export default function FinanceClientsPage() {
           flags.push("concentration");
         }
 
-        const primaryRisk = riskPriority.find((item) => flags.includes(item)) ?? "stable";
+        const primaryRisk = riskPriority.find((item) => flags.includes(item));
         const otherFlags = flags.filter((flag) => flag !== primaryRisk);
 
         return {
@@ -148,8 +146,7 @@ export default function FinanceClientsPage() {
                   <td className="py-3 pr-4">{formatCurrency(row.overdue)}</td>
                   <td className="py-3">
                     <div className="flex items-center gap-2">
-                      <RiskBadge code={row.primaryRisk as RiskCode | "stable"} />
-
+                      {row.primaryRisk ? <RiskBadge code={row.primaryRisk} /> : null}
                       {row.otherFlags.length ? (
                         <details className="relative">
                           <summary className="cursor-pointer list-none text-xs text-slate-400 hover:text-slate-200">

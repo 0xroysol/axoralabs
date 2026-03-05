@@ -62,6 +62,9 @@ export default function FinanceReceivablesPage() {
                 <div>
                   <p className="text-xs uppercase tracking-wide text-slate-500">USD</p>
                   <p className="font-display text-lg font-semibold text-slate-100">{formatCurrency(totalAging)}</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    <LocalizedText text={financeReceivablesContent.totalReceivablesLabel} />
+                  </p>
                 </div>
               </div>
             </div>
