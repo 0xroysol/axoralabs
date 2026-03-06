@@ -15,7 +15,9 @@ export function Footer({ statement, domain }: FooterProps) {
           <p className="text-sm text-textSoft">
             <LocalizedText text={statement} />
           </p>
-          <p className="mt-3 text-sm text-textSoft">© {new Date().getFullYear()} {domain}</p>
+          <Link href="/" className="focus-ring mt-3 inline-flex rounded-sm text-sm text-textSoft hover:text-slate-100">
+            © {new Date().getFullYear()} {domain}
+          </Link>
         </div>
 
         <div className="grid gap-5 text-sm text-textSoft sm:grid-cols-3">

@@ -399,7 +399,7 @@ const tr: Record<string, string> = {
   "All data in this demo is fictional and used for demonstration purposes.":
     "Bu demodaki tüm veriler kurgusaldır ve yalnızca gösterim amaçlı kullanılır.",
   "Enter Live Demo": "Canlı Demo'ya Gir",
-  "Back to AxoraLab": "AxoraLab'e Dön",
+  "Back to AxoraLab": "AxoraLab’e Dön",
   "Product: Axora Finance OS": "Ürün: Axora Finance OS",
   "Axora Finance OS (Agency Edition)": "Axora Finance OS (Ajans Sürümü)",
   "Axora Operations Panel (Agency Edition)": "Axora Operations Panel (Ajans Sürümü)",

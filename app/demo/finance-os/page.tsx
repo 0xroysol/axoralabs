@@ -10,7 +10,7 @@ export default function FinanceOsLandingPage() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-180px)] w-full max-w-5xl items-center justify-center px-6 pb-20 pt-8 md:pt-12">
+    <section className="mx-auto flex min-h-[calc(100vh-180px)] w-full max-w-5xl items-center justify-center px-6 pb-20 pt-10 md:pt-12">
       <motion.article
         initial={reducedMotion ? undefined : { opacity: 0, y: 8 }}
         animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}

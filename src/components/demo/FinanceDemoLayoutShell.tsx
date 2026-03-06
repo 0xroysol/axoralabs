@@ -17,7 +17,7 @@ export function FinanceDemoLayoutShell({ children }: FinanceDemoLayoutShellProps
   const t = useTranslate();
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-8">
+    <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-10 md:pt-8">
       <motion.header
         initial={reducedMotion ? undefined : { opacity: 0, y: 10 }}
         animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export function FinanceDemoLayoutShell({ children }: FinanceDemoLayoutShellProps
       </motion.header>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[260px_1fr]">
-        <aside className="surface sticky top-24 h-fit rounded-2xl p-4">
+        <aside className="surface h-fit rounded-2xl p-4 lg:sticky lg:top-24">
           <p className="eyebrow">
             <LocalizedText text={financeOsShellContent.navLabel} />
           </p>

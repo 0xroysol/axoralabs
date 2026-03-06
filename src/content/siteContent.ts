@@ -57,8 +57,7 @@ export const productNavLinks: NavItem[] = [
 
 export const serviceNavLinks: NavItem[] = [
   { label: "Custom Dashboards", href: "/services/finance-dashboards" },
-  { label: "Data Integration & Support", href: "/services/industry-panels" },
-  { label: "Vibe Coding Education", href: "/services/vibe-coding" }
+  { label: "Data Integration & Support", href: "/services/industry-panels" }
 ];
 
 export const companyNavLinks: NavItem[] = [
@@ -167,7 +166,7 @@ export const financeOsLandingContent = {
 export const financeOsShellContent = {
   agencyLabel: "Valoryx — Performance Marketing Agency • 12 Employees",
   sampleDataLabel: "Sample Data",
-  backToSiteLabel: "Back to Site",
+  backToSiteLabel: "Back to AxoraLab",
   navLabel: "Finance OS Navigation",
   navItems: [
     { label: "Overview", href: financeDemoRoutes.overview },
