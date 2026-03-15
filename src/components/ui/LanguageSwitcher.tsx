@@ -2,18 +2,31 @@
 
 import { useLanguage } from "@/src/i18n/LanguageProvider";
 
-export function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  compact?: boolean;
+};
+
+export function LanguageSwitcher({ compact = false }: LanguageSwitcherProps) {
   const { locale, setLocale } = useLanguage();
 
   const buttonClasses = (target: "tr" | "en") =>
-    `focus-ring rounded-md px-2.5 py-1.5 text-xs font-semibold tracking-wide transition ${
+    `focus-ring rounded-full px-2.5 py-1.5 text-xs font-semibold tracking-wide transition ${
       locale === target
-        ? "bg-slate-100 text-slate-900"
-        : "bg-slate-900/70 text-slate-300 hover:text-slate-100"
+        ? compact
+          ? "bg-white text-slate-950"
+          : "bg-slate-950 text-white"
+        : compact
+          ? "bg-slate-900/60 text-slate-300 hover:text-white"
+          : "bg-white/80 text-slate-500 hover:text-slate-950"
     }`;
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-lg border border-slate-600 bg-slate-900/50 p-1" aria-label="Language switcher">
+    <div
+      className={`inline-flex items-center gap-1 rounded-full border p-1 ${
+        compact ? "border-slate-700 bg-slate-950/70" : "border-[#d8cfbf] bg-white/80"
+      }`}
+      aria-label="Language switcher"
+    >
       <button type="button" className={buttonClasses("tr")} onClick={() => setLocale("tr")}>
         TR
       </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { studioSeoByLocale } from "@/src/content/studioContent";
 import { DEFAULT_LOCALE, type Locale } from "@/src/i18n/translations";
 
 type LanguageContextValue = {
@@ -25,6 +26,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, locale);
     document.documentElement.lang = locale;
+
+    const seo = studioSeoByLocale[locale];
+    document.title = seo.title;
+
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    if (descriptionTag) {
+      descriptionTag.setAttribute("content", seo.description);
+    }
   }, [locale]);
 
   const value = useMemo(

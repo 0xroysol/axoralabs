@@ -1,7 +1,17 @@
-# AxoraLab.ai - Premium Next.js Kurumsal Web Sitesi
+# AxoraLab - Studio Web Sitesi
 
-Bu proje, **AxoraLab.ai** için tasarlanmış üretime hazır bir Next.js (App Router) web sitesidir.
-Hedef: yüksek güven veren, premium, modern ve yatırımcı sunumuna uygun bir dijital vitrin oluşturmak.
+Bu proje, AxoraLab için mevcut Next.js altyapısı korunarak güncellenmiş modern bir product studio web sitesidir.
+Odak artık dar bir ajans-finans mesajı değil; şirketlere özel yazılım sistemleri tasarlayan ve geliştiren daha geniş bir studio konumlandırmasıdır.
+
+## Bu Güncellemede Ne Değişti?
+
+- Homepage tek sayfalık, anchor tabanlı studio yapısına dönüştürüldü.
+- Ana mesaj; web app, mobil uygulama, operasyon paneli ve AI otomasyonlarını kapsayan daha geniş bir yazılım stüdyosu konumuna taşındı.
+- Homepage içindeki eski ajans-finans ağırlıklı bloklar, pricing bölümü ve Vibe Coding görünürlüğü kaldırıldı.
+- Navbar ve footer, anchored bilgi mimarisine göre sadeleştirildi.
+- TR/EN içerikler yeni studio mesajına göre güncellendi.
+- Demo route’ları korunarak pazarlama ana sayfasından ayrıştırıldı.
+- Homepage için daha premium, light-first bir görsel ritim kuruldu.
 
 ## Teknoloji Yığını
 
@@ -9,86 +19,31 @@ Hedef: yüksek güven veren, premium, modern ve yatırımcı sunumuna uygun bir 
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- React Three Fiber
-
-## Özellikler
-
-- Premium dark tema (`#0A0F14`) ve cam/glow tabanlı görsel dil
-- Sticky navbar ve servis dropdown menüsü
-- Tam responsive (mobile-first) yapı
-- 3D hero (subtle holographic orb)
-- Servis detay sayfaları (intro, hedef kitle, teslimatlar, KPI, fiyat, engagement, FAQ)
-- Demos sayfası (finans KPI’ları, çizgi grafik, mali kırılım)
-- Process, About ve Contact sayfaları
-- Contact formunda client-side doğrulama + mock başarı bildirimi
-- SEO metadata + OpenGraph + sitemap + robots
-- Erişilebilirlik odakları: semantik yapı, ARIA kullanımı, reduced motion desteği
+- React Three Fiber (mevcut demo altyapısında)
 
 ## Kurulum
 
-> Not: Bu ortamda `node` kurulu olmadığı için derleme/test komutları çalıştırılamadı.
-
-1. Node.js 20+ kurun.
-2. Bağımlılıkları yükleyin:
+1. Bağımlılıkları yükleyin:
 
 ```bash
 npm install
 ```
 
-3. Geliştirme sunucusunu başlatın:
+2. Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
 ```
 
-4. Üretim derlemesi:
+3. Üretim derlemesi alın:
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Klasör Yapısı
+## Notlar
 
-```text
-app/
-  about/page.tsx
-  contact/page.tsx
-  demos/page.tsx
-  process/page.tsx
-  services/
-    page.tsx
-    finance-dashboards/page.tsx
-    industry-panels/page.tsx
-    ai-assistants/page.tsx
-    vibe-coding/page.tsx
-  globals.css
-  layout.tsx
-  page.tsx
-  robots.ts
-  sitemap.ts
-
-src/
-  components/
-    layout/
-    sections/
-    three/
-    ui/
-  content/siteContent.ts
-```
-
-## Tasarım ve İçerik Notları
-
-- Tüm ana içerikler `src/content/siteContent.ts` içinde merkezileştirilmiştir.
-- Tekrarlayan UI elemanları yeniden kullanılabilir bileşenler olarak ayrılmıştır:
-  - `ServiceCard`
-  - `PricingCard`
-  - `FAQAccordion`
-  - `KPIWidget`
-
-## Sonraki Adımlar (Öneri)
-
-- Gerçek takvim bağlantısı (Calendly vb.)
-- Form gönderimini gerçek backend/API ile bağlama
-- Gerçek demo veri kaynağıyla grafiklerin canlılaştırılması
-- Lighthouse/axe denetimleriyle son kalite turu
+- Ana studio içerikleri `src/content/studioContent.ts` içinde merkezileştirildi.
+- Eski demo ve servis sayfaları korunmuştur; homepage artık bunları merkeze koymaz.
+- Dil geçişi istemci tarafında çalışır; içeriklerin tamamı çeviri sözlüğü üzerinden okunur.

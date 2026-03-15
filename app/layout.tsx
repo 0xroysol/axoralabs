@@ -4,8 +4,8 @@ import "./globals.css";
 import { Footer } from "@/src/components/layout/Footer";
 import { Navbar } from "@/src/components/layout/Navbar";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
-import { brand } from "@/src/content/siteContent";
 import { LanguageProvider } from "@/src/i18n/LanguageProvider";
+import { studioBrand, studioSeoByLocale } from "@/src/content/studioContent";
 
 const display = Sora({
   subsets: ["latin"],
@@ -20,24 +20,21 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://axoralabs.ai"),
   title: {
-    default: "AxoraLab.ai | AI-ready business systems & intelligent dashboards",
-    template: "%s | AxoraLab.ai"
+    default: studioSeoByLocale.tr.title,
+    template: "%s | AxoraLab"
   },
-  description:
-    "AxoraLab.ai helps digital marketing agencies gain financial clarity with intelligent dashboards and AI-ready business systems.",
+  description: studioSeoByLocale.tr.description,
   openGraph: {
-    title: "AxoraLab.ai",
-    description:
-      "Financial clarity systems for digital marketing agencies: finance OS, operations panels, and AI assistants.",
+    title: studioSeoByLocale.en.title,
+    description: studioSeoByLocale.en.description,
     url: "https://axoralabs.ai",
-    siteName: "AxoraLab.ai",
+    siteName: "AxoraLab",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "AxoraLab.ai",
-    description:
-      "Track cash flow, profitability, payroll ratio, and receivables in one place with Axora Finance OS."
+    title: studioSeoByLocale.en.title,
+    description: studioSeoByLocale.en.description
   }
 };
 
@@ -47,22 +44,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-bg text-white antialiased">
+    <html lang="tr" className={`${display.variable} ${body.variable}`}>
+      <body className="bg-bg text-slate-950 antialiased">
         <LanguageProvider>
           <a
             href="#main-content"
-            className="focus-ring sr-only z-[999] rounded-md border border-slate-100 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+            className="focus-ring sr-only z-[999] rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
           >
             <LocalizedText text="Skip to content" />
           </a>
-          <div className="relative min-h-screen overflow-x-clip">
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-slate-700/10 to-transparent" />
-            <Navbar brandName={brand.name} />
-            <main id="main-content" className="pt-20">
+          <div className="relative min-h-screen overflow-x-clip bg-[#f5f1e8]">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[280px] bg-[radial-gradient(circle_at_top_left,rgba(15,23,42,0.06),transparent_44%),radial-gradient(circle_at_top_right,rgba(148,163,184,0.15),transparent_36%)]" />
+            <Navbar brandName={studioBrand.name} />
+            <main id="main-content" className="pt-24 md:pt-28">
               {children}
             </main>
-            <Footer statement={brand.footerStatement} domain={brand.domain} />
+            <Footer statement={studioBrand.footerStatement} domain={studioBrand.copyrightLabel} />
           </div>
         </LanguageProvider>
       </body>
