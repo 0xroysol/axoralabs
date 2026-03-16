@@ -3,16 +3,15 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  --bg: #05060c;
-  --bg-soft: #0b0f18;
-  --surface: #111524;
-  --surface-strong: #090d17;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: rgba(255, 255, 255, 0.14);
-  --text: #f6f7fb;
-  --text-soft: #9aa4b2;
-  --accent: #94a3ff;
+  color-scheme: light;
+  --bg: #f6f1e8;
+  --bg-soft: #fbf7f0;
+  --surface: #ffffff;
+  --surface-soft: #faf6ef;
+  --line: #e4dccf;
+  --text: #0f172a;
+  --text-soft: #667085;
+  --accent: #111827;
 }
 
 html,
@@ -42,164 +41,21 @@ a {
 }
 
 ::selection {
-  background: rgba(148, 163, 255, 0.22);
-  color: #ffffff;
+  background: rgba(15, 23, 42, 0.12);
+  color: #111827;
 }
 
-.surface {
-  background: linear-gradient(180deg, rgba(17, 21, 36, 0.96), rgba(8, 10, 18, 0.98));
-  border: 1px solid var(--line);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 24px 56px rgba(0, 0, 0, 0.34);
-}
-
-.surface-strong {
-  background: linear-gradient(180deg, rgba(9, 13, 23, 0.98), rgba(5, 7, 12, 0.99));
-  border: 1px solid var(--line-strong);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 30px 70px rgba(0, 0, 0, 0.42);
-}
-
-.eyebrow {
-  color: #8fa8ff;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 600;
+.focus-ring:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
 }
 
 .eyebrow-light {
-  color: #7b7367;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.eyebrow-cinematic {
-  color: #97a8ff;
+  color: #8a7e6c;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   font-size: 0.72rem;
   font-weight: 700;
-}
-
-.panel-divider {
-  border-top: 1px solid var(--line);
-}
-
-.grid-bg {
-  background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 26px 26px;
-}
-
-.focus-ring:focus-visible {
-  outline: 2px solid #cbd5ff;
-  outline-offset: 2px;
-}
-
-.studio-card {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(220, 211, 197, 0.92);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
-  backdrop-filter: blur(10px);
-}
-
-.studio-hover-card {
-  transition:
-    transform 240ms ease,
-    box-shadow 240ms ease,
-    border-color 240ms ease;
-}
-
-.studio-hover-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 48px rgba(15, 23, 42, 0.1);
-  border-color: rgba(205, 195, 179, 1);
-}
-
-.studio-perspective {
-  perspective: 1800px;
-  transform-style: preserve-3d;
-}
-
-.studio-cinema-glow {
-  position: absolute;
-  z-index: 0;
-  border-radius: 999px;
-  filter: blur(34px);
-  opacity: 0.9;
-  pointer-events: none;
-}
-
-.studio-cinematic-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.07), transparent 28%),
-    linear-gradient(180deg, rgba(17, 21, 36, 0.92), rgba(7, 9, 16, 0.98));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 26px 70px rgba(0, 0, 0, 0.32);
-}
-
-.studio-cinematic-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 84%);
-}
-
-.studio-chip-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.52rem 0.9rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #d6d9e2;
-  backdrop-filter: blur(14px);
-}
-
-.studio-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  border: 1px solid rgba(216, 207, 191, 0.95);
-  background: rgba(255, 255, 255, 0.78);
-  padding: 0.45rem 0.8rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.studio-pill-dark {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
-}
-
-
-.studio-orb {
-  position: absolute;
-  z-index: 0;
-  border-radius: 999px;
-  background: radial-gradient(circle at center, rgba(122, 139, 255, 0.22), rgba(122, 139, 255, 0.04) 48%, transparent 72%);
-  filter: blur(26px);
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
