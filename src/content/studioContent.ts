@@ -11,14 +11,14 @@ export const studioBrand = {
 
 export const studioSeoByLocale = {
   tr: {
-    title: "AxoraLab | Web App, Mobil App ve Operasyon Sistemleri",
+    title: "AxoraLab | Özel Yazılım Sistemleri ve Operasyon Katmanları",
     description:
-      "AxoraLab; web app, mobil uygulama, operasyon paneli ve AI otomasyonları geliştiren modern bir product studio’dur."
+      "AxoraLab; özel web tabanlı yazılım sistemleri, operasyon panelleri, workflow katmanları ve AI-ready otomasyon akışları tasarlayan modern bir product studio’dur."
   },
   en: {
-    title: "AxoraLab | Custom Web Apps, Mobile Apps & Operational Systems",
+    title: "AxoraLab | Custom Software Systems & Operational Layers",
     description:
-      "AxoraLab is a modern product studio building custom web apps, mobile apps, operations dashboards, and AI automations."
+      "AxoraLab is a modern product studio designing custom web systems, operational dashboards, workflow layers, and AI-ready automations."
   }
 } as const;
 
@@ -32,78 +32,81 @@ export const studioNavLinks: StudioNavItem[] = [
 
 export const studioHomeContent = {
   hero: {
-    eyebrow: "Web Apps • Mobile Apps • Operations Panels • AI Automations",
-    title: "We build software systems tailored to your business.",
+    eyebrow: "Custom Web Apps • Operations Dashboards • Workflow Systems • AI Automations",
+    title: "We design software systems that make complex businesses feel clear.",
     description:
-      "From web apps and mobile apps to operations dashboards and AI automations, we turn complex workflows into modern, scalable systems.",
+      "Operational dashboards, custom web systems, workflow layers, and AI-ready automations shaped into one modern product experience.",
     primaryCta: "Let's Talk",
-    secondaryCta: "See what we build",
+    secondaryCta: "See the System Types",
     visualCards: {
-      dashboard: "Operations Overview",
-      pipeline: "Workflow Pipeline",
-      mobile: "Field App",
-      automation: "Automation Layer",
-      metrics: ["Tasks synced", "Approvals routed", "Reports ready"]
+      commandDeck: "Command Deck",
+      workflowLayer: "Workflow Layer",
+      orchestration: "AI Orchestration",
+      metrics: ["Signals aligned", "Workflows routed", "Decisions visible"]
     }
   },
   whatWeBuild: {
     title: "What We Build",
+    description:
+      "Not generic websites. Not templates. We design the actual operational layer your team works inside.",
     items: [
       {
         title: "Custom Web Apps",
         description:
-          "Custom web-based software systems tailored to your business or workflow."
+          "Purpose-built internal or client-facing systems shaped around your real process logic."
       },
       {
         title: "Operations Dashboards",
         description:
-          "Operational visibility, reporting, process tracking, and decision dashboards."
+          "Decision surfaces for reporting, visibility, team rhythm, and operational control."
       },
       {
-        title: "Mobile Apps",
+        title: "Workflow Systems",
         description:
-          "Mobile experiences for field teams or end users."
+          "Lead flow, approval logic, internal actions, and process movement designed as software."
       },
       {
         title: "AI Automations",
         description:
-          "AI-ready automation layers that streamline, summarize, and orchestrate repetitive workflows."
+          "AI-ready automations that summarize, route, trigger, and reduce repetitive operational load."
       }
     ]
   },
   systems: {
     title: "What Kind of Systems We Design",
+    description:
+      "The goal is not to sell a service list. It is to help you imagine your own business workflow as software.",
     items: [
-      "Lead & client management systems",
-      "Portfolio / inventory / record systems",
-      "Follow-up and workflow pipelines",
+      "Lead and client management systems",
+      "Internal workflow and approval pipelines",
+      "Reporting and decision layers",
+      "Operations control panels",
+      "Customer-facing portals",
+      "Data integration backbones",
       "Internal team tools",
-      "Reporting and decision dashboards",
-      "Data integration layers",
-      "Customer portals",
-      "Operations control panels"
+      "Custom CRM structures"
     ]
   },
   selectedSystems: {
     title: "Selected System Types",
     items: [
       {
-        title: "Real Estate Operations Platform",
+        title: "Lead & Workflow Control Layer",
         description:
-          "Lead, portfolio, and day-to-day follow-up workflows unified in one operational system.",
-        points: ["Lead inbox", "Portfolio tracking", "Task rhythm"]
+          "A single operational system that tracks incoming leads, ownership, next actions, and team visibility without friction.",
+        points: ["Lead flow", "Ownership", "Next actions"]
       },
       {
-        title: "Agency Finance & Operations Dashboard",
+        title: "Decision & Reporting Layer",
         description:
-          "A decision layer that brings profitability, receivables, reporting, and team rhythm together.",
-        points: ["Receivables", "Margins", "Operational cadence"]
+          "A cleaner view for performance, financial visibility, pipeline status, and operational signal quality.",
+        points: ["Reporting", "Visibility", "Signal quality"]
       },
       {
-        title: "Custom CRM & Workflow System",
+        title: "Internal Operations System",
         description:
-          "A custom software layer that simplifies lead flow, client process, and team actions.",
-        points: ["Pipeline logic", "Client statuses", "Team coordination"]
+          "A custom internal layer that brings process states, actions, and recurring operational work into one product surface.",
+        points: ["Process states", "Actions", "Recurring ops"]
       }
     ]
   },
@@ -112,51 +115,51 @@ export const studioHomeContent = {
     steps: [
       {
         name: "Discover",
-        detail: "We understand your workflow, user roles, and data sources."
+        detail: "We map workflow reality, user roles, process friction, and the operational context behind the request."
       },
       {
         name: "Architect",
-        detail: "We define the screens, data model, and experience architecture."
+        detail: "We define the system shape: information hierarchy, screen rhythm, data model, and interaction logic."
       },
       {
         name: "Build",
-        detail: "We build the web app, mobile layer, or automation system."
+        detail: "We turn the concept into a working software layer with production-minded frontend and clean system logic."
       },
       {
         name: "Launch",
-        detail: "We complete testing, onboarding, and deployment."
+        detail: "We complete testing, onboarding, rollout, and the practical details that make a system usable."
       },
       {
         name: "Improve",
-        detail: "We improve the system iteratively based on real usage."
+        detail: "We refine the product around real usage patterns and expand it where the workflow proves the need."
       }
     ]
   },
   why: {
     title: "Why AxoraLab?",
     points: [
-      "Tailored systems, not off-the-shelf templates",
-      "Interfaces that look modern and work in practice",
-      "Fast prototyping with production-quality thinking",
-      "Scalable architecture",
-      "Web, mobile, and automation considered together"
+      "Tailored systems instead of generic agency output",
+      "Interfaces that feel premium and stay usable under real operational load",
+      "Clear architecture before visual noise",
+      "Fast product thinking with production discipline",
+      "A studio lens that can connect workflow, reporting, and automation together"
     ]
   },
   about: {
     title: "About the Studio",
     description:
-      "AxoraLab is a product studio that designs and builds tailored software systems around real operational needs. Its focus is modern interfaces, clear workflow design, and systems that deliver value in real use."
+      "AxoraLab is a small product studio focused on turning operational complexity into software that feels clear, modern, and durable in real use."
   },
   finalCta: {
-    title: "Let's build your next operational system.",
+    title: "Let's shape the next system your team actually wants to use.",
     description:
-      "From internal dashboards and workflow tools to mobile apps and automation layers, we can design the right system for your business.",
+      "From workflow control and reporting layers to custom internal products and AI-ready operational systems, we can design the right structure for your business.",
     cta: "Book a 15-min Call"
   },
   contact: {
-    title: "Let's scope the right system for your team.",
+    title: "Tell us what kind of system you need.",
     description:
-      "Tell us about your workflow, users, and what kind of system you need. We'll shape the right product direction with you.",
+      "If the workflow already exists in spreadsheets, messages, follow-up steps, or disconnected tools, it can likely be turned into a better software system.",
     label: "What do you want to build?",
     emailLabel: "hello@axoralabs.ai",
     submit: "Send brief"

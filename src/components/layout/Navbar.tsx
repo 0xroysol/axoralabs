@@ -16,34 +16,19 @@ export function Navbar({ brandName }: NavbarProps) {
   const pathname = usePathname();
   const t = useTranslate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const isDemoRoute = pathname.startsWith("/demo/");
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  const headerClasses = isDemoRoute
-    ? "border-slate-800/70 bg-[#0a1018]/88 text-slate-100"
-    : "border-[#d9d1c3]/80 bg-[#f6f1e8]/88 text-slate-950";
-
-  const linkClasses = isDemoRoute
-    ? "text-slate-300 hover:text-white"
-    : "text-slate-600 hover:text-slate-950";
-
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl ${headerClasses}`}>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#05060c]/72 text-white backdrop-blur-2xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-6">
         <Link
           href="/"
-          className="focus-ring inline-flex items-center gap-3 rounded-full px-1 py-1 font-display text-base font-semibold tracking-[-0.02em] md:text-lg"
+          className="focus-ring inline-flex items-center gap-3 rounded-full px-1 py-1 font-display text-base font-semibold tracking-[-0.03em] md:text-lg"
         >
-          <span
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-2xl border text-sm font-semibold ${
-              isDemoRoute
-                ? "border-slate-700 bg-slate-900 text-slate-100"
-                : "border-[#d8cfbf] bg-white text-slate-900 shadow-[0_8px_24px_rgba(15,23,42,0.08)]"
-            }`}
-          >
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
             A
           </span>
           <span>{brandName}</span>
@@ -54,25 +39,21 @@ export function Navbar({ brandName }: NavbarProps) {
             <Link
               key={item.href}
               href={item.href}
-              className={`focus-ring rounded-full px-4 py-2 text-sm font-medium transition-colors ${linkClasses}`}
+              className="focus-ring rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
             >
               {t(item.label)}
             </Link>
           ))}
           <div className="ml-3">
-            <LanguageSwitcher compact={isDemoRoute} />
+            <LanguageSwitcher compact />
           </div>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-          <LanguageSwitcher compact={isDemoRoute} />
+          <LanguageSwitcher compact />
           <button
             type="button"
-            className={`focus-ring rounded-full border px-3 py-2 text-sm ${
-              isDemoRoute
-                ? "border-slate-700 bg-slate-900/70 text-slate-100"
-                : "border-[#d7cfbf] bg-white text-slate-900"
-            }`}
+            className="focus-ring rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-white"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -89,16 +70,14 @@ export function Navbar({ brandName }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className={`border-t px-5 pb-5 md:hidden ${
-              isDemoRoute ? "border-slate-800 bg-[#0a1018]/96" : "border-[#e2dbce] bg-[#f6f1e8]/96"
-            }`}
+            className="border-t border-white/8 bg-[#05060c]/96 px-5 pb-5 md:hidden"
           >
             <div className="mt-4 flex flex-col gap-1">
               {studioNavLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`focus-ring rounded-2xl px-4 py-3 text-sm font-medium ${linkClasses}`}
+                  className="focus-ring rounded-2xl px-4 py-3 text-sm font-medium text-slate-300 hover:text-white"
                   onClick={() => setMenuOpen(false)}
                 >
                   {t(item.label)}

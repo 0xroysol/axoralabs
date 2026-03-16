@@ -770,7 +770,6 @@ const tr: Record<string, string> = {
   "Reporting and decision dashboards": "Raporlama ve karar dashboard’ları",
   "Data integration layers": "Veri entegrasyon katmanları",
   "Customer portals": "Müşteri portalları",
-  "Operations control panels": "Operasyon kontrol panelleri",
   "Selected System Types": "Seçili Sistem Kurguları",
   "Real Estate Operations Platform": "Emlak Ofisi Operasyon Sistemi",
   "Lead, portfolio, and day-to-day follow-up workflows unified in one operational system.": "Müşteri adaylarını, portföyleri ve günlük takip akışlarını tek panelde birleştiren operasyon yapıları.",
@@ -810,6 +809,97 @@ const tr: Record<string, string> = {
   "Send brief": "Kısa Özeti Gönder",
   "Please describe what you want to build.": "Lütfen geliştirmek istediğiniz sistemi kısaca yazın.",
   "Custom software systems for modern teams.": "Modern ekipler için özel yazılım sistemleri.",
+  "Custom Web Apps • Operations Dashboards • Workflow Systems • AI Automations":
+    "Özel Web Uygulamaları • Operasyon Dashboard'ları • Workflow Sistemleri • AI Otomasyonları",
+  "We design software systems that make complex businesses feel clear.":
+    "Karmaşık iş yapılarının net görünmesini sağlayan yazılım sistemleri tasarlıyoruz.",
+  "Operational dashboards, custom web systems, workflow layers, and AI-ready automations shaped into one modern product experience.":
+    "Operasyon panellerini, özel web sistemlerini, workflow katmanlarını ve AI-ready otomasyonları tek bir modern ürün deneyiminde birleştiriyoruz.",
+  "See the System Types": "Sistem Türlerini Gör",
+  "Command Deck": "Komuta Katmanı",
+  "Workflow Layer": "Workflow Katmanı",
+  "AI Orchestration": "AI Orkestrasyonu",
+  "Signals aligned": "Sinyaller hizalandı",
+  "Workflows routed": "Akışlar yönlendirildi",
+  "Decisions visible": "Kararlar görünür",
+  "Purpose-built internal or client-facing systems shaped around your real process logic.":
+    "Gerçek süreç mantığınıza göre şekillenen iç kullanım veya müşteri tarafı yazılım sistemleri.",
+  "Decision surfaces for reporting, visibility, team rhythm, and operational control.":
+    "Raporlama, görünürlük, ekip ritmi ve operasyon kontrolü için karar yüzeyleri.",
+  "Workflow Systems": "Workflow Sistemleri",
+  "Lead flow, approval logic, internal actions, and process movement designed as software.":
+    "Lead akışı, onay mantığı, iç aksiyonlar ve süreç hareketlerini yazılım olarak tasarlayan sistemler.",
+  "AI-ready automations that summarize, route, trigger, and reduce repetitive operational load.":
+    "Özetleyen, yönlendiren, tetikleyen ve tekrar eden operasyon yükünü azaltan AI-ready otomasyonlar.",
+  "The goal is not to sell a service list. It is to help you imagine your own business workflow as software.":
+    "Amaç bir hizmet listesi göstermek değil; kendi iş akışınızı yazılım olarak hayal etmenizi sağlamak.",
+  "Lead and client management systems": "Lead ve müşteri yönetim sistemleri",
+  "Internal workflow and approval pipelines": "İç workflow ve onay akışları",
+  "Reporting and decision layers": "Raporlama ve karar katmanları",
+  "Operations control panels": "Operasyon kontrol panelleri",
+  "Customer-facing portals": "Müşteri tarafı portallar",
+  "Data integration backbones": "Veri entegrasyon omurgaları",
+  "Custom CRM structures": "Özel CRM yapıları",
+  "Lead & Workflow Control Layer": "Lead ve Workflow Kontrol Katmanı",
+  "A single operational system that tracks incoming leads, ownership, next actions, and team visibility without friction.":
+    "Gelen lead'leri, sahiplik durumunu, sonraki aksiyonları ve ekip görünürlüğünü tek yerde toplayan operasyon katmanı.",
+  "Lead flow": "Lead akışı",
+  "Ownership": "Sorumluluk",
+  "Next actions": "Sonraki aksiyonlar",
+  "Decision & Reporting Layer": "Karar ve Raporlama Katmanı",
+  "A cleaner view for performance, financial visibility, pipeline status, and operational signal quality.":
+    "Performans, finansal görünürlük, pipeline durumu ve operasyon sinyal kalitesi için daha temiz bir görünüm.",
+  "Reporting": "Raporlama",
+  "Visibility": "Görünürlük",
+  "Signal quality": "Sinyal kalitesi",
+  "Internal Operations System": "İç Operasyon Sistemi",
+  "A custom internal layer that brings process states, actions, and recurring operational work into one product surface.":
+    "Süreç durumlarını, aksiyonları ve tekrar eden operasyon işlerini tek ürün yüzeyinde toplayan özel iç sistem katmanı.",
+  "Process states": "Süreç durumları",
+  "Actions": "Aksiyonlar",
+  "Recurring ops": "Tekrarlayan operasyonlar",
+  "We map workflow reality, user roles, process friction, and the operational context behind the request.":
+    "İş akışının gerçek yapısını, kullanıcı rollerini, süreç sürtünmesini ve talebin operasyonel bağlamını birlikte çözümleriz.",
+  "We define the system shape: information hierarchy, screen rhythm, data model, and interaction logic.":
+    "Sistemin formunu; bilgi hiyerarşisi, ekran ritmi, veri modeli ve etkileşim mantığıyla kurarız.",
+  "We turn the concept into a working software layer with production-minded frontend and clean system logic.":
+    "Fikri, üretim kalitesini gözeten frontend ve temiz sistem mantığıyla çalışan bir yazılım katmanına dönüştürürüz.",
+  "We complete testing, onboarding, rollout, and the practical details that make a system usable.":
+    "Test, onboarding, devreye alma ve sistemi gerçekten kullanılabilir yapan pratik detayları tamamlarız.",
+  "We refine the product around real usage patterns and expand it where the workflow proves the need.":
+    "Ürünü gerçek kullanım örüntülerine göre iyileştirir, ihtiyaç doğrulandıkça genişletiriz.",
+  "Tailored systems instead of generic agency output":
+    "Genel ajans çıktıları yerine işinize özel sistemler",
+  "Interfaces that feel premium and stay usable under real operational load":
+    "Premium his veren ama gerçek operasyon yükü altında da kullanılabilen arayüzler",
+  "Clear architecture before visual noise": "Görsel gürültüden önce net mimari",
+  "Fast product thinking with production discipline": "Üretim disipliniyle hızlı ürün düşüncesi",
+  "A studio lens that can connect workflow, reporting, and automation together":
+    "Workflow, raporlama ve otomasyonu birlikte düşünebilen stüdyo bakışı",
+  "AxoraLab is a small product studio focused on turning operational complexity into software that feels clear, modern, and durable in real use.":
+    "AxoraLab, operasyonel karmaşıklığı gerçek kullanımda net, modern ve kalıcı hissettiren yazılım sistemlerine dönüştüren küçük bir product studio’dur.",
+  "Let's shape the next system your team actually wants to use.":
+    "Ekibinizin gerçekten kullanmak isteyeceği bir sonraki sistemi birlikte şekillendirelim.",
+  "From workflow control and reporting layers to custom internal products and AI-ready operational systems, we can design the right structure for your business.":
+    "Workflow kontrolünden raporlama katmanlarına, özel iç ürünlerden AI-ready operasyon sistemlerine kadar işinize uygun doğru yapıyı tasarlayabiliriz.",
+  "Tell us what kind of system you need.": "Nasıl bir sisteme ihtiyaç duyduğunuzu anlatın.",
+  "If the workflow already exists in spreadsheets, messages, follow-up steps, or disconnected tools, it can likely be turned into a better software system.":
+    "İş akışı bugün tablolar, mesajlar, takip adımları veya kopuk araçlar içinde yaşıyorsa, büyük ihtimalle daha iyi bir yazılım sistemine dönüştürülebilir.",
+  "Operational visibility layer": "Operasyon görünürlük katmanı",
+  "Signals": "Sinyaller",
+  "Queues": "Kuyruklar",
+  "Velocity": "Hız",
+  "Signal map": "Sinyal haritası",
+  "Summary trigger": "Özet tetikleyici",
+  "Context route": "Bağlam yönlendirme",
+  "Approval chain": "Onay zinciri",
+  "Intake": "Giriş",
+  "Routing": "Yönlendirme",
+  "Approval": "Onay",
+  "Output": "Çıktı",
+  "Open": "Açık",
+  "Active": "Aktif",
+  "Ready": "Hazır"
 };
 
 type TemplateVariables = Record<string, string | number>;

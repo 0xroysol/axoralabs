@@ -6,7 +6,7 @@ import { PageIntro } from "@/src/components/sections/PageIntro";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk to AxoraLab about custom web apps, mobile apps, operations dashboards, and AI-ready internal systems."
+    "Talk to AxoraLab about custom web systems, operational dashboards, workflow layers, and AI-ready internal systems."
 };
 
 export default function ContactPage() {

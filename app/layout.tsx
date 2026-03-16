@@ -45,16 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-bg text-slate-950 antialiased">
+      <body className="bg-bg text-white antialiased">
         <LanguageProvider>
           <a
             href="#main-content"
-            className="focus-ring sr-only z-[999] rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+            className="focus-ring sr-only z-[999] rounded-md border border-white/10 bg-white px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
           >
             <LocalizedText text="Skip to content" />
           </a>
-          <div className="relative min-h-screen overflow-x-clip bg-[#f5f1e8]">
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-[280px] bg-[radial-gradient(circle_at_top_left,rgba(15,23,42,0.06),transparent_44%),radial-gradient(circle_at_top_right,rgba(148,163,184,0.15),transparent_36%)]" />
+          <div className="relative min-h-screen overflow-x-clip bg-[#05060c]">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[300px] bg-[radial-gradient(circle_at_top_left,rgba(123,136,255,0.15),transparent_38%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_30%)]" />
             <Navbar brandName={studioBrand.name} />
             <main id="main-content" className="pt-24 md:pt-28">
               {children}
