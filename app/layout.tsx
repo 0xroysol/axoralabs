@@ -45,15 +45,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-[#f6f1e8] text-slate-950 antialiased">
+      <body className="bg-[#05060A] text-[#F5F7FB] antialiased">
         <LanguageProvider>
           <a
             href="#main-content"
-            className="focus-ring sr-only z-[999] rounded-md border border-[#e4dccf] bg-white px-3 py-2 text-sm font-semibold text-slate-950 focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
+            className="focus-ring sr-only z-[999] rounded-md border border-white/10 bg-[#0B1020] px-3 py-2 text-sm font-semibold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
           >
             <LocalizedText text="Skip to content" />
           </a>
-          <div className="relative min-h-screen overflow-x-clip bg-[#f6f1e8]">
+          <div className="relative min-h-screen overflow-x-clip bg-[#05060A]">
             <Navbar brandName={studioBrand.name} />
             <main id="main-content" className="pt-24 md:pt-28">
               {children}

@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
-  --bg: #f6f1e8;
-  --bg-soft: #fbf7f0;
-  --surface: #ffffff;
-  --surface-soft: #faf6ef;
-  --line: #e4dccf;
-  --text: #0f172a;
-  --text-soft: #667085;
-  --accent: #111827;
+  color-scheme: dark;
+  --bg: #05060a;
+  --surface: #0b1020;
+  --surface-soft: #111827;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f5f7fb;
+  --text-soft: #a3aab8;
+  --accent: #4da3ff;
+  --accent-violet: #7765ff;
 }
 
 html,
@@ -26,7 +26,10 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top, rgba(77, 163, 255, 0.08), transparent 22%),
+    radial-gradient(circle at 85% 12%, rgba(119, 101, 255, 0.08), transparent 20%),
+    var(--bg);
   color: var(--text);
   font-family: var(--font-body), sans-serif;
 }
@@ -41,17 +44,17 @@ a {
 }
 
 ::selection {
-  background: rgba(15, 23, 42, 0.12);
-  color: #111827;
+  background: rgba(77, 163, 255, 0.22);
+  color: #f5f7fb;
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid #111827;
+  outline: 2px solid #4da3ff;
   outline-offset: 2px;
 }
 
 .eyebrow-light {
-  color: #8a7e6c;
+  color: #7f8aa6;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   font-size: 0.72rem;

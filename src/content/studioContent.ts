@@ -35,40 +35,35 @@ export const studioHomeContent = {
     eyebrow: "Custom Web Apps • Operations Panels • Workflow Systems • AI Automations",
     title: "We build software systems tailored to your business.",
     description:
-      "We design custom software systems that make operations, workflows, and internal processes simpler, cleaner, and more scalable.",
+      "We design custom software systems that make operations, workflows, and internal processes simpler, faster, and more scalable.",
     primaryCta: "Let's Talk",
     secondaryCta: "What We Build"
   },
-  preview: {
+  showcase: {
     title: "Modern interfaces. Real operational workflows.",
     subtitle:
-      "Not just attractive interfaces, but systems teams actually use.",
-    items: ["Dashboard", "Workflow", "Data Sync"]
+      "More than attractive screens: software surfaces teams actually rely on."
   },
   whatWeBuild: {
     title: "What We Build",
-    subtitle: "Not generic sites - systems built around real workflows.",
+    subtitle: "Not generic templates - systems built around the way your team works.",
     items: [
       {
         title: "Custom Web Apps",
-        description: "Custom web systems designed around your workflow.",
-        icon: "web"
+        description: "Custom web systems designed around your workflow."
       },
       {
         title: "Operations Panels",
-        description: "Modern panels for visibility, reporting, and decision-making.",
-        icon: "panel"
+        description: "Modern panels for visibility, reporting, and decision-making."
       },
       {
         title: "Workflow Systems",
-        description: "Workflow layers that simplify approvals, tasks, and repeated processes.",
-        icon: "workflow"
+        description: "Workflow layers that simplify approvals, tasks, and repeated processes."
       },
       {
         title: "AI Automations",
         description:
-          "Automation layers that reduce repetition and improve operational flow.",
-        icon: "ai"
+          "Automation layers that reduce repetition and improve operational flow."
       }
     ]
   },
@@ -76,12 +71,12 @@ export const studioHomeContent = {
     title: "What Kind of Systems We Design",
     subtitle: "Clean system structures that turn workflows into software.",
     items: [
-      { label: "CRM & lead management", icon: "crm" },
-      { label: "Internal operations tools", icon: "team" },
-      { label: "Reporting & decision dashboards", icon: "reporting" },
-      { label: "Workflow & approval pipelines", icon: "workflow" },
-      { label: "Customer portals", icon: "portal" },
-      { label: "Data integration layers", icon: "data" }
+      "CRM & lead management",
+      "Internal operations tools",
+      "Workflow / approval systems",
+      "Reporting & decision layers",
+      "Customer portals",
+      "Data integration systems"
     ]
   },
   process: {
@@ -89,11 +84,11 @@ export const studioHomeContent = {
     steps: [
       {
         name: "Discover",
-        detail: "We understand the workflow, user roles, and friction points."
+        detail: "We understand the workflow and operational needs."
       },
       {
         name: "Architect",
-        detail: "We define the screens, data model, and user experience."
+        detail: "We shape the screens, data structure, and user flow."
       },
       {
         name: "Build",
@@ -101,11 +96,11 @@ export const studioHomeContent = {
       },
       {
         name: "Launch",
-        detail: "We complete testing, onboarding, and deployment."
+        detail: "We complete testing and rollout."
       },
       {
         name: "Improve",
-        detail: "We refine the system iteratively based on real usage."
+        detail: "We improve the system based on real use."
       }
     ]
   },
