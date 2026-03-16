@@ -23,9 +23,9 @@ export function Navbar({ brandName }: NavbarProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-5">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-[#e4dccf] bg-white/88 px-4 py-3 text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] backdrop-blur-xl md:px-5">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-[#e6ddd0] bg-white/88 px-4 py-3 text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] backdrop-blur-xl md:px-5">
         <Link href="/" className="focus-ring inline-flex items-center gap-3 rounded-full px-1 py-1 font-display text-base font-semibold tracking-[-0.03em] md:text-lg">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-[#e6ded2] bg-[#faf6ef] text-sm font-semibold text-slate-950">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-[#e8dfd2] bg-[#faf6ef] text-sm font-semibold text-slate-950">
             A
           </span>
           <span>{brandName}</span>
@@ -50,7 +50,7 @@ export function Navbar({ brandName }: NavbarProps) {
           <LanguageSwitcher compact />
           <button
             type="button"
-            className="focus-ring rounded-full border border-[#e4dccf] bg-[#faf6ef] px-3 py-2 text-sm text-slate-950"
+            className="focus-ring rounded-full border border-[#e6ddd0] bg-[#faf6ef] px-3 py-2 text-sm text-slate-950"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -67,7 +67,7 @@ export function Navbar({ brandName }: NavbarProps) {
             initial={{ opacity: 0, y: -8, height: 0 }}
             animate={{ opacity: 1, y: 0, height: "auto" }}
             exit={{ opacity: 0, y: -8, height: 0 }}
-            className="mx-auto mt-3 w-full max-w-7xl overflow-hidden rounded-[2rem] border border-[#e4dccf] bg-white px-5 pb-5 pt-4 text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] md:hidden"
+            className="mx-auto mt-3 w-full max-w-7xl overflow-hidden rounded-[2rem] border border-[#e6ddd0] bg-white px-5 pb-5 pt-4 text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] md:hidden"
           >
             <div className="flex flex-col gap-1">
               {studioNavLinks.map((item) => (

@@ -1,18 +1,18 @@
 # AxoraLab - Studio Web Sitesi
 
-Bu proje, AxoraLab için mevcut Next.js altyapısı korunarak tamamen yeniden kurgulanmış modern bir studio ana sayfası içerir.
-Odak artık dar bir ajans-finans mesajı değil; şirketlere özel yazılım sistemleri tasarlayan ve geliştiren daha geniş bir product studio konumlandırmasıdır.
+Bu proje, AxoraLab için mevcut Next.js altyapısı korunarak yeniden kurgulanmış modern bir studio web sitesi içerir.
+Odak artık dar bir sektör veya paket dili değil; şirketlerin operasyon ihtiyaçlarına göre özel yazılım sistemleri tasarlayan ve geliştiren modern bir product studio konumlandırmasıdır.
 
 ## Bu Güncellemede Ne Değişti?
 
-- Ana sayfa mevcut yapı yamalanmadan, sıfırdan yeniden tasarlandı.
-- Homepage artık light-first, tek sayfa ve anchored bir studio deneyimi sunuyor.
-- Hero bölümü; net copy, güçlü tipografi ve ürün benzeri mockup kompozisyonuyla yeniden kuruldu.
-- “What We Build”, “Systems”, “Selected System Types”, “Process”, “Why”, “About”, “Final CTA” ve “Contact” bölümleri tamamen yeniden yazıldı.
-- Eski dar agency-finance dili, pricing yapısı ve Vibe Coding görünürlüğü homepage akışından çıkarıldı.
-- Navbar ve footer yeni anchored bilgi mimarisiyle sadeleştirildi.
-- TR/EN içerikler i18n yapısı korunarak yeni konumlandırmaya göre güncellendi.
-- Demo route’ları korunurken, marketing ana sayfası artık onlardan bağımsız bir studio vitrini olarak çalışıyor.
+- Ana sayfa mevcut parçalar yamalanmadan tamamen yeniden kuruldu.
+- Homepage artık daha disiplinli, light-first ve tek sayfa studio landing yapısına sahip.
+- Hero bölümü; tek güçlü dark sahne, daha kısa copy ve inandırıcı ürün mockup kompozisyonuyla yeniden tasarlandı.
+- Studio Preview, What We Build, Systems, Process, About ve Final CTA bölümleri sıfırdan yeniden yazıldı.
+- Homepage üzerinden pricing, Vibe Coding, finance-only dil, agency-only dil ve sektör bazlı dar anlatılar kaldırıldı.
+- Navbar ve footer anchored studio bilgi mimarisine göre sadeleştirildi.
+- TR/EN içerikler i18n yapısı korunarak yeni studio yönüne göre güncellendi.
+- Demo route’ları içeride korunurken, ana sayfa artık onlardan bağımsız bir marketing vitrini olarak çalışır.
 
 ## Teknoloji Yığını
 
@@ -45,6 +45,6 @@ npm run start
 
 ## Notlar
 
-- Ana studio içerikleri `src/content/studioContent.ts` içinde merkezileştirildi.
-- Demo ve servis sayfaları korunmuştur; fakat homepage artık bağımsız bir studio mesajı taşır.
-- Dil geçişi istemci tarafında çalışır; içeriklerin tamamı çeviri sözlüğü üzerinden okunur.
+- Studio içerikleri `src/content/studioContent.ts` içinde merkezileştirildi.
+- Demo ve diğer alt sayfalar korunmuştur; ancak homepage artık ayrı bir studio mesajı taşır.
+- Dil geçişi istemci tarafında çalışır; homepage metinleri çeviri sözlüğü üzerinden okunur.

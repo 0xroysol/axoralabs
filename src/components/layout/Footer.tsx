@@ -9,7 +9,7 @@ type FooterProps = {
 
 export function Footer({ statement, domain }: FooterProps) {
   return (
-    <footer className="border-t border-[#e4dccf] bg-[#f6f1e8] text-slate-950">
+    <footer className="border-t border-[#e5dccd] bg-[#f6f1e8] text-slate-950">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-sm text-slate-500">
