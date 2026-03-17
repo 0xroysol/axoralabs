@@ -62,11 +62,10 @@ export default function HomePage() {
       <motion.section id="showcase" {...reveal} className="border-b border-white/8 bg-[#070A12]">
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-30">
           <div className="max-w-3xl">
-            <SectionLabel text={studioHomeContent.showcase.title} />
             <LocalizedText
               text={studioHomeContent.showcase.title}
               as="h2"
-              className="mt-4 font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4.35rem]"
+              className="font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4.35rem]"
             />
             <LocalizedText
               text={studioHomeContent.showcase.subtitle}
@@ -84,8 +83,7 @@ export default function HomePage() {
       <motion.section id="what-we-build" {...reveal} className="border-b border-white/8 bg-[#05060A]">
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
           <div className="max-w-3xl">
-            <SectionLabel text={studioHomeContent.whatWeBuild.title} />
-            <LocalizedText text={studioHomeContent.whatWeBuild.title} as="h2" className="mt-4 font-display text-[2.7rem] font-semibold tracking-[-0.08em] text-white md:text-[4.1rem]" />
+            <LocalizedText text={studioHomeContent.whatWeBuild.title} as="h2" className="font-display text-[2.7rem] font-semibold tracking-[-0.08em] text-white md:text-[4.1rem]" />
             <LocalizedText text={studioHomeContent.whatWeBuild.subtitle} as="p" className="mt-5 max-w-2xl text-lg leading-8 text-slate-400" />
           </div>
 
@@ -110,8 +108,7 @@ export default function HomePage() {
       <motion.section id="process" {...reveal} className="border-b border-white/8 bg-[#070A12]">
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-28">
           <div className="max-w-3xl">
-            <SectionLabel text={studioHomeContent.process.title} />
-            <LocalizedText text={studioHomeContent.process.title} as="h2" className="mt-4 font-display text-[2.7rem] font-semibold tracking-[-0.08em] text-white md:text-[4.1rem]" />
+            <LocalizedText text={studioHomeContent.process.title} as="h2" className="font-display text-[2.7rem] font-semibold tracking-[-0.08em] text-white md:text-[4.1rem]" />
           </div>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-5 lg:gap-5">
@@ -139,8 +136,7 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:py-30">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
             <div className="max-w-lg">
-              <SectionLabel text={studioHomeContent.about.title} />
-              <LocalizedText text={studioHomeContent.about.title} as="h2" className="mt-4 max-w-[10ch] font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4.1rem]" />
+              <LocalizedText text={studioHomeContent.about.title} as="h2" className="max-w-[10ch] font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4.1rem]" />
               <LocalizedText text={studioHomeContent.about.description} as="p" className="mt-5 text-base leading-8 text-slate-400" />
             </div>
 
@@ -148,8 +144,7 @@ export default function HomePage() {
               <div className="absolute right-[-4rem] top-[-3rem] h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.12),transparent_68%)] blur-3xl" />
               <div className="absolute bottom-[-4rem] left-[-3rem] h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(77,163,255,0.1),transparent_68%)] blur-3xl" />
               <div className="relative">
-                <SectionLabel text={studioHomeContent.finalCta.title} />
-                <LocalizedText text={studioHomeContent.finalCta.title} as="h2" className="mt-4 max-w-[12ch] font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4rem]" />
+                <LocalizedText text={studioHomeContent.finalCta.title} as="h2" className="max-w-[12ch] font-display text-[2.7rem] font-semibold leading-[0.92] tracking-[-0.08em] text-white md:text-[4rem]" />
                 <LocalizedText text={studioHomeContent.finalCta.description} as="p" className="mt-5 max-w-2xl text-base leading-8 text-slate-300" />
                 <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-400">
                   <a href={`mailto:${studioHomeContent.finalCta.email}`} className="focus-ring inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 transition hover:text-white">
