@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
-import { studioNavLinks } from "@/src/content/studioContent";
+import { studioFooterLinks } from "@/src/content/studioContent";
 
 type FooterProps = {
   statement: string;
@@ -22,7 +22,7 @@ export function Footer({ statement, domain }: FooterProps) {
 
         <nav aria-label="Footer navigation">
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-400">
-            {studioNavLinks.map((item) => (
+            {studioFooterLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="focus-ring rounded-sm transition hover:text-white">
                   <LocalizedText text={item.label} />

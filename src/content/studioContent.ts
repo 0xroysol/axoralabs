@@ -24,7 +24,14 @@ export const studioSeoByLocale = {
 
 export const studioNavLinks: StudioNavItem[] = [
   { label: "What We Build", href: "/#what-we-build" },
-  { label: "Systems", href: "/#systems" },
+  { label: "Systems", href: "/#showcase" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" }
+];
+
+export const studioFooterLinks: StudioNavItem[] = [
+  { label: "What We Build", href: "/#what-we-build" },
   { label: "Process", href: "/#process" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" }
@@ -32,21 +39,39 @@ export const studioNavLinks: StudioNavItem[] = [
 
 export const studioHomeContent = {
   hero: {
-    eyebrow: "Custom Web Apps • Operations Panels • Workflow Systems • AI Automations",
+    eyebrow:
+      "Custom Web Apps • Operations Panels • Workflow Systems • AI Automations",
     title: "We build software systems tailored to your business.",
     description:
-      "We design custom software systems that make operations, workflows, and internal processes simpler, faster, and more scalable.",
+      "We design custom software systems that make internal processes, workflows, and operations simpler, faster, and more scalable.",
     primaryCta: "Let's Talk",
     secondaryCta: "What We Build"
   },
   showcase: {
-    title: "Modern interfaces. Real operational workflows.",
+    title: "Interfaces designed for real operations.",
     subtitle:
-      "More than attractive screens: software surfaces teams actually rely on."
+      "More than attractive screens: software surfaces teams actually use.",
+    modules: [
+      {
+        title: "Workflow Control",
+        subtitle:
+          "Queue, routing, approval state, and task ownership in one controlled layer."
+      },
+      {
+        title: "Operations Console",
+        subtitle:
+          "Records, filters, detail context, and recent actions in a single operational surface."
+      },
+      {
+        title: "Data Sync Layer",
+        subtitle:
+          "Source, mapping, validation, and destination state handled in one sync flow."
+      }
+    ]
   },
   whatWeBuild: {
     title: "What We Build",
-    subtitle: "Not generic templates - systems built around the way your team works.",
+    subtitle: "Not generic templates - systems built around real workflows.",
     items: [
       {
         title: "Custom Web Apps",
@@ -54,29 +79,19 @@ export const studioHomeContent = {
       },
       {
         title: "Operations Panels",
-        description: "Modern panels for visibility, reporting, and decision-making."
+        description:
+          "Modern panels for visibility, reporting, and decision-making."
       },
       {
         title: "Workflow Systems",
-        description: "Workflow layers that simplify approvals, tasks, and repeated processes."
+        description:
+          "Workflow layers that simplify approvals, tasks, and repeated processes."
       },
       {
         title: "AI Automations",
         description:
           "Automation layers that reduce repetition and improve operational flow."
       }
-    ]
-  },
-  systems: {
-    title: "What Kind of Systems We Design",
-    subtitle: "Clean system structures that turn workflows into software.",
-    items: [
-      "CRM & lead management",
-      "Internal operations tools",
-      "Workflow / approval systems",
-      "Reporting & decision layers",
-      "Customer portals",
-      "Data integration systems"
     ]
   },
   process: {
@@ -88,7 +103,7 @@ export const studioHomeContent = {
       },
       {
         name: "Architect",
-        detail: "We shape the screens, data structure, and user flow."
+        detail: "We shape the screens, data structure, and user experience."
       },
       {
         name: "Build",
@@ -112,7 +127,7 @@ export const studioHomeContent = {
   finalCta: {
     title: "Let's build your next system together.",
     description:
-      "Let's design the right internal tool, workflow system, dashboard, or automation layer for your business.",
+      "Let's design the right internal tool, workflow system, operations panel, or automation layer for your business.",
     cta: "Book a 15-min Call",
     email: "hello@axoralabs.ai"
   }
