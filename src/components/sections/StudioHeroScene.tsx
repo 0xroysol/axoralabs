@@ -103,10 +103,10 @@ function HologramCube() {
             }
       }
       transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-      className="pointer-events-none absolute -right-10 -top-10 hidden origin-center [perspective:2200px] xl:block"
+      className="pointer-events-none absolute right-0 top-[-84px] z-30 hidden origin-center [perspective:2200px] xl:block"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="relative h-[280px] w-[280px] [transform:rotateX(58deg)_rotateY(-6deg)_rotateZ(-33deg)]" style={{ transformStyle: "preserve-3d" }}>
+      <div className="relative h-[300px] w-[300px] [transform:rotateX(58deg)_rotateY(-6deg)_rotateZ(-33deg)]" style={{ transformStyle: "preserve-3d" }}>
         <div className="absolute inset-[20%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_68%)] blur-2xl" />
         <div className="absolute left-8 top-10 h-44 w-44 rounded-[2rem] bg-black/60 blur-2xl" style={{ transform: "translateZ(-80px) translateX(50px) translateY(58px)" }} />
         <div className="absolute left-[78px] top-[218px] h-10 w-40 rounded-full bg-black/70 blur-xl" />
@@ -138,7 +138,7 @@ export function StudioHeroScene() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="relative mx-auto w-full max-w-[820px] lg:max-w-[900px]">
+    <div className="relative mx-auto w-full max-w-[860px] lg:max-w-[980px] xl:min-h-[760px]">
       <div className="absolute left-1/2 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(77,163,255,0.2),transparent_62%)] blur-3xl" />
       <div className="absolute right-8 top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.16),transparent_66%)] blur-3xl" />
       <div className="absolute left-12 bottom-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_70%)] blur-3xl" />
@@ -147,9 +147,9 @@ export function StudioHeroScene() {
       <motion.div
         animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
         transition={slowFloat}
-        className="relative [perspective:2400px]"
+        className="relative z-10 pt-10 xl:mr-20 xl:pt-40 [perspective:2400px]"
       >
-        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(7,9,18,0.99))] p-4 shadow-[0_50px_180px_rgba(0,0,0,0.55)] md:p-5 lg:[transform:rotateX(9deg)_rotateY(-14deg)]">
+        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(7,9,18,0.99))] p-4 shadow-[0_50px_180px_rgba(0,0,0,0.55)] md:p-5 lg:[transform:rotateX(9deg)_rotateY(-14deg)] xl:max-w-[760px]">
           <div className="absolute inset-0 rounded-[2.8rem] bg-[radial-gradient(circle_at_15%_15%,rgba(77,163,255,0.08),transparent_22%),radial-gradient(circle_at_80%_18%,rgba(119,101,255,0.1),transparent_24%)]" />
 
           <div className="relative rounded-[2.3rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,10,21,0.96),rgba(5,6,10,0.99))] p-4 md:p-5">
