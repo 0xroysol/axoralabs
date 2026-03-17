@@ -76,80 +76,21 @@ function ShowcaseFrame({ title, subtitle, children, className = "" }: { title: s
   );
 }
 
-function HologramCube() {
-  const reducedMotion = useReducedMotion();
-
-  const tiles = [
-    "bg-[linear-gradient(180deg,#181b22_0%,#0a0d13_100%)]",
-    "bg-[linear-gradient(180deg,#1e2128_0%,#0b0d12_100%)]",
-    "bg-[linear-gradient(180deg,#161920_0%,#06080d_100%)]",
-    "bg-[linear-gradient(180deg,#12151c_0%,#06080d_100%)]",
-    "bg-[linear-gradient(180deg,#0d1017_0%,#030507_100%)]",
-    "bg-[linear-gradient(180deg,#171a21_0%,#07090d_100%)]",
-    "bg-[linear-gradient(180deg,#11141b_0%,#05070b_100%)] bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.08),transparent_40%),linear-gradient(180deg,#11141b_0%,#05070b_100%)]",
-    "bg-[linear-gradient(180deg,#0c0f15_0%,#020305_100%)]",
-    "bg-[linear-gradient(180deg,#171a20_0%,#06080c_100%)] bg-[radial-gradient(circle_at_75%_22%,rgba(255,255,255,0.12),transparent_28%),linear-gradient(180deg,#171a20_0%,#06080c_100%)]"
-  ];
-
-  return (
-    <motion.div
-      animate={
-        reducedMotion
-          ? undefined
-          : {
-              y: [0, -10, 0],
-              rotateZ: [-10, -8, -10],
-              rotateX: [57, 60, 57]
-            }
-      }
-      transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-      className="pointer-events-none absolute right-0 top-[-84px] z-30 hidden origin-center [perspective:2200px] xl:block"
-      style={{ transformStyle: "preserve-3d" }}
-    >
-      <div className="relative h-[300px] w-[300px] [transform:rotateX(58deg)_rotateY(-6deg)_rotateZ(-33deg)]" style={{ transformStyle: "preserve-3d" }}>
-        <div className="absolute inset-[20%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_68%)] blur-2xl" />
-        <div className="absolute left-8 top-10 h-44 w-44 rounded-[2rem] bg-black/60 blur-2xl" style={{ transform: "translateZ(-80px) translateX(50px) translateY(58px)" }} />
-        <div className="absolute left-[78px] top-[218px] h-10 w-40 rounded-full bg-black/70 blur-xl" />
-
-        <div className="grid grid-cols-3 gap-3" style={{ transformStyle: "preserve-3d" }}>
-          {tiles.map((tile, index) => (
-            <div
-              key={index}
-              className={`relative h-[82px] w-[82px] rounded-[1.05rem] border border-white/8 shadow-[0_18px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.08)] ${tile}`}
-              style={{
-                transform: `translateZ(${index % 3 === 1 ? 8 : index === 8 ? 12 : 0}px)`,
-                transformStyle: "preserve-3d"
-              }}
-            >
-              <div className="absolute inset-[1px] rounded-[0.95rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_42%)]" />
-              <div className="absolute inset-x-2 bottom-2 h-[2px] rounded-full bg-[linear-gradient(90deg,rgba(255,255,255,0.0),rgba(255,255,255,0.35),rgba(255,255,255,0.0))]" />
-              {(index === 6 || index === 8) && (
-                <div className="absolute inset-0 rounded-[0.95rem] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.04),transparent_56%),radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:auto,8px_8px] opacity-60" />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 export function StudioHeroScene() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="relative mx-auto w-full max-w-[860px] lg:max-w-[980px] xl:min-h-[760px]">
+    <div className="relative mx-auto w-full max-w-[820px] lg:max-w-[900px]">
       <div className="absolute left-1/2 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(77,163,255,0.2),transparent_62%)] blur-3xl" />
       <div className="absolute right-8 top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.16),transparent_66%)] blur-3xl" />
       <div className="absolute left-12 bottom-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_70%)] blur-3xl" />
-      <HologramCube />
 
       <motion.div
         animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
         transition={slowFloat}
-        className="relative z-10 pt-10 xl:mr-20 xl:pt-40 [perspective:2400px]"
+        className="relative [perspective:2400px]"
       >
-        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(7,9,18,0.99))] p-4 shadow-[0_50px_180px_rgba(0,0,0,0.55)] md:p-5 lg:[transform:rotateX(9deg)_rotateY(-14deg)] xl:max-w-[760px]">
+        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(7,9,18,0.99))] p-4 shadow-[0_50px_180px_rgba(0,0,0,0.55)] md:p-5 lg:[transform:rotateX(9deg)_rotateY(-14deg)]">
           <div className="absolute inset-0 rounded-[2.8rem] bg-[radial-gradient(circle_at_15%_15%,rgba(77,163,255,0.08),transparent_22%),radial-gradient(circle_at_80%_18%,rgba(119,101,255,0.1),transparent_24%)]" />
 
           <div className="relative rounded-[2.3rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,10,21,0.96),rgba(5,6,10,0.99))] p-4 md:p-5">
@@ -275,6 +216,7 @@ export function StudioHeroScene() {
 }
 
 export function StudioShowcaseModules() {
+
   return (
     <div className="grid gap-6 xl:grid-cols-3">
       <motion.article
