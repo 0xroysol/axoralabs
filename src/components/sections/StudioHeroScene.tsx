@@ -4,44 +4,39 @@ import { motion, useReducedMotion } from "framer-motion";
 import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { studioHomeContent } from "@/src/content/studioContent";
 
-type QueueItemProps = {
+type QueueRowProps = {
   title: string;
   detail: string;
   state: string;
 };
 
-type FlowCardProps = {
-  title: string;
-  detail: string;
-};
-
-type DetailFieldProps = {
+type FieldProps = {
   label: string;
   value: string;
 };
 
-type EventItemProps = {
+type EventProps = {
   label: string;
   detail: string;
 };
 
-const surfaceMotion = {
-  duration: 10,
+const floatMotion = {
+  duration: 11,
   repeat: Infinity,
   ease: "easeInOut" as const
 };
 
-function TinyLabel({ text }: { text: string }) {
+function MetaLabel({ text }: { text: string }) {
   return (
-    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+    <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-500">
       <LocalizedText text={text} />
     </p>
   );
 }
 
-function QueueItem({ title, detail, state }: QueueItemProps) {
+function QueueRow({ title, detail, state }: QueueRowProps) {
   return (
-    <div className="rounded-[1rem] border border-white/8 bg-[#0d1326]/92 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+    <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm font-medium text-slate-100">
@@ -51,7 +46,7 @@ function QueueItem({ title, detail, state }: QueueItemProps) {
             <LocalizedText text={detail} />
           </p>
         </div>
-        <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-slate-300">
+        <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] text-slate-300">
           <LocalizedText text={state} />
         </span>
       </div>
@@ -59,23 +54,10 @@ function QueueItem({ title, detail, state }: QueueItemProps) {
   );
 }
 
-function FlowCard({ title, detail }: FlowCardProps) {
+function Field({ label, value }: FieldProps) {
   return (
-    <div className="rounded-[1rem] border border-white/8 bg-[#0d1326]/88 px-4 py-3.5">
-      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
-        <LocalizedText text={title} />
-      </p>
-      <p className="mt-2 text-sm leading-6 text-slate-300">
-        <LocalizedText text={detail} />
-      </p>
-    </div>
-  );
-}
-
-function DetailField({ label, value }: DetailFieldProps) {
-  return (
-    <div className="rounded-[1rem] border border-white/8 bg-white/[0.03] px-3.5 py-3">
-      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
+    <div className="rounded-2xl border border-white/8 bg-black/20 px-3.5 py-3.5">
+      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
         <LocalizedText text={label} />
       </p>
       <p className="mt-2 text-sm text-slate-100">
@@ -85,10 +67,10 @@ function DetailField({ label, value }: DetailFieldProps) {
   );
 }
 
-function EventItem({ label, detail }: EventItemProps) {
+function Event({ label, detail }: EventProps) {
   return (
-    <div className="rounded-[1rem] border border-white/8 bg-[#0d1326]/88 px-3.5 py-3">
-      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
+    <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-3.5 py-3">
+      <p className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
         <LocalizedText text={label} />
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -102,102 +84,154 @@ function HeroDesktopScene() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="relative hidden md:block">
-      <div className="absolute left-10 top-8 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(77,163,255,0.18),transparent_65%)] blur-3xl" />
-      <div className="absolute right-8 top-10 h-60 w-60 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.16),transparent_66%)] blur-3xl" />
-      <div className="absolute inset-x-16 bottom-0 h-32 bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_70%)] blur-3xl" />
+    <div className="relative hidden lg:block">
+      <div className="absolute -left-16 top-8 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(77,163,255,0.14),transparent_68%)] blur-3xl" />
+      <div className="absolute right-0 top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.14),transparent_68%)] blur-3xl" />
+      <div className="absolute inset-x-24 bottom-0 h-36 bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_72%)] blur-3xl" />
 
       <motion.div
-        animate={reducedMotion ? undefined : { y: [0, -10, 0] }}
-        transition={surfaceMotion}
-        className="relative [perspective:2200px]"
+        animate={reducedMotion ? undefined : { y: [0, -8, 0] }}
+        transition={floatMotion}
+        className="relative [perspective:2400px]"
       >
-        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(6,8,15,1))] p-4 shadow-[0_55px_180px_rgba(0,0,0,0.52)] lg:[transform:rotateX(8deg)_rotateY(-12deg)]">
-          <div className="absolute inset-0 rounded-[2.8rem] bg-[radial-gradient(circle_at_14%_20%,rgba(77,163,255,0.08),transparent_24%),radial-gradient(circle_at_80%_18%,rgba(119,101,255,0.1),transparent_24%)]" />
+        <div className="relative rounded-[2.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(10,14,24,0.98),rgba(5,6,10,1))] p-4 shadow-[0_60px_200px_rgba(0,0,0,0.54)] [transform:rotateX(8deg)_rotateY(-11deg)]">
+          <div className="absolute inset-0 rounded-[2.8rem] bg-[radial-gradient(circle_at_14%_18%,rgba(77,163,255,0.08),transparent_24%),radial-gradient(circle_at_82%_14%,rgba(119,101,255,0.08),transparent_22%)]" />
 
-          <div className="relative rounded-[2.2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,10,21,0.98),rgba(5,6,10,1))] p-5">
-            <div className="flex items-center justify-between gap-4 border-b border-white/8 pb-4">
+          <div className="relative overflow-hidden rounded-[2.2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(8,10,18,0.98),rgba(4,5,9,1))] p-6">
+            <div className="flex items-center justify-between border-b border-white/8 pb-4">
               <div className="flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/28" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/14" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/24" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/12" />
               </div>
               <div className="flex items-center gap-2">
-                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-400">
                   <LocalizedText text="Operational Command Surface" />
                 </span>
-                <span className="rounded-full border border-[#4da3ff]/20 bg-[#4da3ff]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#d7e9ff]">
-                  <LocalizedText text="Routing active" />
+                <span className="rounded-full border border-[#4da3ff]/20 bg-[#4da3ff]/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[#d7e9ff]">
+                  <LocalizedText text="Operational routing live" />
                 </span>
               </div>
             </div>
 
-            <div className="mt-5 grid gap-4 lg:grid-cols-[0.95fr_1.05fr_0.8fr]">
+            <div className="mt-5 grid gap-4 xl:grid-cols-[0.34fr_0.42fr_0.24fr]">
               <div className="rounded-[1.8rem] border border-white/8 bg-white/[0.025] p-4">
                 <div className="flex items-center justify-between gap-3">
-                  <TinyLabel text="Incoming Records" />
+                  <MetaLabel text="Incoming queue" />
                   <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] text-slate-400">
-                    <LocalizedText text="Assigned to team" />
+                    <LocalizedText text="Assigned routing" />
                   </span>
                 </div>
                 <div className="mt-4 grid gap-3">
-                  <QueueItem title="New partner request" detail="Submitted from intake form" state="Waiting review" />
-                  <QueueItem title="Contract update request" detail="Needs legal approval route" state="Needs owner" />
-                  <QueueItem title="Sync conflict" detail="Validation rule needs confirmation" state="Review required" />
+                  <QueueRow title="New intake request" detail="Created from inbound request form" state="Waiting review" />
+                  <QueueRow title="Contract revision" detail="Needs approval chain before release" state="Needs owner" />
+                  <QueueRow title="Sync validation issue" detail="Destination rule needs confirmation" state="Review required" />
                 </div>
               </div>
 
-              <div className="rounded-[1.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(17,24,39,0.92),rgba(10,14,28,0.98))] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
+              <div className="rounded-[1.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(17,24,39,0.94),rgba(10,13,22,0.98))] p-4 shadow-[0_28px_80px_rgba(0,0,0,0.34)]">
                 <div className="flex items-center justify-between gap-3">
-                  <TinyLabel text="Workflow Routing" />
+                  <MetaLabel text="Workflow state" />
                   <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] text-slate-400">
-                    <LocalizedText text="Approval path" />
+                    <LocalizedText text="Approval path active" />
                   </span>
                 </div>
+
                 <div className="mt-4 grid gap-3">
-                  <FlowCard title="Intake" detail="Record normalized and assigned to the right operational owner." />
-                  <FlowCard title="Review" detail="Approval state and required actions stay visible before handoff." />
-                  <FlowCard title="Deploy" detail="Confirmed records move into execution with sync logging preserved." />
+                  <div className="rounded-[1.3rem] border border-white/8 bg-[#0D1326] p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <MetaLabel text="Current routing" />
+                      <span className="rounded-full border border-[#7765ff]/20 bg-[#7765ff]/10 px-2.5 py-1 text-[10px] text-[#e2dcff]">
+                        <LocalizedText text="Review lane" />
+                      </span>
+                    </div>
+                    <div className="mt-4 grid gap-3 md:grid-cols-3">
+                      <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-3.5 py-3.5">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
+                          <LocalizedText text="Intake" />
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">
+                          <LocalizedText text="Record normalized and ready for routing." />
+                        </p>
+                      </div>
+                      <div className="rounded-2xl border border-white/8 bg-[#131A2D] px-3.5 py-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.28)]">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
+                          <LocalizedText text="Review" />
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-slate-100">
+                          <LocalizedText text="Approval and owner visibility stay active here." />
+                        </p>
+                      </div>
+                      <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-3.5 py-3.5">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
+                          <LocalizedText text="Execution" />
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">
+                          <LocalizedText text="Confirmed records move into operational delivery." />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.025] p-4">
+                    <MetaLabel text="Recent activity" />
+                    <div className="mt-4 grid gap-2.5">
+                      <div className="flex items-start justify-between gap-4 rounded-2xl border border-white/8 bg-black/20 px-4 py-3">
+                        <div>
+                          <p className="text-sm text-slate-100"><LocalizedText text="Owner reassigned after review" /></p>
+                          <p className="mt-1 text-xs text-slate-500"><LocalizedText text="Operational log updated with new handoff state." /></p>
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500">14:22</span>
+                      </div>
+                      <div className="flex items-start justify-between gap-4 rounded-2xl border border-white/8 bg-black/20 px-4 py-3">
+                        <div>
+                          <p className="text-sm text-slate-100"><LocalizedText text="Validation passed for destination write" /></p>
+                          <p className="mt-1 text-xs text-slate-500"><LocalizedText text="Record prepared for final sync and release." /></p>
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500">14:27</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <motion.div
-                animate={reducedMotion ? undefined : { y: [0, 6, 0] }}
-                transition={{ ...surfaceMotion, duration: 12, delay: 0.4 }}
-                className="rounded-[1.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(14,18,34,0.96),rgba(9,12,22,0.99))] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.36)]"
+                animate={reducedMotion ? undefined : { y: [0, 7, 0] }}
+                transition={{ ...floatMotion, duration: 12.5, delay: 0.35 }}
+                className="rounded-[1.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(12,16,30,0.98),rgba(7,9,18,1))] p-4 shadow-[0_36px_100px_rgba(0,0,0,0.4)]"
               >
-                <TinyLabel text="Inspector" />
-                <div className="mt-3 rounded-[1rem] border border-white/8 bg-white/[0.03] p-3">
+                <MetaLabel text="Detail drawer" />
+                <div className="mt-3 rounded-[1rem] border border-white/8 bg-white/[0.03] p-3.5">
                   <p className="text-sm font-medium text-slate-100">
-                    <LocalizedText text="Record details" />
+                    <LocalizedText text="Record context" />
                   </p>
                   <p className="mt-1 text-xs text-slate-500">
-                    <LocalizedText text="Operational handoff" />
+                    <LocalizedText text="Operational release handoff" />
                   </p>
                 </div>
                 <div className="mt-3 grid gap-3">
-                  <DetailField label="Owner" value="Operations lead" />
-                  <DetailField label="Deadline" value="Review before release window" />
-                  <DetailField label="Notes" value="Approval path locked after final review" />
+                  <Field label="Owner" value="Operations lead" />
+                  <Field label="Deadline" value="Review before release window" />
+                  <Field label="Next action" value="Lock approval path after final review" />
                 </div>
               </motion.div>
             </div>
 
             <motion.div
               animate={reducedMotion ? undefined : { y: [0, 4, 0] }}
-              transition={{ ...surfaceMotion, duration: 11.5, delay: 0.2 }}
-              className="mt-4 rounded-[1.8rem] border border-white/8 bg-white/[0.025] p-4"
+              transition={{ ...floatMotion, duration: 12, delay: 0.15 }}
+              className="mt-4 rounded-[1.8rem] border border-white/8 bg-[linear-gradient(180deg,rgba(8,11,20,0.92),rgba(6,8,15,1))] p-4"
             >
               <div className="flex items-center justify-between gap-3">
-                <TinyLabel text="Sync Activity" />
+                <MetaLabel text="Sync layer" />
                 <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] text-slate-400">
-                  <LocalizedText text="Event state clean" />
+                  <LocalizedText text="Validation clean" />
                 </span>
               </div>
               <div className="mt-4 grid gap-3 md:grid-cols-3">
-                <EventItem label="Source" detail="Incoming payload normalized and ready for routing." />
-                <EventItem label="Validation" detail="Status rules checked before destination write." />
-                <EventItem label="Destination" detail="Operations layer updated and activity log appended." />
+                <Event label="Source" detail="Incoming payload normalized before handoff." />
+                <Event label="Mapping" detail="Owner, stage, and routing rules confirmed." />
+                <Event label="Destination" detail="Operations surface updated with fresh event state." />
               </div>
             </motion.div>
           </div>
@@ -211,56 +245,51 @@ function HeroMobileScene() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="relative md:hidden">
-      <div className="absolute inset-x-8 top-6 h-32 bg-[radial-gradient(circle,rgba(77,163,255,0.18),transparent_66%)] blur-3xl" />
-      <div className="absolute right-2 top-14 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.14),transparent_68%)] blur-3xl" />
+    <div className="relative lg:hidden">
+      <div className="absolute inset-x-10 top-6 h-32 bg-[radial-gradient(circle,rgba(77,163,255,0.16),transparent_68%)] blur-3xl" />
+      <div className="absolute right-4 top-14 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(119,101,255,0.14),transparent_68%)] blur-3xl" />
 
       <motion.div
-        animate={reducedMotion ? undefined : { y: [0, -6, 0] }}
-        transition={{ ...surfaceMotion, duration: 9 }}
+        animate={reducedMotion ? undefined : { y: [0, -5, 0] }}
+        transition={{ ...floatMotion, duration: 9 }}
         className="relative"
       >
-        <div className="relative rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.96),rgba(6,8,15,1))] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.42)]">
-          <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_18%_18%,rgba(77,163,255,0.08),transparent_26%),radial-gradient(circle_at_86%_24%,rgba(119,101,255,0.08),transparent_26%)]" />
-          <div className="relative rounded-[1.5rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,10,21,0.98),rgba(5,6,10,1))] p-3.5">
+        <div className="rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(10,14,24,0.98),rgba(5,6,10,1))] p-3 shadow-[0_34px_110px_rgba(0,0,0,0.44)]">
+          <div className="rounded-[1.5rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,10,18,0.98),rgba(4,5,9,1))] p-4">
             <div className="flex items-center justify-between gap-3 border-b border-white/8 pb-3">
-              <TinyLabel text="Operational Command Surface" />
-              <span className="rounded-full border border-[#4da3ff]/20 bg-[#4da3ff]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#d7e9ff]">
-                <LocalizedText text="Routing active" />
+              <MetaLabel text="Operational Command Surface" />
+              <span className="rounded-full border border-[#4da3ff]/20 bg-[#4da3ff]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-[#d7e9ff]">
+                <LocalizedText text="Operational routing live" />
               </span>
             </div>
 
-            <div className="mt-4 grid gap-3">
-              <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.025] p-3.5">
-                <TinyLabel text="Incoming Records" />
+            <div className="mt-4 space-y-3">
+              <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.025] p-3.5">
+                <div className="flex items-center justify-between gap-3">
+                  <MetaLabel text="Incoming queue" />
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] text-slate-400">
+                    <LocalizedText text="Assigned routing" />
+                  </span>
+                </div>
                 <div className="mt-3 grid gap-2.5">
-                  <QueueItem title="New partner request" detail="Submitted from intake form" state="Waiting review" />
-                  <QueueItem title="Contract update request" detail="Needs legal approval route" state="Needs owner" />
+                  <QueueRow title="New intake request" detail="Created from inbound request form" state="Waiting review" />
+                  <QueueRow title="Sync validation issue" detail="Destination rule needs confirmation" state="Review required" />
                 </div>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[1.2rem] border border-white/8 bg-[#111827] p-3.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
-                  <TinyLabel text="Workflow Routing" />
-                  <div className="mt-3 grid gap-2.5">
-                    <FlowCard title="Intake" detail="Normalized" />
-                    <FlowCard title="Review" detail="Approval state visible" />
-                  </div>
-                </div>
-                <div className="rounded-[1.2rem] border border-white/8 bg-[#0e1222] p-3.5 shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
-                  <TinyLabel text="Inspector" />
-                  <div className="mt-3 grid gap-2.5">
-                    <DetailField label="Owner" value="Operations lead" />
-                    <DetailField label="Deadline" value="Review before release" />
-                  </div>
+              <div className="rounded-[1.25rem] border border-white/8 bg-[#111827] p-3.5 shadow-[0_20px_60px_rgba(0,0,0,0.26)]">
+                <MetaLabel text="Workflow state" />
+                <div className="mt-3 grid gap-2.5">
+                  <Field label="Current lane" value="Review lane" />
+                  <Field label="Next action" value="Assign owner and release final route" />
                 </div>
               </div>
 
-              <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.025] p-3.5">
-                <TinyLabel text="Sync Activity" />
+              <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.025] p-3.5">
+                <MetaLabel text="Sync layer" />
                 <div className="mt-3 grid gap-2.5">
-                  <EventItem label="Source" detail="Payload ready for routing." />
-                  <EventItem label="Destination" detail="Operations layer updated." />
+                  <Event label="Source" detail="Incoming payload normalized before handoff." />
+                  <Event label="Destination" detail="Operations surface updated with fresh event state." />
                 </div>
               </div>
             </div>
@@ -271,31 +300,40 @@ function HeroMobileScene() {
   );
 }
 
-function ShowcaseSurface({
+function ShowcasePanel({
+  kicker,
   title,
-  subtitle,
+  description,
   children,
-  className = ""
+  reverse = false
 }: {
+  kicker: string;
   title: string;
-  subtitle: string;
+  description: string;
   children: React.ReactNode;
-  className?: string;
+  reverse?: boolean;
 }) {
   return (
     <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative overflow-hidden rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.94),rgba(7,9,18,0.99))] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.34)] ${className}`}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className={`grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center ${reverse ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""}`}
     >
-      <div className="absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.16),transparent)]" />
-      <h3 className="font-display text-[1.55rem] font-semibold tracking-[-0.05em] text-white">
-        <LocalizedText text={title} />
-      </h3>
-      <p className="mt-2 max-w-[30ch] text-sm leading-7 text-slate-400">
-        <LocalizedText text={subtitle} />
-      </p>
-      <div className="mt-5">{children}</div>
+      <div className="max-w-md">
+        <MetaLabel text={kicker} />
+        <h3 className="mt-3 font-display text-[2rem] font-semibold tracking-[-0.06em] text-white md:text-[2.6rem]">
+          <LocalizedText text={title} />
+        </h3>
+        <p className="mt-4 text-base leading-8 text-slate-400">
+          <LocalizedText text={description} />
+        </p>
+      </div>
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(11,16,32,0.94),rgba(7,9,18,0.99))] p-5 shadow-[0_34px_110px_rgba(0,0,0,0.34)]">
+        <div className="absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.16),transparent)]" />
+        {children}
+      </div>
     </motion.article>
   );
 }
@@ -313,47 +351,69 @@ export function StudioShowcaseModules() {
   const modules = studioHomeContent.showcase.modules;
 
   return (
-    <div className="grid gap-6 xl:grid-cols-3">
-      <ShowcaseSurface title={modules[0].title} subtitle={modules[0].subtitle} className="xl:[transform:rotateY(-6deg)] xl:[perspective:1800px]">
-        <div className="rounded-[1.35rem] border border-white/8 bg-white/[0.03] p-3.5">
-          <div className="grid gap-3">
-            <QueueItem title="New intake request" detail="Waiting owner assignment" state="Queued" />
-            <QueueItem title="Approval update" detail="Routed to reviewer lane" state="Review" />
-            <QueueItem title="Operational handoff" detail="Ready for execution queue" state="Active" />
-          </div>
-        </div>
-      </ShowcaseSurface>
-
-      <ShowcaseSurface title={modules[1].title} subtitle={modules[1].subtitle} className="xl:translate-y-8 xl:[transform:rotateX(4deg)] xl:[perspective:1800px]">
-        <div className="grid gap-3">
-          <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.03] p-3.5">
-            <div className="grid gap-2.5">
-              <FlowCard title="Filter" detail="Open records for operations owner" />
-              <FlowCard title="Detail" detail="Record drawer keeps status and notes visible" />
-            </div>
-          </div>
-          <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.03] p-3.5">
-            <TinyLabel text="Recent Actions" />
+    <div className="space-y-8 lg:space-y-12">
+      <ShowcasePanel kicker={modules[0].title} title={modules[0].title} description={modules[0].subtitle}>
+        <div className="grid gap-3 md:grid-cols-[0.52fr_0.48fr]">
+          <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.025] p-4">
+            <MetaLabel text="Incoming queue" />
             <div className="mt-3 grid gap-2.5">
-              <EventItem label="Update" detail="Owner changed after review handoff." />
-              <EventItem label="Log" detail="Comment appended to operational timeline." />
+              <QueueRow title="New intake request" detail="Waiting owner assignment before routing." state="Queued" />
+              <QueueRow title="Approval update" detail="Review lane requested a final confirmation." state="Review" />
+              <QueueRow title="Execution handoff" detail="Operational team is ready for release." state="Active" />
+            </div>
+          </div>
+          <div className="rounded-[1.4rem] border border-white/8 bg-[linear-gradient(180deg,rgba(17,24,39,0.94),rgba(10,13,22,0.98))] p-4">
+            <MetaLabel text="Route visibility" />
+            <div className="mt-3 grid gap-2.5">
+              <Event label="Intake" detail="Record enters the correct approval path immediately." />
+              <Event label="Review" detail="Required owner and approval state stay visible." />
+              <Event label="Execution" detail="Cleared work moves into the delivery queue." />
             </div>
           </div>
         </div>
-      </ShowcaseSurface>
+      </ShowcasePanel>
 
-      <ShowcaseSurface title={modules[2].title} subtitle={modules[2].subtitle} className="xl:[transform:rotateY(6deg)] xl:[perspective:1800px]">
-        <div className="rounded-[1.25rem] border border-white/8 bg-white/[0.03] p-3.5">
-          <div className="grid gap-3">
-            <FlowCard title="Source" detail="Lead capture payload enters sync layer." />
-            <FlowCard title="Mapping" detail="Owner, stage, and routing rules are normalized." />
-            <FlowCard title="Destination" detail="Validated data writes into the operations surface." />
+      <ShowcasePanel kicker={modules[1].title} title={modules[1].title} description={modules[1].subtitle} reverse>
+        <div className="grid gap-3 md:grid-cols-[0.58fr_0.42fr]">
+          <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.025] p-4">
+            <div className="grid gap-2.5">
+              <Field label="Open records" value="Filtered by owner, state, and release priority" />
+              <Field label="Detail drawer" value="Status, notes, and handoff context stay visible" />
+            </div>
           </div>
-          <div className="mt-3 rounded-[1rem] border border-dashed border-[#4da3ff]/30 bg-[#4da3ff]/6 px-3 py-3 text-sm text-[#dcecff]">
-            <LocalizedText text="Validation state clean" />
+          <div className="rounded-[1.4rem] border border-white/8 bg-[#101626] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.26)]">
+            <MetaLabel text="Recent actions" />
+            <div className="mt-3 grid gap-2.5">
+              <Event label="Update" detail="Owner changed after review handoff." />
+              <Event label="Comment" detail="Operational timeline updated with a new note." />
+              <Event label="Release" detail="Execution route unlocked for downstream team." />
+            </div>
           </div>
         </div>
-      </ShowcaseSurface>
+      </ShowcasePanel>
+
+      <ShowcasePanel kicker={modules[2].title} title={modules[2].title} description={modules[2].subtitle}>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.025] p-4">
+            <MetaLabel text="Source" />
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              <LocalizedText text="Lead payload enters the sync layer with routing metadata." />
+            </p>
+          </div>
+          <div className="rounded-[1.4rem] border border-white/8 bg-[#101626] p-4 shadow-[0_18px_60px_rgba(0,0,0,0.24)]">
+            <MetaLabel text="Mapping" />
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              <LocalizedText text="Ownership, stage, and validation rules are confirmed in one pass." />
+            </p>
+          </div>
+          <div className="rounded-[1.4rem] border border-white/8 bg-white/[0.025] p-4">
+            <MetaLabel text="Destination" />
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              <LocalizedText text="Validated data writes into the operations surface with event logging." />
+            </p>
+          </div>
+        </div>
+      </ShowcasePanel>
     </div>
   );
 }
