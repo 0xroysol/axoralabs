@@ -3,7 +3,11 @@
 import { useSearchParams } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslate } from "@/src/components/ui/LocalizedText";
-import { demoRequestMessagesByIntent, serviceTypeOptions } from "@/src/content/siteContent";
+import {
+  contactFormConfig,
+  demoRequestMessagesByIntent,
+  serviceTypeOptions
+} from "@/src/content/siteContent";
 
 type FormState = {
   name: string;
@@ -11,10 +15,6 @@ type FormState = {
   company: string;
   serviceType: string;
   message: string;
-};
-
-type ContactFormProps = {
-  mode?: "service" | "studio";
 };
 
 const initialState: FormState = {
@@ -25,7 +25,7 @@ const initialState: FormState = {
   message: ""
 };
 
-export function ContactForm({ mode = "service" }: ContactFormProps) {
+export function ContactForm() {
   const t = useTranslate();
   const searchParams = useSearchParams();
   const hasPrefilled = useRef(false);
@@ -34,7 +34,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
   const [toast, setToast] = useState<string>("");
 
   useEffect(() => {
-    if (mode === "studio" || hasPrefilled.current) {
+    if (hasPrefilled.current) {
       return;
     }
 
@@ -57,7 +57,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
       message: prefilledMessage || prev.message
     }));
     hasPrefilled.current = true;
-  }, [mode, searchParams, t]);
+  }, [searchParams, t]);
 
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
@@ -65,6 +65,11 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
     () => Boolean(form.name && form.email && form.company && form.serviceType && form.message),
     [form]
   );
+
+  const messagePlaceholder =
+    form.serviceType === contactFormConfig.unsureOption
+      ? t(contactFormConfig.unsureMessagePlaceholder)
+      : t(contactFormConfig.defaultMessagePlaceholder);
 
   const validate = () => {
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
@@ -81,10 +86,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
       nextErrors.company = t("Please enter your company name.");
     }
     if (!form.serviceType.trim()) {
-      nextErrors.serviceType =
-        mode === "studio"
-          ? t("Please describe what you want to build.")
-          : t("Please choose a service type.");
+      nextErrors.serviceType = t("Please choose an option.");
     }
     if (!form.message.trim()) {
       nextErrors.message = t("Please enter a short project message.");
@@ -110,19 +112,12 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
   };
 
   const fieldClasses =
-    mode === "studio"
-      ? "focus-ring w-full rounded-2xl border border-[#d8cfbf] bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400"
-      : "focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100";
+    "focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500";
 
-  const labelClasses =
-    mode === "studio"
-      ? "mb-2 block text-sm font-medium text-slate-700"
-      : "mb-2 block text-sm font-medium text-slate-200";
+  const labelClasses = "mb-2 block text-sm font-medium text-slate-200";
 
   const submitClasses =
-    mode === "studio"
-      ? "focus-ring inline-flex rounded-full border border-slate-900 bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-40"
-      : "focus-ring inline-flex rounded-md border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40";
+    "focus-ring inline-flex rounded-md border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40";
 
   return (
     <div className="space-y-5">
@@ -130,11 +125,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
         <div
           role="status"
           aria-live="polite"
-          className={`rounded-2xl px-4 py-3 text-sm ${
-            mode === "studio"
-              ? "border border-emerald-200 bg-emerald-50 text-emerald-800"
-              : "border border-emerald-300/30 bg-emerald-300/10 text-emerald-200"
-          }`}
+          className="rounded-2xl border border-emerald-300/30 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-200"
         >
           {toast}
         </div>
@@ -205,35 +196,23 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
 
         <div>
           <label htmlFor="serviceType" className={labelClasses}>
-            {mode === "studio" ? t("What do you want to build?") : t("Service Type")}
+            {t("What do you want to build?")}
           </label>
-          {mode === "studio" ? (
-            <input
-              id="serviceType"
-              type="text"
-              value={form.serviceType}
-              onChange={(event) => setForm((prev) => ({ ...prev, serviceType: event.target.value }))}
-              className={fieldClasses}
-              aria-invalid={Boolean(errors.serviceType)}
-              aria-describedby={errors.serviceType ? "service-error" : undefined}
-            />
-          ) : (
-            <select
-              id="serviceType"
-              value={form.serviceType}
-              onChange={(event) => setForm((prev) => ({ ...prev, serviceType: event.target.value }))}
-              className={fieldClasses}
-              aria-invalid={Boolean(errors.serviceType)}
-              aria-describedby={errors.serviceType ? "service-error" : undefined}
-            >
-              <option value="">{t("Select a service")}</option>
-              {serviceTypeOptions.map((option) => (
-                <option value={option} key={option}>
-                  {t(option)}
-                </option>
-              ))}
-            </select>
-          )}
+          <select
+            id="serviceType"
+            value={form.serviceType}
+            onChange={(event) => setForm((prev) => ({ ...prev, serviceType: event.target.value }))}
+            className={fieldClasses}
+            aria-invalid={Boolean(errors.serviceType)}
+            aria-describedby={errors.serviceType ? "service-error" : undefined}
+          >
+            <option value="">{t("Select an option")}</option>
+            {serviceTypeOptions.map((option) => (
+              <option value={option} key={option}>
+                {t(option)}
+              </option>
+            ))}
+          </select>
           {errors.serviceType ? (
             <p id="service-error" className="mt-1 text-xs text-rose-500">
               {errors.serviceType}
@@ -251,6 +230,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
             value={form.message}
             onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
             className={fieldClasses}
+            placeholder={messagePlaceholder}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? "message-error" : undefined}
           />
@@ -262,7 +242,7 @@ export function ContactForm({ mode = "service" }: ContactFormProps) {
         </div>
 
         <button type="submit" disabled={!canSubmit} className={submitClasses}>
-          {mode === "studio" ? t("Send brief") : t("Submit request")}
+          {t("Request a Call")}
         </button>
       </form>
     </div>

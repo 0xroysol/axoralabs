@@ -283,17 +283,17 @@ export const financeBudgetContent = {
 
 export const demoRequestLinks = {
   finance: "/demo/finance-os",
-  operations: "/contact?serviceType=Demo%20Request&intent=operations",
-  assistant: "/contact?serviceType=Demo%20Request&intent=assistant"
+  operations: "/contact?serviceType=Operations%20Panel&intent=operations",
+  assistant: "/contact?serviceType=AI%20Automation&intent=assistant"
 };
 
 export const demoRequestMessagesByIntent: Record<string, string> = {
   finance:
-    "Hi, we would like to request the Axora Finance OS (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.",
+    "Hi, we would like to explore a custom finance and operations system for our team. Please share available time slots.",
   operations:
-    "Hi, we would like to request the Axora Operations Panel (Agency Edition) demo. We are a 5–20 person digital marketing agency. Please share available time slots.",
+    "Hi, we would like to discuss an operations panel for our team. Please share available time slots.",
   assistant:
-    "Hi, we would like to request the Axora AI Assistant demo. We are a 5–20 person digital marketing agency. Please share available time slots."
+    "Hi, we would like to discuss an AI automation setup for our team. Please share available time slots."
 };
 
 export const servicesPageContent = {
@@ -702,11 +702,19 @@ export const aboutContent = {
 };
 
 export const serviceTypeOptions = [
-  "Demo Request",
-  "Agency Finance MVP",
-  "Agency Growth Suite",
-  "AI Assistant System",
-  "Integration & Support",
-  "Vibe Coding Education",
-  "Integrated Suite"
+  "Custom Web App",
+  "Operations Panel",
+  "Workflow System",
+  "CRM / Lead Management",
+  "Data Integration",
+  "AI Automation",
+  "Existing System Improvement",
+  "Not Sure / Let's Define It Together"
 ];
+
+export const contactFormConfig = {
+  unsureOption: "Not Sure / Let's Define It Together",
+  defaultMessagePlaceholder: "Briefly tell us what you want to build.",
+  unsureMessagePlaceholder:
+    "Briefly describe your need and we'll help define the right system together."
+};
