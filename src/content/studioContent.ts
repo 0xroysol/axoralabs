@@ -24,16 +24,14 @@ export const studioSeoByLocale = {
 
 export const studioNavLinks: StudioNavItem[] = [
   { label: "What We Build", href: "/#what-we-build" },
-  { label: "Systems", href: "/#showcase" },
+  { label: "Interfaces", href: "/#showcase" },
   { label: "Process", href: "/#process" },
-  { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" }
 ];
 
 export const studioFooterLinks: StudioNavItem[] = [
   { label: "What We Build", href: "/#what-we-build" },
   { label: "Process", href: "/#process" },
-  { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" }
 ];
 
@@ -55,17 +53,17 @@ export const studioHomeContent = {
       {
         title: "Workflow Control",
         subtitle:
-          "Queue, routing, approval state, and task ownership in one controlled layer."
+          "Queue, routing, approval states, and task flow in one controlled surface."
       },
       {
         title: "Operations Console",
         subtitle:
-          "Records, filters, detail context, and recent actions in a single operational surface."
+          "Records, filters, detail context, and recent actions gathered in one operational view."
       },
       {
         title: "Data Sync Layer",
         subtitle:
-          "Source, mapping, validation, and destination state handled in one sync flow."
+          "Source, mapping, validation, and destination state handled in one visible flow."
       }
     ]
   },
@@ -79,8 +77,7 @@ export const studioHomeContent = {
       },
       {
         title: "Operations Panels",
-        description:
-          "Modern panels for visibility, reporting, and decision-making."
+        description: "Modern control surfaces for visibility, tracking, and decisions."
       },
       {
         title: "Workflow Systems",
@@ -90,7 +87,7 @@ export const studioHomeContent = {
       {
         title: "AI Automations",
         description:
-          "Automation layers that reduce repetition and improve operational flow."
+          "Automation layers that reduce repetition and keep operations moving."
       }
     ]
   },
@@ -119,16 +116,14 @@ export const studioHomeContent = {
       }
     ]
   },
-  about: {
-    title: "About AxoraLab",
-    description:
-      "AxoraLab is a modern product studio that designs and builds custom software systems around real operational needs. Its focus is clear process design, strong interfaces, and systems that create value in real use."
-  },
   finalCta: {
     title: "Let's build your next system together.",
     description:
       "Let's design the right internal tool, workflow system, operations panel, or automation layer for your business.",
-    cta: "Book a 15-min Call",
-    email: "hello@axoralabs.ai"
+    cta: "Request a Call",
+    email: "hello@axoralabs.ai",
+    formIntroTitle: "Tell us what you want to build.",
+    formIntroDescription:
+      "If the workflow already lives in spreadsheets, messages, approvals, or disconnected tools, it can likely become a better software system."
   }
 };
