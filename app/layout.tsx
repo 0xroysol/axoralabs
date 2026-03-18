@@ -3,7 +3,6 @@ import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/src/components/layout/Footer";
 import { Navbar } from "@/src/components/layout/Navbar";
-import { LocalizedText } from "@/src/components/ui/LocalizedText";
 import { LanguageProvider } from "@/src/i18n/LanguageProvider";
 import { studioBrand, studioSeoByLocale } from "@/src/content/studioContent";
 
@@ -20,10 +19,10 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://axoralabs.ai"),
   title: {
-    default: studioSeoByLocale.tr.title,
+    default: studioSeoByLocale.en.title,
     template: "%s | AxoraLab"
   },
-  description: studioSeoByLocale.tr.description,
+  description: studioSeoByLocale.en.description,
   openGraph: {
     title: studioSeoByLocale.en.title,
     description: studioSeoByLocale.en.description,
@@ -44,14 +43,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="bg-[#05060A] text-[#F5F7FB] antialiased">
         <LanguageProvider>
           <a
             href="#main-content"
             className="focus-ring sr-only z-[999] rounded-md border border-white/10 bg-[#0B1020] px-3 py-2 text-sm font-semibold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
           >
-            <LocalizedText text="Skip to content" />
+            Skip to content
           </a>
           <div className="relative min-h-screen overflow-x-clip bg-[#05060A]">
             <Navbar brandName={studioBrand.name} />

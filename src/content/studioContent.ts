@@ -10,21 +10,15 @@ export const studioBrand = {
 };
 
 export const studioSeoByLocale = {
-  tr: {
-    title: "AxoraLab | Özel Yazılım Sistemleri ve Operasyon Panelleri",
-    description:
-      "AxoraLab; özel web uygulamaları, operasyon panelleri, workflow sistemleri ve AI otomasyonları geliştiren modern bir product studio’dur."
-  },
   en: {
     title: "AxoraLab | Custom Software Systems & Operations Panels",
     description:
-      "AxoraLab is a modern product studio building custom web apps, operations panels, workflow systems, and AI automations."
+      "AxoraLab is a premium software studio building custom web apps, operations panels, workflow systems, and AI automations."
   }
 } as const;
 
 export const studioNavLinks: StudioNavItem[] = [
   { label: "What We Build", href: "/#what-we-build" },
-  { label: "Interfaces", href: "/#showcase" },
   { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" }
 ];
@@ -41,48 +35,33 @@ export const studioHomeContent = {
       "Custom Web Apps • Operations Panels • Workflow Systems • AI Automations",
     title: "We build software systems tailored to your business.",
     description:
-      "We design custom software systems that make internal processes, workflows, and operations simpler, faster, and more scalable.",
-    primaryCta: "Let's Talk",
-    secondaryCta: "What We Build"
-  },
-  showcase: {
-    title: "Interfaces designed for real operations.",
-    subtitle:
-      "More than attractive screens: software surfaces teams actually use.",
-    modules: [
-      {
-        title: "Workflow Control",
-        subtitle: "Queue, routing, approvals, and ownership handled in one controlled layer."
-      },
-      {
-        title: "Operations Console",
-        subtitle: "Records, filters, detail context, and recent actions gathered in one operational surface."
-      },
-      {
-        title: "Data Sync Layer",
-        subtitle: "Source, mapping, validation, and destination state kept visible in one sync flow."
-      }
-    ]
+      "From internal tools to workflow systems and AI automations, we design software that makes operations cleaner, faster, and more scalable.",
+    primaryCta: "Start a Project",
+    secondaryCta: "See What We Build"
   },
   whatWeBuild: {
     title: "What We Build",
-    subtitle: "Not generic templates — systems built around real workflows.",
+    subtitle: "Tailored systems designed around real workflows — not generic templates.",
     items: [
       {
         title: "Custom Web Apps",
-        description: "Custom web systems designed around your workflow."
+        description:
+          "Custom software experiences built around your internal or customer-facing workflows."
       },
       {
         title: "Operations Panels",
-        description: "Modern control surfaces for visibility, tracking, and decisions."
+        description:
+          "Clean control surfaces for visibility, decisions, and operational flow."
       },
       {
         title: "Workflow Systems",
-        description: "Workflow structures that simplify approvals, tasks, and repeated processes."
+        description:
+          "Systems that simplify approvals, routing, recurring tasks, and team coordination."
       },
       {
         title: "AI Automations",
-        description: "Automation layers that reduce repetition and keep operations moving."
+        description:
+          "Automation layers that reduce manual repetition and improve process speed."
       }
     ]
   },
@@ -91,34 +70,30 @@ export const studioHomeContent = {
     steps: [
       {
         name: "Discover",
-        detail: "We understand the workflow and operational needs."
+        detail: "We understand the workflow, context, and friction points."
       },
       {
         name: "Architect",
-        detail: "We shape the screens, data structure, and user experience."
+        detail: "We define the system structure, experience, and operational logic."
       },
       {
         name: "Build",
-        detail: "We build the system and make it operational."
+        detail: "We design and develop the software layer with production quality in mind."
       },
       {
-        name: "Launch",
-        detail: "We complete testing and rollout."
-      },
-      {
-        name: "Improve",
-        detail: "We improve the system based on real use."
+        name: "Refine",
+        detail: "We improve the system based on real use and iteration."
       }
     ]
   },
   finalCta: {
-    title: "Let's build your next system together.",
+    title: "Let’s build your next system.",
     description:
-      "Let's design the right internal tool, workflow system, operations panel, or automation layer for your business.",
+      "Whether you need an internal tool, workflow layer, operations panel, or automation system, we can design the right software for your business.",
     cta: "Request a Call",
     email: "hello@axoralabs.ai",
     formIntroTitle: "Tell us what you want to build.",
     formIntroDescription:
-      "If the workflow already lives in spreadsheets, messages, approvals, or disconnected tools, it can likely become a better software system."
+      "Briefly describe the workflow, internal tool, or operational layer you want to improve and we will help shape the right system."
   }
 };

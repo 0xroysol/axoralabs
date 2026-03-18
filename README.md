@@ -1,24 +1,30 @@
 # AxoraLab
 
-AxoraLab için Next.js App Router tabanlı pazarlama sitesi ve demo route'ları.
+AxoraLab için Next.js tabanlı tek sayfalık, koyu temalı studio websitesi.
 
-## Son güncelleme
+## Bu turda ne değişti?
 
-Ana sayfa tamamen yeniden kuruldu.
+Bu güncellemede ana sayfa tamamen yeniden kuruldu.
+Eski parçalı, tekrar eden ve yer yer sahte ürün hissi veren homepage yapısı bırakıldı.
+Yerine daha sade, daha koyu, daha kontrollü ve tek dilli bir studio akışı kuruldu.
 
-Bu redesign ile:
-- homepage tek parça dark-only product studio yönüne taşındı
-- eski yamalı section yapısı tamamen kaldırıldı
-- hero alanı tek bir anlamlı operasyon yazılım sahnesi etrafında yeniden tasarlandı
-- studio showcase alanı gerçekçi workflow, operations console ve data sync yüzeyleriyle yeniden kuruldu
-- anlamsız KPI kutuları, sahte grafikler ve dekoratif dashboard parçaları çıkarıldı
-- içerik miktarı azaltılarak daha net ve premium bir ritim kuruldu
-- footer ve nav yeni dark studio yapısına göre sadeleştirildi
-- contact form yeni studio konumlandırmasına göre temizlendi
-- pricing, Vibe Coding ve dar agency/finance homepage dili kaldırıldı
-- demo route'ları ve genel uygulama yapısı korundu
+Yeni yapı:
+- Hero
+- What We Build
+- Process
+- Final CTA / Contact
+- Footer
 
-## Geliştirme
+Yapılan başlıca değişiklikler:
+- Ana sayfa tek dil İngilizceye geçirildi
+- TR/EN dil switch arayüzden kaldırıldı
+- Homepage tamamen dark-only yapıya çevrildi
+- Hero, tek bir operasyon yazılım sahnesi etrafında yeniden kuruldu
+- Pricing, Vibe Coding ve dar sektör mesajları homepage’ten çıkarıldı
+- Contact alanı yeni studio konumlandırmasına göre sadeleştirildi
+- Nav ve footer, yeni minimal akışa göre temizlendi
+
+## Kurulum
 
 ```bash
 npm install
