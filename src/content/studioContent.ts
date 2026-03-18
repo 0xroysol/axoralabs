@@ -52,24 +52,21 @@ export const studioHomeContent = {
     modules: [
       {
         title: "Workflow Control",
-        subtitle:
-          "Queue, routing, approval states, and task flow in one controlled surface."
+        subtitle: "Queue, routing, approvals, and ownership handled in one controlled layer."
       },
       {
         title: "Operations Console",
-        subtitle:
-          "Records, filters, detail context, and recent actions gathered in one operational view."
+        subtitle: "Records, filters, detail context, and recent actions gathered in one operational surface."
       },
       {
         title: "Data Sync Layer",
-        subtitle:
-          "Source, mapping, validation, and destination state handled in one visible flow."
+        subtitle: "Source, mapping, validation, and destination state kept visible in one sync flow."
       }
     ]
   },
   whatWeBuild: {
     title: "What We Build",
-    subtitle: "Not generic templates - systems built around real workflows.",
+    subtitle: "Not generic templates — systems built around real workflows.",
     items: [
       {
         title: "Custom Web Apps",
@@ -81,13 +78,11 @@ export const studioHomeContent = {
       },
       {
         title: "Workflow Systems",
-        description:
-          "Workflow layers that simplify approvals, tasks, and repeated processes."
+        description: "Workflow structures that simplify approvals, tasks, and repeated processes."
       },
       {
         title: "AI Automations",
-        description:
-          "Automation layers that reduce repetition and keep operations moving."
+        description: "Automation layers that reduce repetition and keep operations moving."
       }
     ]
   },

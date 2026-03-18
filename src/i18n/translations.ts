@@ -1248,6 +1248,11 @@ const tr: Record<string, string> = {
   "Ownership and routing rules confirmed": "Sahiplik ve yönlendirme kuralları doğrulandı",
   "Operations surface updated with event state": "Operasyon yüzeyi olay durumu ile güncellendi",
   "State updated": "Durum güncellendi",
+  "Queue, routing, approvals, and ownership handled in one controlled layer.": "Kuyruk, yönlendirme, onaylar ve sahiplik tek bir kontrollü katmanda yönetilir.",
+  "Records, filters, detail context, and recent actions gathered in one operational surface.": "Kayıtlar, filtreler, detay bağlamı ve son aksiyonlar tek bir operasyon yüzeyinde toplanır.",
+  "Source, mapping, validation, and destination state kept visible in one sync flow.": "Kaynak, eşleme, doğrulama ve hedef durumu tek bir senkron akışında görünür tutulur.",
+  "Workflow structures that simplify approvals, tasks, and repeated processes.": "Onayları, görevleri ve tekrar eden süreçleri sadeleştiren akış yapıları.",
+  "Not generic templates — systems built around real workflows.": "Hazır şablonlar değil — gerçek iş akışlarına göre kurulan sistemler.",
 
 };
 
