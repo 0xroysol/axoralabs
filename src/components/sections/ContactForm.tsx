@@ -102,7 +102,7 @@ export function ContactForm() {
       return;
     }
 
-    setToast(t("Thanks. Your request has been captured. We will reach out shortly."));
+    setToast(t("Thanks. We received your brief and will get back to you shortly."));
     setForm(initialState);
     setErrors({});
 
@@ -112,12 +112,12 @@ export function ContactForm() {
   };
 
   const fieldClasses =
-    "focus-ring w-full rounded-lg border border-slate-600 bg-slate-900/70 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500";
+    "focus-ring w-full rounded-[1.15rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 transition hover:border-white/14 focus:border-sky-300/50";
 
-  const labelClasses = "mb-2 block text-sm font-medium text-slate-200";
+  const labelClasses = "mb-2.5 block text-sm font-medium text-slate-200";
 
   const submitClasses =
-    "focus-ring inline-flex rounded-md border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40";
+    "focus-ring inline-flex rounded-full border border-slate-100 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-white disabled:cursor-not-allowed disabled:opacity-40";
 
   return (
     <div className="space-y-5">
@@ -125,7 +125,7 @@ export function ContactForm() {
         <div
           role="status"
           aria-live="polite"
-          className="rounded-2xl border border-emerald-300/30 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-200"
+          className="rounded-[1.4rem] border border-emerald-300/30 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-200"
         >
           {toast}
         </div>
@@ -146,7 +146,7 @@ export function ContactForm() {
             aria-describedby={errors.name ? "name-error" : undefined}
           />
           {errors.name ? (
-            <p id="name-error" className="mt-1 text-xs text-rose-500">
+            <p id="name-error" className="mt-1.5 text-xs text-rose-400">
               {errors.name}
             </p>
           ) : null}
@@ -167,7 +167,7 @@ export function ContactForm() {
               aria-describedby={errors.company ? "company-error" : undefined}
             />
             {errors.company ? (
-              <p id="company-error" className="mt-1 text-xs text-rose-500">
+              <p id="company-error" className="mt-1.5 text-xs text-rose-400">
                 {errors.company}
               </p>
             ) : null}
@@ -187,7 +187,7 @@ export function ContactForm() {
               aria-describedby={errors.email ? "email-error" : undefined}
             />
             {errors.email ? (
-              <p id="email-error" className="mt-1 text-xs text-rose-500">
+              <p id="email-error" className="mt-1.5 text-xs text-rose-400">
                 {errors.email}
               </p>
             ) : null}
@@ -214,7 +214,7 @@ export function ContactForm() {
             ))}
           </select>
           {errors.serviceType ? (
-            <p id="service-error" className="mt-1 text-xs text-rose-500">
+            <p id="service-error" className="mt-1.5 text-xs text-rose-400">
               {errors.serviceType}
             </p>
           ) : null}
@@ -235,14 +235,14 @@ export function ContactForm() {
             aria-describedby={errors.message ? "message-error" : undefined}
           />
           {errors.message ? (
-            <p id="message-error" className="mt-1 text-xs text-rose-500">
+            <p id="message-error" className="mt-1.5 text-xs text-rose-400">
               {errors.message}
             </p>
           ) : null}
         </div>
 
         <button type="submit" disabled={!canSubmit} className={submitClasses}>
-          {t("Request a Call")}
+          {t("Send Project Brief")}
         </button>
       </form>
     </div>

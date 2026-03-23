@@ -714,7 +714,8 @@ export const serviceTypeOptions = [
 
 export const contactFormConfig = {
   unsureOption: "Not Sure / Let's Define It Together",
-  defaultMessagePlaceholder: "Briefly tell us what you want to build.",
+  defaultMessagePlaceholder:
+    "Outline the workflow, team, or internal product you want to build.",
   unsureMessagePlaceholder:
-    "Briefly describe your need and we'll help define the right system together."
+    "Describe the operational problem and we will help define the right system together."
 };
