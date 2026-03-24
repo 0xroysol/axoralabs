@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, type ReactNode } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ContactForm } from "@/src/components/sections/ContactForm";
@@ -50,27 +50,6 @@ function ArrowRightIcon() {
   );
 }
 
-function BlurIn({
-  children,
-  delay = 0,
-  className
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-      animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function SplitText({
   text,
   className,
@@ -85,19 +64,13 @@ function SplitText({
   return (
     <span className={className}>
       {words.map((word, index) => (
-        <motion.span
+        <span
           key={`${word}-${index}`}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: startDelay + index * 0.08,
-            ease: [0.22, 1, 0.36, 1]
-          }}
-          className="mr-[0.24em] inline-block last:mr-0"
+          className="hero-word mr-[0.24em] inline-block last:mr-0"
+          style={{ animationDelay: `${startDelay + index * 0.08}s` }}
         >
           {word}
-        </motion.span>
+        </span>
       ))}
     </span>
   );
@@ -136,14 +109,15 @@ function HeroSection() {
           <div className="max-w-3xl">
             <div className="flex flex-col gap-12">
               <div className="flex flex-col gap-6">
-                <BlurIn delay={0}>
-                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 backdrop-blur-sm">
-                    <SparklesIcon />
-                    <span className="text-sm font-medium text-white/80">
-                      New AI Automation Ally
-                    </span>
-                  </div>
-                </BlurIn>
+                <div
+                  className="hero-blur-in inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 backdrop-blur-sm"
+                  style={{ animationDelay: "0s" }}
+                >
+                  <SparklesIcon />
+                  <span className="text-sm font-medium text-white/80">
+                    New AI Automation Ally
+                  </span>
+                </div>
 
                 <div className="flex flex-col gap-6">
                   <h1 className="text-4xl font-medium leading-tight text-white md:text-5xl lg:text-6xl lg:leading-[1.2]">
@@ -162,32 +136,31 @@ function HeroSection() {
                     </span>
                   </h1>
 
-                  <BlurIn delay={0.4}>
-                    <p className="max-w-xl text-lg font-normal leading-relaxed text-white/80">
-                      Our cutting-edge AI platform automates, analyzes, and accelerates
-                      your workflows so you can focus on what really matters.
-                    </p>
-                  </BlurIn>
+                  <p
+                    className="hero-blur-in max-w-xl text-lg font-normal leading-relaxed text-white/80"
+                    style={{ animationDelay: "0.4s" }}
+                  >
+                    Our cutting-edge AI platform automates, analyzes, and accelerates
+                    your workflows so you can focus on what really matters.
+                  </p>
                 </div>
               </div>
 
-              <BlurIn delay={0.6}>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/book-call"
-                    className="focus-ring inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#070612] transition hover:bg-white/90"
-                  >
-                    Book A Free Call
-                    <ArrowRightIcon />
-                  </Link>
-                  <Link
-                    href="/#what-we-build"
-                    className="focus-ring inline-flex items-center rounded-full bg-white/20 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/25"
-                  >
-                    Learn now
-                  </Link>
-                </div>
-              </BlurIn>
+              <div className="hero-blur-in flex flex-wrap gap-4" style={{ animationDelay: "0.6s" }}>
+                <Link
+                  href="/book-call"
+                  className="focus-ring inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#070612] transition hover:bg-white/90"
+                >
+                  Book A Free Call
+                  <ArrowRightIcon />
+                </Link>
+                <Link
+                  href="/#what-we-build"
+                  className="focus-ring inline-flex items-center rounded-full bg-white/20 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/25"
+                >
+                  Learn now
+                </Link>
+              </div>
             </div>
           </div>
         </div>
